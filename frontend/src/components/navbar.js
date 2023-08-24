@@ -3,9 +3,11 @@ import logo from "../assets/images/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IconContext } from "react-icons";
 import MobileNavbar from "./mobilenavbar";
+import Submenu from "./submenu";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showSubMenu, setShowSubMenu] = useState(false);
 
   const toggleMobileMenu = () => {
     console.log("Clicked");
@@ -26,6 +28,24 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
+  const handleNavItemHover = () => {
+    console.log("Enter");
+    setShowSubMenu(true);
+  };
+
+  const handleNavItemLeave = () => {
+    console.log("Leave");
+    setShowSubMenu(false);
+  };
+
+  const handleSubMenuMouseEnter = () => {
+    setShowSubMenu(true);
+  };
+
+  const handleSubMenuMouseLeave = () => {
+    setShowSubMenu(false);
+  };
+
   return (
     <>
       <nav className="navbar-main">
@@ -34,15 +54,36 @@ const Navbar = () => {
         </div>
         <div className={"navbar-routes"}>
           <ul>
-            <li>Home</li>
-            <li>Packages</li>
-            <li>Accomodation</li>
-            <li>Event Planning</li>
-            <li>Rentals</li>
-            <li>Tours</li>
-            <li>Event Tickets</li>
-            <li>Book Now</li>
-            <li>Contact Us</li>
+            <li>
+              <a>Home</a>
+            </li>
+            <li
+              onMouseEnter={handleNavItemHover}
+              onMouseLeave={handleNavItemLeave}
+            >
+              <a>Packages</a>
+            </li>
+            <li>
+              <a>Accomodation</a>
+            </li>
+            <li>
+              <a>Event Planning</a>
+            </li>
+            <li>
+              <a>Rentals</a>
+            </li>
+            <li>
+              <a>Tours</a>
+            </li>
+            <li>
+              <a>Event Tickets</a>
+            </li>
+            <li>
+              <a>Book Now</a>
+            </li>
+            <li>
+              <a>Contact Us</a>
+            </li>
           </ul>
         </div>
         <div className="navbar-hamburger">
@@ -56,6 +97,13 @@ const Navbar = () => {
           isOpen={isMobileMenuOpen}
           toggleMenu={toggleMobileMenu}
         ></MobileNavbar>
+        {showSubMenu && (
+          <Submenu
+            onMouseEnter={handleSubMenuMouseEnter}
+            onMouseLeave={handleSubMenuMouseLeave}
+            visibility={showSubMenu}
+          />
+        )}
       </nav>
     </>
   );

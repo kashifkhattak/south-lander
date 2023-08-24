@@ -13,7 +13,7 @@ const Hero = () => {
           <img src={heroBG} alt=""></img>
         </div>
         <div className="hero-content">
-          <h1>South Lander Travel</h1>
+          <h1>Southlander Travel</h1>
           <p>
             Explore Ecuador's most innovative destination experience offer:
             all-inclusive vacation packages, destination events, explore Ecuador
