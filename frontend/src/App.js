@@ -6,6 +6,8 @@ import SectionHeader from "./components/sectionheader";
 import Packagebar from "./components/packagebar";
 import AccomodationGallery from "./components/accomodationgallery";
 import Destinationbar from "./components/destinationbar";
+import WeddingBanner from "./components/weddingbanner";
+import Rentalbar from "./components/rentalbar";
 
 function App() {
   return (
@@ -36,6 +38,22 @@ function App() {
         }
       ></SectionHeader>
       <Destinationbar></Destinationbar>
+      <WeddingBanner></WeddingBanner>
+      <SectionHeader
+        header={"Exclusive"}
+        subheader={"Vacation Rentals"}
+        description={
+          "Our stock of vacation-perfect certified properties up for rent all around continental Ecuador and the Galapagos."
+        }
+      ></SectionHeader>
+      <Rentalbar></Rentalbar>
+      <SectionHeader
+        header={"Ecuador"}
+        subheader={"Sights and Tours"}
+        description={
+          "Modern infraestructure, cultural splendor, wildlife watching, sublime scenery, snowed peaked volcanoes, waves splashing white-sand beaches and more! wrapped-up in an easy-access compact territory the size of Nevada!"
+        }
+      ></SectionHeader>
       <Footer></Footer>
     </>
   );
