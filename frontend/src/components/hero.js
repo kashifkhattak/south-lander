@@ -9,9 +9,9 @@ const Hero = () => {
   return (
     <>
       <div className="hero-main">
-        <div className="hero-bg">
+        {/* <div className="hero-bg">
           <img src={heroBG} alt=""></img>
-        </div>
+        </div> */}
         <div className="hero-content">
           <h1>Southlander Travel</h1>
           <p>

@@ -311,7 +311,9 @@ li {
 
 .hero-main {
   width: 100%;
-  height: 57rem;
+  height: auto;
+  background-image: url("A:\Freelancing\Southlander\south-lander\frontend\src\assets\images\consul-bg.jpg");
+  background-size: cover;
 }
 
 .hero-bg {
@@ -326,13 +328,22 @@ li {
 }
 
 .hero-content {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* position: absolute; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  /* top: 0;
+  left: 0; */
+  /* transform: translate(-50%, -50%); */
   text-align: center;
   z-index: 1;
-  padding: 20px;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
 .hero-content h1 {
@@ -448,6 +459,12 @@ li {
   animation: fadeInUp 0.8s ease-in-out 0.4s forwards;
 }
 
+/* @media (max-width: 900px) {
+  .hero-content {
+    top: 40%;
+  }
+}
+
 @media (max-width: 750px) {
   .hero-buttons li {
     width: 70px;
@@ -462,7 +479,10 @@ li {
   .hero-buttons p {
     font-size: x-small;
   }
-}
+  .hero-main {
+    height: 75rem;
+  }
+} */
 
 /* Footer Component ---------------------------------------------------------------------------------------- */
 
