@@ -8,6 +8,8 @@ import AccomodationGallery from "./components/accomodationgallery";
 import Destinationbar from "./components/destinationbar";
 import WeddingBanner from "./components/weddingbanner";
 import Rentalbar from "./components/rentalbar";
+import ToursGallery from "./components/toursgallery";
+import Events from "./components/events";
 
 function App() {
   return (
@@ -54,6 +56,15 @@ function App() {
           "Modern infraestructure, cultural splendor, wildlife watching, sublime scenery, snowed peaked volcanoes, waves splashing white-sand beaches and more! wrapped-up in an easy-access compact territory the size of Nevada!"
         }
       ></SectionHeader>
+      <ToursGallery></ToursGallery>
+      <SectionHeader
+        header={"Hands On"}
+        subheader={"Event Tickets And Event Packages"}
+        description={
+          "Experience the thrill of unique tourism attractions with our all-inclusive special events packages; from world-renowned events to charming community festivals and park programs, we've got you covered. Book now and let us take care of everything, so you can focus on enjoying every moment of your unforgettable event experience!"
+        }
+      ></SectionHeader>
+      <Events></Events>
       <Footer></Footer>
     </>
   );

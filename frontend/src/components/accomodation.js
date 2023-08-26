@@ -9,9 +9,7 @@ const Accomodation = () => {
         <img src={home}></img>
         <div className="accomodation-text">
           <p>La Gavía</p>
-          <span>
-            Same | Beach Hopping
-          </span>
+          <span>Same | Beach Hopping</span>
         </div>
       </div>
     </>
