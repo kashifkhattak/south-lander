@@ -2081,12 +2081,12 @@ li {
   color: #000000;
 }
 
-.right-images{
+.right-images {
   display: flex;
   flex-wrap: wrap;
 }
 
-.right-images img{
+.right-images img {
   width: 50%;
   padding: 10px;
 }
@@ -2096,10 +2096,183 @@ li {
     flex-direction: column;
     height: auto;
   }
-  .tips-left{
+  .tips-left {
     width: 100%;
   }
-  .tips-right{
+  .tips-right {
     width: 100%;
   }
+}
+
+/* Inquiry Component -------------------------------------------------------------------------------------- */
+
+/* .inquiry-main {
+  width: 80%;
+  height: 70rem;
+  margin: 5% 10%;
+  background: url("A:\Freelancing\Southlander\south-lander\frontend\src\assets\images\face.jpg")
+    #e6e6e6;
+}
+
+.inquiry-main::before {
+  content: "";
+  position: absolute;
+  background: rgba(33, 48, 59, 0.52);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  border-radius: 5px;
+} */
+
+.inquiry-main {
+  background-image: url("A:\Freelancing\Southlander\south-lander\frontend\src\assets\images\face.jpg");
+  background-repeat: repeat;
+  width: 80%;
+  margin: 5% 10%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7.5%;
+  padding-bottom: 7.5%;
+}
+
+.inquiry-main::before {
+  content: "";
+  background: rgba(33, 48, 59, 0.52);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.inquiry-card {
+  width: 50%;
+  height: auto;
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 5px;
+  border-bottom: 2px solid #cccccc;
+  box-shadow: 0px 11px 26px 0px rgba(0, 0, 0, 0.29);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inquiry-card h4 {
+  margin-top: 0px;
+  font-size: 42px;
+  color: #333333;
+}
+
+.inquiry-card p {
+  color: #e92b44;
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.inquiry-card {
+  font-size: 18px;
+  margin-bottom: 0px;
+  color: #333333;
+  justify-content: center;
+}
+
+.inquiry-card form {
+  width: 95%;
+  margin-top: 20px;
+}
+
+.inquiry-row {
+  margin-bottom: 10px;
+}
+
+.inquiry-row input {
+  width: 46%;
+  background: #fff;
+  padding-left: 10px;
+  border: 0px;
+  height: 45px;
+  border-radius: 2px;
+  margin-left: 2%;
+  margin-right: 2%;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #efefef;
+}
+
+.inquiry-row select {
+  width: 96%;
+  background: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 0px;
+  height: 45px;
+  border-radius: 2px;
+  margin-left: 2%;
+  margin-right: 2%;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #efefef;
+}
+
+.inquiry-row option {
+  clear: both;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: pointer;
+  min-height: 50px;
+  line-height: 25px;
+  width: 100% !important;
+  text-align: left;
+  text-transform: none;
+  padding-bottom: 0px !important;
+  padding-top: 5px;
+}
+
+.inquiry-row textarea {
+  width: 96%;
+  height: 8rem;
+  background: #fff;
+  padding: 10px;
+  border: 0px;
+  border-radius: 2px;
+  margin-left: 2%;
+  margin-right: 2%;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #efefef;
+}
+
+.inquiry-row button {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px 15px;
+  border-radius: 2px;
+  display: inline-block;
+  font-family: "Quicksand", sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff !important;
+  /* font-family: Arial; */
+  font-size: 18px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  background: #c09373;
+  background: linear-gradient(to bottom, #83999e, #c09373);
+  line-height: 3.5rem;
+  border: none;
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
 }

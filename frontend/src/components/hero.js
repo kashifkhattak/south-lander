@@ -5,7 +5,7 @@ import icon2 from "../assets/icons/4.png";
 import icon3 from "../assets/icons/1.png";
 import icon4 from "../assets/icons/6.png";
 
-const Hero = () => {
+const Hero = ({title, subtitle}) => {
   return (
     <>
       <div className="hero-main">
@@ -13,12 +13,9 @@ const Hero = () => {
           <img src={heroBG} alt=""></img>
         </div> */}
         <div className="hero-content">
-          <h1>Southlander Travel</h1>
+          <h1>{title}</h1>
           <p>
-            Explore Ecuador's most innovative destination experience offer:
-            all-inclusive vacation packages, destination events, explore Ecuador
-            through our unique tours, or enjoy our exclusive vacation rentals
-            around the country.
+            {subtitle}
           </p>
           <div className="hero-buttons">
             <ul>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IconContext } from "react-icons";
@@ -55,7 +56,7 @@ const Navbar = () => {
         <div className={"navbar-routes"}>
           <ul>
             <li>
-              <a>Home</a>
+              <Link to="/home">Home</Link>
             </li>
             <li
               onMouseEnter={handleNavItemHover}
@@ -79,10 +80,10 @@ const Navbar = () => {
               <a>Event Tickets</a>
             </li>
             <li>
-              <a>Book Now</a>
+              <Link to="/booking">Book Now</Link>
             </li>
             <li>
-              <a>Contact Us</a>
+              <Link to="/contact">Contact us</Link>
             </li>
           </ul>
         </div>
