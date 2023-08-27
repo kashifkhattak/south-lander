@@ -10,6 +10,7 @@ import WeddingBanner from "./components/weddingbanner";
 import Rentalbar from "./components/rentalbar";
 import ToursGallery from "./components/toursgallery";
 import Events from "./components/events";
+import Tips from "./components/tips";
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
         }
       ></SectionHeader>
       <Events></Events>
+      <Tips></Tips>
       <Footer></Footer>
     </>
   );

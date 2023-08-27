@@ -1906,6 +1906,10 @@ li {
   font-size: 15px;
 }
 
+.events-table tr:hover {
+  background-color: #f1f1f1;
+}
+
 .events-table tr td:first-child {
   text-align: center;
 }
@@ -1969,5 +1973,133 @@ li {
   }
   .events-table tr td {
     height: 70px;
+  }
+}
+
+/* Tips Component ----------------------------------------------------------------------------------------- */
+
+.tips-main {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 10%;
+  height: auto;
+  background: url("A:\Freelancing\Southlander\south-lander\frontend\src\assets\images\tipsbg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tips-left {
+  width: 30%;
+  height: auto;
+}
+
+.tips-left h3 {
+  background: #2ea5d3;
+  display: inline-block;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 5px 8px 3px 8px;
+  font-weight: 500;
+  margin-top: 0px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.left-content img {
+  height: 80px;
+  width: 70px;
+}
+
+.left-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+}
+
+.left-text p {
+  color: #0f0f0f;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.left-text span {
+  color: #0f0f0f;
+  font-size: 14.5px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.tips-right {
+  width: 70%;
+  height: auto;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-content {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.right-content img {
+  height: 80px;
+  width: 70px;
+}
+
+.tips-right h3 {
+  background: #2ea5d3;
+  display: inline-block;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 5px 8px 3px 8px;
+  font-weight: 500;
+  margin-top: 0px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.tips-social {
+  margin-top: 30px;
+}
+
+.tips-social a {
+  font-size: 18px;
+  padding: 5px 10px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.right-images{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right-images img{
+  width: 50%;
+  padding: 10px;
+}
+
+@media (max-width: 750px) {
+  .tips-main {
+    flex-direction: column;
+    height: auto;
+  }
+  .tips-left{
+    width: 100%;
+  }
+  .tips-right{
+    width: 100%;
   }
 }
