@@ -5,7 +5,7 @@ import icon2 from "../assets/icons/4.png";
 import icon3 from "../assets/icons/1.png";
 import icon4 from "../assets/icons/6.png";
 
-const Hero = ({title, subtitle}) => {
+const Hero = ({title, subtitle , forms}) => {
   return (
     <>
       <div className="hero-main">
@@ -45,6 +45,7 @@ const Hero = ({title, subtitle}) => {
               </li>
             </ul>
           </div>
+          <div className="hero-forms">{forms}</div>
         </div>
       </div>
     </>

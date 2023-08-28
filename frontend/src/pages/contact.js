@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import SectionHeader from "../components/sectionheader";
 import Tips from "../components/tips";
 import Inquiry from "../components/inquiry";
+import ContactsFooter from "../components/contactsfooter";
 
 const Contact = () => {
   return (
@@ -16,6 +17,7 @@ const Contact = () => {
         }
       ></SectionHeader>
       <Inquiry></Inquiry>
+      <ContactsFooter></ContactsFooter>
       <Tips></Tips>
       <Footer></Footer>
     </>
