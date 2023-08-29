@@ -10,25 +10,60 @@ const BookingForms = () => {
     <div className="bookingforms-main">
       <div className="bf-tabs">
         <div className="bf-tab">
-          <a className={`${activeIndex === 1 ? "active" : "inactive"}`} onClick={() => handleClick(1)}>Packages</a>
+          <a
+            className={`${activeIndex === 1 ? "active" : "inactive"}`}
+            onClick={() => handleClick(1)}
+          >
+            Packages
+          </a>
         </div>
         <div className="bf-tab">
-          <a className={`${activeIndex === 2 ? "active" : "inactive"}`} onClick={() => handleClick(2)}>Accommodation</a>
+          <a
+            className={`${activeIndex === 2 ? "active" : "inactive"}`}
+            onClick={() => handleClick(2)}
+          >
+            Accommodation
+          </a>
         </div>
         <div className="bf-tab">
-          <a className={`${activeIndex === 3 ? "active" : "inactive"}`} onClick={() => handleClick(3)}>Event Planning</a>
+          <a
+            className={`${activeIndex === 3 ? "active" : "inactive"}`}
+            onClick={() => handleClick(3)}
+          >
+            Event Planning
+          </a>
         </div>
         <div className="bf-tab">
-          <a className={`${activeIndex === 4 ? "active" : "inactive"}`} onClick={() => handleClick(4)}>Rentals</a>
+          <a
+            className={`${activeIndex === 4 ? "active" : "inactive"}`}
+            onClick={() => handleClick(4)}
+          >
+            Rentals
+          </a>
         </div>
         <div className="bf-tab">
-          <a className={`${activeIndex === 5 ? "active" : "inactive"}`} onClick={() => handleClick(5)}>Tours</a>
+          <a
+            className={`${activeIndex === 5 ? "active" : "inactive"}`}
+            onClick={() => handleClick(5)}
+          >
+            Tours
+          </a>
         </div>
         <div className="bf-tab">
-          <a className={`${activeIndex === 6 ? "active" : "inactive"}`} onClick={() => handleClick(6)}>Event Tickets</a>
+          <a
+            className={`${activeIndex === 6 ? "active" : "inactive"}`}
+            onClick={() => handleClick(6)}
+          >
+            Event Tickets
+          </a>
         </div>
         <div className="bf-tab">
-          <a className={`${activeIndex === 7 ? "active" : "inactive"}`} onClick={() => handleClick(7)}>Transfers</a>
+          <a
+            className={`${activeIndex === 7 ? "active" : "inactive"}`}
+            onClick={() => handleClick(7)}
+          >
+            Transfers ✈️|🚍
+          </a>
         </div>
       </div>
       <div className="bf-card">
@@ -39,43 +74,46 @@ const BookingForms = () => {
             Ecuador and get the most out of your time and money.
           </span>
         </div>
-        <form>
-          <div className="inquiry-row">
+        <form className="bf-form">
+          <div className="bf-row-single">
             <input
               type="text"
               id="firstname"
               name="firstname"
-              placeholder="First Name"
-              required
-            />
-            <input
-              type="text"
-              id="lastname"
-              name="lastname"
-              placeholder="Last Name"
+              placeholder="Enter your Name"
               required
             />
           </div>
-          <div className="inquiry-row">
+          <div className="bf-row-single">
             <input
               type="text"
-              id="phonenum"
-              name="phonenum"
-              placeholder="Phone Number"
+              id="firstname"
+              name="firstname"
+              placeholder="Nationality"
               required
             />
+          </div>
+          <div className="bf-row">
+            <select id="request" name="request" required>
+              <option value="" disabled selected>
+                Type of ID
+              </option>
+              <option value="Packages">Passport</option>
+              <option value="Accommodation">Driver's License</option>
+              <option value="Timesharing">Other Government Issued ID</option>
+            </select>
             <input
               type="text"
               id="email"
               name="email"
-              placeholder="Email"
+              placeholder="Enter your Email"
               required
             />
           </div>
-          <div className="inquiry-row">
+          <div className="bf-row-single">
             <select id="request" name="request" required>
               <option value="" disabled selected>
-                How may we help you?
+                Facilities List
               </option>
               <option value="Packages">All-Inclusive Packages</option>
               <option value="Accommodation">Accommodation</option>
@@ -87,11 +125,64 @@ const BookingForms = () => {
               <option value="Other">Other</option>
             </select>
           </div>
-          <div className="inquiry-row">
-            <textarea id="message" name="message" rows="4" required></textarea>
+          <div className="bf-row">
+            <select id="request" name="request" required>
+              <option value="" disabled selected>
+                No. of Rooms
+              </option>
+              <option value="Packages">Passport</option>
+              <option value="Accommodation">Driver's License</option>
+              <option value="Timesharing">Other Government Issued ID</option>
+            </select>
+            <select id="request" name="request" required>
+              <option value="" disabled selected>
+                Occupants Per Room
+              </option>
+              <option value="Packages">Passport</option>
+              <option value="Accommodation">Driver's License</option>
+              <option value="Timesharing">Other Government Issued ID</option>
+            </select>
           </div>
-          <div className="inquiry-row">
-            <button type="submit">Send</button>
+          <div className="bf-row">
+            <select id="request" name="request" required>
+              <option value="" disabled selected>
+                No. of Adults
+              </option>
+              <option value="Packages">Passport</option>
+              <option value="Accommodation">Driver's License</option>
+              <option value="Timesharing">Other Government Issued ID</option>
+            </select>
+            <select id="request" name="request" required>
+              <option value="" disabled selected>
+                No. of Children
+              </option>
+              <option value="Packages">Passport</option>
+              <option value="Accommodation">Driver's License</option>
+              <option value="Timesharing">Other Government Issued ID</option>
+            </select>
+          </div>
+          <div className="in-out-header">
+            <p>- Check In -</p>
+            <p>- Check Out -</p>
+          </div>
+          <div className="bf-row">
+            <input
+              type="date"
+              id="email"
+              name="email"
+              placeholder="Enter your Email"
+              required
+            />
+            <input
+              type="date"
+              id="email"
+              name="email"
+              placeholder="Enter your Email"
+              required
+            />
+          </div>
+          <div className="bf-row">
+            <button type="submit">Buy Now</button>
           </div>
         </form>
       </div>
