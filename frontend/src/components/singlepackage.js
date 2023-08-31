@@ -3,6 +3,7 @@ import React from "react";
 import iplace from "../assets/images/iplace-1.jpg";
 import flag from "../assets/images/flag.png";
 import tick from "../assets/images/tick.png";
+import { Link } from "react-router-dom";
 
 const SinglePackage = () => {
   return (
@@ -62,7 +63,7 @@ const SinglePackage = () => {
         </div>
         <div className="pp-buttons">
             <button className="pp-book">Book Now</button>
-            <button className="pp-view">View Package</button>
+            <Link to="/package-details" className="pp-view">View Package</Link>
         </div>
       </div>
     </div>

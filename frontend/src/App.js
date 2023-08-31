@@ -5,6 +5,7 @@ import Booking from "./pages/booking";
 import Contact from "./pages/contact";
 import PackagesPage from "./pages/packagespage";
 import ScrollToTop from "./components/scrolltotop";
+import PackagesDetails from "./pages/packagedetails";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="booking" element={<Booking />} />
           <Route path="contact" element={<Contact />} />
           <Route path="packages" element={<PackagesPage />} />
+          <Route path="package-details" element={<PackagesDetails />} />
         </Routes>
       </BrowserRouter>
     </>
