@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "react-carousel-minimal";
+import UmbrellaHeader from "./umbrellaheader";
 
 const CarouselComponent = () => {
   const data = [
@@ -41,28 +42,30 @@ const CarouselComponent = () => {
     },
   ];
 
-
   return (
     <>
-      <Carousel
-        data={data}
-        time={9000}
-        width="100%"
-        height="345px"
-        automatic={false}
-        pauseIconColor="white"
-        pauseIconSize="40px"
-        slideBackgroundColor="darkgrey"
-        slideImageFit="cover"
-        thumbnails={true}
-        thumbnailWidth="100px"
-        style={{
-          textAlign: "center",
-          maxWidth: "100%",
-          maxHeight: "500px",
-          margin: "10px auto",
-        }}
-      />
+    <UmbrellaHeader header={"Photo Gallery"} />
+      <div className="carousel-container-main">
+        <Carousel
+          data={data}
+          time={9000}
+          width="100%"
+          height="345px"
+          automatic={false}
+          pauseIconColor="white"
+          pauseIconSize="40px"
+          slideBackgroundColor="darkgrey"
+          slideImageFit="cover"
+          thumbnails={true}
+          thumbnailWidth="100px"
+          style={{
+            textAlign: "center",
+            maxWidth: "100%",
+            maxHeight: "500px",
+            margin: "10px auto",
+          }}
+        />
+      </div>
     </>
   );
 };

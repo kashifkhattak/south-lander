@@ -4,6 +4,7 @@ import two from "../assets/images/2.jpg";
 import three from "../assets/images/3.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandPointRight } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Rental = () => {
   return (
@@ -24,7 +25,7 @@ const Rental = () => {
           <div class="hot-page2-hom-pre">
             <ul>
               <li>
-                <a href="rentals_details.html">
+                <Link to="/rental-details">
                   <div class="hot-page2-hom-pre-1">
                     {" "}
                     <img src={one} alt="" />{" "}
@@ -37,10 +38,10 @@ const Rental = () => {
                     {" "}
                     <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "}
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="rentals_details.html">
+              <Link to="/rental-details">
                   <div class="hot-page2-hom-pre-1">
                     {" "}
                     <img src={two} alt="" />{" "}
@@ -53,10 +54,10 @@ const Rental = () => {
                     {" "}
                     <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "}
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="rentals_details.html">
+              <Link to="/rental-details">
                   <div class="hot-page2-hom-pre-1">
                     {" "}
                     <img src={three} alt="" />{" "}
@@ -69,7 +70,7 @@ const Rental = () => {
                     {" "}
                     <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "}
                   </div>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

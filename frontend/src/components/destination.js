@@ -1,21 +1,26 @@
 import React from "react";
 
 import t1 from "../assets/images/3.jpg";
-import clock from "../assets/images/clock.png"
-import info from "../assets/images/info.png"
-import price from "../assets/images/price.png"
-import map from "../assets/images/map.png"
+import clock from "../assets/images/clock.png";
+import info from "../assets/images/info.png";
+import price from "../assets/images/price.png";
+import map from "../assets/images/map.png";
+import { Link } from "react-router-dom";
 
 const Destination = () => {
   return (
     <>
       <div className="destination-main">
         <div className="destination-image">
-          <img src={t1} alt=""></img>
+          <Link to="/event-planning">
+            <img src={t1} alt=""></img>
+          </Link>
         </div>
         <div className="destination-content">
           <div className="destination-text">
-            <p>Spiritual Gatherings and Retreats</p>
+            <Link to="/event-planning">
+              <p>Spiritual Gatherings and Retreats</p>
+            </Link>
             <span>Custom experiences from:</span>
             <span>5-Star</span>
           </div>
