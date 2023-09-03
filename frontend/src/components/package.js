@@ -1,10 +1,10 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import t1 from "../assets/images/t1.png";
-import clock from "../assets/images/clock.png"
-import info from "../assets/images/info.png"
-import price from "../assets/images/price.png"
-import map from "../assets/images/map.png"
+import clock from "../assets/images/clock.png";
+import info from "../assets/images/info.png";
+import price from "../assets/images/price.png";
+import map from "../assets/images/map.png";
 
 const Package = () => {
   return (
@@ -15,22 +15,24 @@ const Package = () => {
         </div>
         <div className="package-content">
           <div className="package-text">
-            <p>Coast</p>
-            <span>Beach Hopping</span>
+            <Link to="/packages">
+              <p>Coast</p>
+              <span>Beach Hopping</span>
+            </Link>
           </div>
           <div className="package-icons">
-            <a href="#">
+            <Link to="/packages">
               <img src={clock}></img>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/packages">
               <img src={info}></img>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/packages">
               <img src={price}></img>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/packages">
               <img src={map}></img>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

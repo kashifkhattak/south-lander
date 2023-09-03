@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IconContext } from "react-icons";
@@ -8,6 +9,7 @@ import Submenu from "./submenu";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showSubMenu, setShowSubMenu] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   const toggleMobileMenu = () => {
     console.log("Clicked");
@@ -29,12 +31,10 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const handleNavItemHover = () => {
-    console.log("Enter");
     setShowSubMenu(true);
   };
 
   const handleNavItemLeave = () => {
-    console.log("Leave");
     setShowSubMenu(false);
   };
 
@@ -46,16 +46,34 @@ const Navbar = () => {
     setShowSubMenu(false);
   };
 
+  useEffect(() => {
+    // Add event listener to track scroll position
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 250) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
+
   return (
     <>
-      <nav className="navbar-main">
+      <nav className={`navbar-main ${isSticky ? 'sticky' : ''}`}>
         <div className="navbar-logo">
           <img src={logo} alt=""></img>
         </div>
         <div className={"navbar-routes"}>
           <ul>
             <li>
-              <a>Home</a>
+              <Link to="/home">Home</Link>
             </li>
             <li
               onMouseEnter={handleNavItemHover}
@@ -79,10 +97,10 @@ const Navbar = () => {
               <a>Event Tickets</a>
             </li>
             <li>
-              <a>Book Now</a>
+              <Link to="/booking">Book Now</Link>
             </li>
             <li>
-              <a>Contact Us</a>
+              <Link to="/contact">Contact us</Link>
             </li>
           </ul>
         </div>

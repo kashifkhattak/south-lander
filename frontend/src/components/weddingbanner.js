@@ -6,6 +6,7 @@ import bin from "../assets/images/6.png";
 import couple from "../assets/images/dis1.png";
 import plate from "../assets/images/dis2.png";
 import plane from "../assets/images/31.png";
+import { Link } from "react-router-dom";
 
 const WeddingBanner = () => {
   return (
@@ -24,33 +25,33 @@ const WeddingBanner = () => {
           <span class="ol-3"></span>
           <p>starting $25,000</p>
           <div className="content-icons">
-            <a href="#">
+            <Link to="/event-planning">
               <img src={car}></img>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/event-planning">
               <img src={bin}></img>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/event-planning">
               <img src={couple}></img>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/event-planning">
               <img src={plate}></img>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/event-planning">
               <img src={plane}></img>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="content-right">
           <div class="offer-r">
-            <a href="#">
+            <Link to="/event-planning">
               {" "}
               <div class="or-1">
                 {" "}
                 <span class="or-11">Buy</span> <span class="or-12">OnLine</span>{" "}
               </div>{" "}
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="/event-planning">
               {" "}
               <div class="or-2">
                 {" "}
@@ -59,7 +60,7 @@ const WeddingBanner = () => {
                 <span class="or-24">use code: RG54ER1</span>{" "}
                 <span class="or-25"></span>{" "}
               </div>{" "}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

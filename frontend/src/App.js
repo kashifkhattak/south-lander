@@ -1,60 +1,45 @@
 import "./App.css";
-import Navbar from "./components/navbar";
-import Hero from "./components/hero";
-import Footer from "./components/footer";
-import SectionHeader from "./components/sectionheader";
-import Packagebar from "./components/packagebar";
-import AccomodationGallery from "./components/accomodationgallery";
-import Destinationbar from "./components/destinationbar";
-import WeddingBanner from "./components/weddingbanner";
-import Rentalbar from "./components/rentalbar";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Preloader from "./components/preloader";
+import Home from "./pages/home";
+import Booking from "./pages/booking";
+import Contact from "./pages/contact";
+import PackagesPage from "./pages/packagespage";
+import ScrollToTop from "./components/scrolltotop";
+import PackagesDetails from "./pages/packagedetails";
+import HotelDetails from "./pages/hoteldetails";
+import EventPlanning from "./pages/eventplanning";
+import RentalDetails from "./pages/rentaldetails";
+import TourDetails from "./pages/tourdetails";
 
 function App() {
+  // const [loading, setLoading] = useState(true);
+  // useEffect(() => {
+  //   // Simulate an asynchronous operation (e.g., data fetching) that takes time
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 350); // Adjust the delay as needed
+  // }, []);
+
   return (
     <>
-      <Navbar></Navbar>
-      <Hero></Hero>
-      <SectionHeader
-        header={"All-Inclusive"}
-        subheader={"Vacation Packages"}
-        description={
-          "The 9 perfect destination categories to travel around Ecuador and get the most out of your time and money."
-        }
-      ></SectionHeader>
-      <Packagebar></Packagebar>
-      <SectionHeader
-        header={"Accomodation"}
-        subheader={"Facilities"}
-        description={
-          "Top 4-star infraestructure around Ecuador, from modern resorts, small cruise-ships, to fully restored old hacienda houses on the andean highlands, give us try and have the experience of a lifetime."
-        }
-      ></SectionHeader>
-      <AccomodationGallery></AccomodationGallery>
-      <SectionHeader
-        header={"Southlander"}
-        subheader={"Destination Experience"}
-        description={
-          "Enjoy our destination experience offer, sit back and enjoy while our staff make it happen: weddings, mitzvahs, expos, conventions, summits, spiritual retreats, etc. including invites, RSVPs, cash gifts and/or ticket sale managing."
-        }
-      ></SectionHeader>
-      <Destinationbar></Destinationbar>
-      <WeddingBanner></WeddingBanner>
-      <SectionHeader
-        header={"Exclusive"}
-        subheader={"Vacation Rentals"}
-        description={
-          "Our stock of vacation-perfect certified properties up for rent all around continental Ecuador and the Galapagos."
-        }
-      ></SectionHeader>
-      <Rentalbar></Rentalbar>
-      <SectionHeader
-        header={"Ecuador"}
-        subheader={"Sights and Tours"}
-        description={
-          "Modern infraestructure, cultural splendor, wildlife watching, sublime scenery, snowed peaked volcanoes, waves splashing white-sand beaches and more! wrapped-up in an easy-access compact territory the size of Nevada!"
-        }
-      ></SectionHeader>
-      <Footer></Footer>
+      <BrowserRouter>
+        <Preloader />
+        <ScrollToTop></ScrollToTop>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route path="booking" element={<Booking />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="packages" element={<PackagesPage />} />
+          <Route path="package-details" element={<PackagesDetails />} />
+          <Route path="hotel-details" element={<HotelDetails />} />
+          <Route path="event-planning" element={<EventPlanning />} />
+          <Route path="rental-details" element={<RentalDetails />} />
+          <Route path="tour-details" element={<TourDetails />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
