@@ -9,6 +9,7 @@ import PackagesDetails from "./pages/packagedetails";
 import HotelDetails from "./pages/hoteldetails";
 import EventPlanning from "./pages/eventplanning";
 import RentalDetails from "./pages/rentaldetails";
+import TourDetails from "./pages/tourdetails";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="hotel-details" element={<HotelDetails />} />
           <Route path="event-planning" element={<EventPlanning />} />
           <Route path="rental-details" element={<RentalDetails />} />
+          <Route path="tour-details" element={<TourDetails />} />
         </Routes>
       </BrowserRouter>
     </>

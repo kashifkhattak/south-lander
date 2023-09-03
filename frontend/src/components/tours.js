@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import place from "../assets/images/place2.jpg";
 
 const Tours = () => {
@@ -14,7 +14,7 @@ const Tours = () => {
             The beautiful capital of Ecuador welcomes you in all its historic,
             cultural and natural splendor.
           </p>
-          <a href="#">Explore</a>
+          <Link to="/tour-details">Explore</Link>
         </div>
       </div>
     </>

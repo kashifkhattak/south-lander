@@ -1,8 +1,10 @@
 import React from "react";
+import UmbrellaHeader from "./umbrellaheader";
 
-const AboutPackage = () => {
+const AboutPackage = ({ header, tournote, tourp }) => {
   return (
     <>
+      <UmbrellaHeader header={header} />
       <div className="tour_head1">
         <table>
           <tbody>
@@ -33,6 +35,12 @@ const AboutPackage = () => {
           </tbody>
         </table>
         <br />
+        {tournote && (
+          <>
+            <UmbrellaHeader header={"Tour Notes"} />
+            <p>{tourp}</p>
+          </>
+        )}
         <p>
           <strong>Inclusions</strong>
         </p>

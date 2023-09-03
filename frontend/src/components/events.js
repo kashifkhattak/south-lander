@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import iplace from "../assets/images/iplace-3.jpg";
 
 const Events = () => {
@@ -26,102 +26,90 @@ const Events = () => {
               <td>1</td>
               <td>
                 <img src={iplace} alt="" />
-                <a href="hotels_list.html" className="events-title">
+                <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
-                </a>{" "}
+                </Link>{" "}
               </td>
               <td className="e_h1">Plaza de Toros, Quito</td>
               <td className="e_h1">8:30 PM</td>
               <td className="e_h1">$120.00</td>
               <td>
-                <a href="events_details.html" className="link-btn">
-                  Details
-                </a>{" "}
+                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
               </td>
             </tr>
             <tr>
               <td>1</td>
               <td>
                 <img src={iplace} alt="" />
-                <a href="hotels_list.html" className="events-title">
+                <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
-                </a>{" "}
+                </Link>{" "}
               </td>
               <td className="e_h1">Plaza de Toros, Quito</td>
               <td className="e_h1">8:30 PM</td>
               <td className="e_h1">$120.00</td>
               <td>
-                <a href="events_details.html" className="link-btn">
-                  Details
-                </a>{" "}
+                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
               </td>
             </tr>
             <tr>
               <td>1</td>
               <td>
                 <img src={iplace} alt="" />
-                <a href="hotels_list.html" className="events-title">
+                <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
-                </a>{" "}
+                </Link>{" "}
               </td>
               <td className="e_h1">Plaza de Toros, Quito</td>
               <td className="e_h1">8:30 PM</td>
               <td className="e_h1">$120.00</td>
               <td>
-                <a href="events_details.html" className="link-btn">
-                  Details
-                </a>{" "}
+                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
               </td>
             </tr>
             <tr>
               <td>1</td>
               <td>
                 <img src={iplace} alt="" />
-                <a href="hotels_list.html" className="events-title">
+                <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
-                </a>{" "}
+                </Link>{" "}
               </td>
               <td className="e_h1">Plaza de Toros, Quito</td>
               <td className="e_h1">8:30 PM</td>
               <td className="e_h1">$120.00</td>
               <td>
-                <a href="events_details.html" className="link-btn">
-                  Details
-                </a>{" "}
+                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
               </td>
             </tr>
             <tr>
               <td>1</td>
               <td>
                 <img src={iplace} alt="" />
-                <a href="hotels_list.html" className="events-title">
+                <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
-                </a>{" "}
+                </Link>{" "}
               </td>
               <td className="e_h1">Plaza de Toros, Quito</td>
               <td className="e_h1">8:30 PM</td>
               <td className="e_h1">$120.00</td>
               <td>
-                <a href="events_details.html" className="link-btn">
-                  Details
-                </a>{" "}
+                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
               </td>
             </tr>
             <tr>
               <td>1</td>
               <td>
                 <img src={iplace} alt="" />
-                <a href="hotels_list.html" className="events-title">
+                <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
-                </a>{" "}
+                </Link>{" "}
               </td>
               <td className="e_h1">Plaza de Toros, Quito</td>
               <td className="e_h1">8:30 PM</td>
               <td className="e_h1">$120.00</td>
               <td>
-                <a href="events_details.html" className="link-btn">
-                  Details
-                </a>{" "}
+                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
               </td>
             </tr>
           </tbody>
