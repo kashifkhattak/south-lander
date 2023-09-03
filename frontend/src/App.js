@@ -1,5 +1,7 @@
 import "./App.css";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Preloader from "./components/preloader";
 import Home from "./pages/home";
 import Booking from "./pages/booking";
 import Contact from "./pages/contact";
@@ -12,9 +14,18 @@ import RentalDetails from "./pages/rentaldetails";
 import TourDetails from "./pages/tourdetails";
 
 function App() {
+  // const [loading, setLoading] = useState(true);
+  // useEffect(() => {
+  //   // Simulate an asynchronous operation (e.g., data fetching) that takes time
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 350); // Adjust the delay as needed
+  // }, []);
+
   return (
     <>
       <BrowserRouter>
+        <Preloader />
         <ScrollToTop></ScrollToTop>
         <Routes>
           <Route index element={<Home />} />
