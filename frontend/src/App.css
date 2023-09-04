@@ -37,7 +37,7 @@ li {
   position: absolute;
   left: 50%;
   top: 50%;
-  background-image: url("A:\Freelancing\Southlander\south-lander\frontend\src\assets\images\preloader.gif");
+  background-image: url("./assets/images/preloader.gif");
   background-repeat: no-repeat;
   background-position: center;
   margin: -100px 0 0 -100px;
@@ -345,7 +345,7 @@ li {
 .hero-main {
   width: 100%;
   height: auto;
-  background-image: url("A:\Freelancing\Southlander\south-lander\frontend\src\assets\images\consul-bg.jpg");
+  background-image: url("./assets/images/consul-bg.jpg");
   background-size: cover;
 }
 
@@ -1234,7 +1234,7 @@ li {
 /* WeddingBanner Component -------------------------------------------------------------------------------- */
 
 .banner-main {
-  background-image: url("a:\Freelancing\Southlander\HTML\images\placebg.jpg");
+  background-image: url("./assets/images/placebg.jpg");
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
@@ -1911,7 +1911,7 @@ li {
 }
 
 .event-searchbar {
-  background-image: url("A:\Freelancing\Southlander\south-lander\frontend\src\assets\images\searchicon.png");
+  background-image: url("./assets/images/searchicon.png");
   background-position: 10px 10px;
   background-repeat: no-repeat;
   width: 100%;
@@ -2034,7 +2034,7 @@ li {
   align-items: start;
   padding: 10%;
   height: auto;
-  background: url("A:\Freelancing\Southlander\south-lander\frontend\src\assets\images\tipsbg.jpg");
+  background: url("./assets/images/tipsbg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -2176,7 +2176,7 @@ li {
 } */
 
 .inquiry-main {
-  background-image: url("A:\Freelancing\Southlander\south-lander\frontend\src\assets\images\face.jpg");
+  background-image: url("./assets/images/face.jpg");
   background-repeat: repeat;
   width: 80%;
   margin: 5% 10%;
@@ -2382,9 +2382,16 @@ li {
 }
 
 .cf-down {
-  background: url("A:\Freelancing\Southlander\south-lander\frontend\src\assets\images\cloud.png");
+  background: url("./assets/images/cloud.png");
   width: 100%;
   height: 190px;
+}
+
+.cf-down-nf {
+  background: url("./assets/images/cloud.png");
+  width: 100%;
+  height: 190px;
+  transform: translateY(-50px);
 }
 
 .cf-subheader {
@@ -2573,6 +2580,29 @@ li {
   border: 1px solid #efefef;
 }
 
+.bf-row-date {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.bf-row-date input {
+  width: 49%;
+  background: #fff;
+  padding-left: 10px;
+  border: 0px;
+  height: 45px;
+  border-radius: 2px;
+  /* margin-left: 2%; */
+  margin-left: 1%;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #efefef;
+}
+
 .bf-row select {
   width: 49%;
   background: #fff;
@@ -2661,7 +2691,7 @@ li {
 .thumb-main {
   width: 100%;
   height: 32rem;
-  background-image: url("A:\Freelancing\Southlander\south-lander\frontend\src\assets\images\5.jpg");
+  background-image: url("./assets/images/5.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -2914,6 +2944,7 @@ li {
 
 .pp-buttons {
   margin-top: 15px;
+  display: flex;
 }
 
 .pp-book {
@@ -2953,12 +2984,13 @@ li {
   text-transform: uppercase;
   font-weight: 700;
   text-decoration: none;
-  padding: 6px 15px;
+  /* padding: 6px 15px; */
+  justify-content: center;
+  align-items: center;
   border-radius: 2px;
-  display: inline-block;
+  display: flex;
   font-family: "Quicksand", sans-serif;
   text-decoration: none;
-  display: inline-block;
   cursor: pointer;
   color: #fff !important;
   /* font-family: Arial; */
@@ -3683,4 +3715,64 @@ li {
   .amen-one{
     width: 100%;
   }
+}
+
+/* NotFound ----------------------------------------------------------------------------------------------- */
+
+.nf-main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.nf-main h2{
+  text-align: center;
+  font-size: 34px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #E06125;
+}
+
+.nf-main h3{
+  text-align: center;
+  font-size: 120px;
+  color: #131313;
+  text-shadow: 0px 3px 5px rgba(22, 111, 182, 0.74);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.nf-main h4{
+  text-align: center;
+  font-size: 18px;
+  color: #131313;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.pop-pages{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 25px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.pop-pages a{
+  text-decoration: none;
+  /* background: #333; */
+  border: 1px solid #131313;
+  padding: 5px;
+  color: #131313;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14.5px;
+  line-height: 24px;
+  font-family: 'Poppins', sans-serif;
+  margin: 3px;
 }
