@@ -12,6 +12,7 @@ import HotelDetails from "./pages/hoteldetails";
 import EventPlanning from "./pages/eventplanning";
 import RentalDetails from "./pages/rentaldetails";
 import TourDetails from "./pages/tourdetails";
+import NotFound from "./pages/404";
 
 function App() {
   // const [loading, setLoading] = useState(true);
@@ -38,6 +39,7 @@ function App() {
           <Route path="event-planning" element={<EventPlanning />} />
           <Route path="rental-details" element={<RentalDetails />} />
           <Route path="tour-details" element={<TourDetails />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
