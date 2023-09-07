@@ -2,6 +2,7 @@ import React from "react";
 import one from "../assets/images/1.jpg";
 import two from "../assets/images/2.jpg";
 import three from "../assets/images/3.jpg";
+import { FaRegHandPointRight } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandPointRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -36,7 +37,8 @@ const Rental = () => {
                   </div>
                   <div class="hot-page2-hom-pre-3">
                     {" "}
-                    <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "}
+                    <FaRegHandPointRight className="hand-icon" />
+                    {/* <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "} */}
                   </div>
                 </Link>
               </li>
@@ -52,7 +54,8 @@ const Rental = () => {
                   </div>
                   <div class="hot-page2-hom-pre-3">
                     {" "}
-                    <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "}
+                    <FaRegHandPointRight className="hand-icon" />
+                    {/* <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "} */}
                   </div>
                 </Link>
               </li>
@@ -68,7 +71,8 @@ const Rental = () => {
                   </div>
                   <div class="hot-page2-hom-pre-3">
                     {" "}
-                    <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "}
+                    <FaRegHandPointRight className="hand-icon" />
+                    {/* <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "} */}
                   </div>
                 </Link>
               </li>

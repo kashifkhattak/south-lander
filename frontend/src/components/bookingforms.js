@@ -409,6 +409,15 @@ const BookingForms = () => {
                 </option>
               </select>
             </div>
+            {activeIndex === 3 && <div style={{display: "flex", paddingBottom: "10px", flexDirection: "column", alignItems: "flex-start"}}>
+              <label style={{fontSize: "14.5px", fontFamily: "poppins", color: "#333"}} htmlFor="event-description">Briefly describe the event you want us to customize:</label>
+              <textarea 
+                style={{width: "100%", border: "1px solid #efefef"}}
+                id="event-description"
+                name="event-description"
+                rows={4}
+              />
+            </div>}
             <div className="bf-row">
               <select id="request" name="request" required>
                 <option value="" disabled selected>
