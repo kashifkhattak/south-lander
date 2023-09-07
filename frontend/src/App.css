@@ -3894,3 +3894,9 @@ li {
   font-family: 'Poppins', sans-serif;
   margin: 3px;
 }
+
+.transport{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px auto 25px auto;
+}
