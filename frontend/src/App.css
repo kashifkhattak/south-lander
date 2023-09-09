@@ -345,9 +345,11 @@ li {
 
 .hero-main {
   width: 100%;
-  height: auto;
+  background-repeat: no-repeat;
   background-image: url("./assets/images/consul-bg.jpg");
+  background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .hero-bg {
