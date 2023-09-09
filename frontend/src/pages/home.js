@@ -23,6 +23,7 @@ const Home = () => {
         }
       ></Hero>
       <SectionHeader
+        id="packages"
         header={"All-Inclusive"}
         subheader={"Vacation Packages"}
         description={
@@ -31,6 +32,7 @@ const Home = () => {
       ></SectionHeader>
       <Packagebar></Packagebar>
       <SectionHeader
+        id="accomodation"
         header={"Accomodation"}
         subheader={"Facilities"}
         description={
@@ -39,6 +41,7 @@ const Home = () => {
       ></SectionHeader>
       <AccomodationGallery></AccomodationGallery>
       <SectionHeader
+        id="event"
         header={"Southlander"}
         subheader={"Destination Experience"}
         description={
@@ -48,6 +51,7 @@ const Home = () => {
       <Destinationbar></Destinationbar>
       <WeddingBanner></WeddingBanner>
       <SectionHeader
+        id="rentals"
         header={"Exclusive"}
         subheader={"Vacation Rentals"}
         description={
@@ -56,6 +60,7 @@ const Home = () => {
       ></SectionHeader>
       <Rentalbar></Rentalbar>
       <SectionHeader
+        id="tours"
         header={"Ecuador"}
         subheader={"Sights and Tours"}
         description={
@@ -64,6 +69,7 @@ const Home = () => {
       ></SectionHeader>
       <ToursGallery></ToursGallery>
       <SectionHeader
+        id="tickets"
         header={"Hands On"}
         subheader={"Event Tickets And Event Packages"}
         description={

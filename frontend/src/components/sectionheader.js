@@ -1,9 +1,9 @@
 import React from "react";
 
-const SectionHeader = ({ header, subheader, description }) => {
+const SectionHeader = ({ header, subheader, description, id }) => {
   return (
     <>
-      <div className="secheader-main">
+      <div id={id} className="secheader-main">
         <div class="spe-title">
           <h2>
             {header} <span>{subheader}</span>

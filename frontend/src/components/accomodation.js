@@ -8,7 +8,7 @@ const Accomodation = () => {
     <>
     <Link to="/hotel-details">
       <div className="accomodation-main">
-        <img src={home}></img>
+        <img src={home} alt="accomodation"/>
         <div className="accomodation-text">
           <p>La Gavía</p>
           <span>Same | Beach Hopping</span>

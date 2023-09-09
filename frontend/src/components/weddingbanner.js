@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import car from "../assets/images/30.png";
@@ -9,9 +9,34 @@ import plane from "../assets/images/31.png";
 import { Link } from "react-router-dom";
 
 const WeddingBanner = () => {
+  const bannerRef = useRef(null);
+
+  useEffect(() => {
+    const bannerElement = bannerRef.current;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          bannerElement.classList.add("in-viewport");
+        } else {
+          bannerElement.classList.remove("in-viewport");
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    observer.observe(bannerElement);
+
+    return () => {
+      observer.unobserve(bannerElement);
+    };
+  }, []);
+
   return (
     <>
-      <div className="banner-main">
+      <div className="banner-main" ref={bannerRef}>
         <div className="content-left">
           <span class="ol-1"></span>
           <span className="ol-2">
@@ -25,22 +50,23 @@ const WeddingBanner = () => {
           <span class="ol-3"></span>
           <p>starting $25,000</p>
           <div className="content-icons">
-            <Link to="/event-planning">
-              <img src={car}></img>
-            </Link>
-            <Link to="/event-planning">
-              <img src={bin}></img>
-            </Link>
-            <Link to="/event-planning">
-              <img src={couple}></img>
-            </Link>
-            <Link to="/event-planning">
-              <img src={plate}></img>
-            </Link>
-            <Link to="/event-planning">
-              <img src={plane}></img>
-            </Link>
-          </div>
+          <Link to="/event-planning" className="animate-icon">
+            <img src={car} />
+          </Link>
+          <Link to="/event-planning" className="animate-icon">
+            <img src={bin} />
+          </Link>
+          <Link to="/event-planning" className="animate-icon">
+            <img src={couple} />
+          </Link>
+          <Link to="/event-planning" className="animate-icon">
+            <img src={plate} />
+          </Link>
+          <Link to="/event-planning" className="animate-icon">
+            <img src={plane} />
+          </Link>
+        </div>
+
         </div>
         <div className="content-right">
           <div class="offer-r">

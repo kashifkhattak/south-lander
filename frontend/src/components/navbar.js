@@ -64,6 +64,29 @@ const Navbar = () => {
     }
   };
 
+  const scrollLinks = document.querySelectorAll(".scroll-link");
+
+  scrollLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+          e.preventDefault()
+
+          const targetId = link.getAttribute("href").substring(1);
+
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+              const offset = 100;
+              const targetPosition = targetElement.offsetTop - offset;
+
+              window.scrollTo({
+                  top: targetPosition,
+                  behavior: "smooth"
+              });
+          }
+      });
+  });
+
+
   return (
     <>
       <nav className={`navbar-main ${isSticky ? 'sticky' : ''}`}>
@@ -79,22 +102,22 @@ const Navbar = () => {
               onMouseEnter={handleNavItemHover}
               onMouseLeave={handleNavItemLeave}
             >
-              <a>Packages</a>
+              <a className="scroll-link" href="#packages">Packages</a>
             </li>
             <li>
-              <a>Accomodation</a>
+              <a className="scroll-link" href="#accomodation">Accomodation</a>
             </li>
             <li>
-              <a>Event Planning</a>
+              <a className="scroll-link" href="#event">Event Planning</a>
             </li>
             <li>
-              <a>Rentals</a>
+              <a className="scroll-link" href="#rentals">Rentals</a>
             </li>
             <li>
-              <a>Tours</a>
+              <a className="scroll-link" href="#tours">Tours</a>
             </li>
             <li>
-              <a>Event Tickets</a>
+              <a className="scroll-link" href="#tickets">Event Tickets</a>
             </li>
             <li>
               <Link to="/booking">Book Now</Link>

@@ -24,7 +24,7 @@ const Events = () => {
             </tr>
             <tr>
               <td>1</td>
-              <td>
+              <td style={{display: 'flex', alignItems: 'center'}}>
                 <img src={iplace} alt="" />
                 <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
@@ -39,7 +39,7 @@ const Events = () => {
             </tr>
             <tr>
               <td>1</td>
-              <td>
+              <td style={{display: 'flex', alignItems: 'center'}}>
                 <img src={iplace} alt="" />
                 <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
@@ -54,7 +54,7 @@ const Events = () => {
             </tr>
             <tr>
               <td>1</td>
-              <td>
+              <td style={{display: 'flex', alignItems: 'center'}}>
                 <img src={iplace} alt="" />
                 <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
@@ -69,7 +69,7 @@ const Events = () => {
             </tr>
             <tr>
               <td>1</td>
-              <td>
+              <td style={{display: 'flex', alignItems: 'center'}}>
                 <img src={iplace} alt="" />
                 <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
@@ -84,7 +84,7 @@ const Events = () => {
             </tr>
             <tr>
               <td>1</td>
-              <td>
+              <td style={{display: 'flex', alignItems: 'center'}}>
                 <img src={iplace} alt="" />
                 <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
@@ -99,7 +99,7 @@ const Events = () => {
             </tr>
             <tr>
               <td>1</td>
-              <td>
+              <td style={{display: 'flex', alignItems: 'center'}}>
                 <img src={iplace} alt="" />
                 <Link to="/package-details" className="events-title">
                   Mago de Oz | May 15th
