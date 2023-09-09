@@ -5,10 +5,20 @@ import icon2 from "../assets/icons/4.png";
 import icon3 from "../assets/icons/1.png";
 import icon4 from "../assets/icons/6.png";
 
-const Hero = ({title, subtitle , forms}) => {
+const Hero = ({tabs, title, subtitle , forms}) => {
+  const backgroundClasses = [
+    "background-position-1",
+    "background-position-2",
+    "background-position-3",
+    "background-position-4",
+    "background-position-5",
+    "background-position-6",
+  ];
+
+  const backgroundClass = backgroundClasses[tabs - 1];
   return (
     <>
-      <div className="hero-main">
+      <div className={`hero-main ${backgroundClass}`}>
         {/* <div className="hero-bg">
           <img src={heroBG} alt=""></img>
         </div> */}
