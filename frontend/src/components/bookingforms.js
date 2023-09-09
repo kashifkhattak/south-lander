@@ -1,11 +1,15 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 
-const BookingForms = () => {
+const BookingForms = ({setTab}) => {
   const [activeIndex, setActiveIndex] = useState(1);
 
   const handleClick = (index) => {
     setActiveIndex(index);
   };
+
+  useEffect(() => {
+    setTab(activeIndex)
+  }, [activeIndex])
 
   return (
     <div className="bookingforms-main">
