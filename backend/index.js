@@ -6,6 +6,7 @@ const app = express();
 require('./startup/routes')(app);
 
 connectToDB();
+require("./startup/validation")();
 
 const port = process.env.APP_PORT || 5000;
 

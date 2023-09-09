@@ -1,0 +1,2384 @@
+{
+	"info": {
+		"_postman_id": "08bb2435-59d2-441d-8b97-a4a2f170bd1a",
+		"name": "South Lander App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12342439"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Huzaifah\",\n    \"lastName\": \"Tariq\",\n    \"username\": \"huzaifahtariq\",\n    \"email\": \"huzaifahtariq08@gmail.com\",\n    \"password\": \"281199\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjNTIwNDYwMzE1NzE0ODNmZjIwZWYiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjU3OTU2fQ.XEG41i2C58FEEM2Uwp1rVeMXtlyCKzoUIbTGoLb7N74",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Kashif\",\n    \"lastName\": \"Khan\",\n    \"username\": \"kashifkhan\",\n    \"email\": \"kashifkhan@gmail.com\",\n    \"password\": \"Baker 221B\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/user/admin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjNTIwNDYwMzE1NzE0ODNmZjIwZWYiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjU3OTU2fQ.XEG41i2C58FEEM2Uwp1rVeMXtlyCKzoUIbTGoLb7N74",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/user/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjNTIwNDYwMzE1NzE0ODNmZjIwZWYiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjU3OTU2fQ.XEG41i2C58FEEM2Uwp1rVeMXtlyCKzoUIbTGoLb7N74",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/user?firstName=Huzaifah&fields=username, isActive",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Huzaifah"
+								},
+								{
+									"key": "fields",
+									"value": "username, isActive"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update My User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjNTIwNDYwMzE1NzE0ODNmZjIwZWYiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjU3OTU2fQ.XEG41i2C58FEEM2Uwp1rVeMXtlyCKzoUIbTGoLb7N74",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Huzaifah\",\n    \"lastName\": \"Tariq\",\n    \"username\": \"huzaifahtariq\",\n    \"email\": \"huzaifahtariq@gmail.com\",\n    \"password\": \"Huzi 281199\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/user/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjNTIwNDYwMzE1NzE0ODNmZjIwZWYiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXFAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTY5NDI1ODM2NX0.a9qYyFjL86VujIMaz6asMx9LLBZk1nUQmz12_TByisA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/user/disable/64fc53c8ca94612629eb3c5f",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"disable",
+								"64fc53c8ca94612629eb3c5f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjNTIwNDYwMzE1NzE0ODNmZjIwZWYiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXFAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTY5NDI1ODM2NX0.a9qYyFjL86VujIMaz6asMx9LLBZk1nUQmz12_TByisA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/user/64fc53c8ca94612629eb3c5f",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"64fc53c8ca94612629eb3c5f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"credentials\": \"huzaifahtariq08@gmail.com\",\n    \"password\": \"281199\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Packages",
+			"item": [
+				{
+					"name": "Create Package",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"COAST\",\n    \"tagLine\": \"Beach Hopping\",\n    \"discountPercentage\": 30,\n    \"imagePath\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/package",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"package"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Packages",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/package?includeIds=false&fields=title",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"package"
+							],
+							"query": [
+								{
+									"key": "includeIds",
+									"value": "false"
+								},
+								{
+									"key": "fields",
+									"value": "title"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Package",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"COAST\",\n    \"tagLine\": \"Beach Hopping\",\n    \"discountPercentage\": 20,\n    \"imagePath\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/package/64fc84084b2847e9a294df2c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"package",
+								"64fc84084b2847e9a294df2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Package",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/package/disable/64fc84084b2847e9a294df2c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"package",
+								"disable",
+								"64fc84084b2847e9a294df2c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Package",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/package/64fc84084b2847e9a294df2c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"package",
+								"64fc84084b2847e9a294df2c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Package Variants",
+			"item": [
+				{
+					"name": "Create Package Variant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"packageId\": \"64fc83e3ed8aa0f669c852a2\",\n    \"title\": \"Classic Galapagos Experience 5 Days / 4 Nights\",\n    \"description\": \"A best-selling combination of tours and free time to explore and enjoy the two main islands; this 5-day package includes a round-trip flight Quito-Baltra-Isabela.\",\n    \"discountPercentage\": 30,\n    \"availableTickets\": 40,\n    \"price\": 100,\n    \"availableDates\": \"Year-Round\",\n    \"tag\": \"Land and Water Exploration\",\n    \"landmarks\": [\"Baltra\", \"Santa Cruz\", \"Isabela\"],\n    \"imagePath\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/packageVariant",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"packageVariant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Package Variants",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/packageVariant",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"packageVariant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Package Variant",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"packageId\": \"64fc83e3ed8aa0f669c852a2\",\n    \"title\": \"Classic Galapagos Experience 5 Days / 4 Nights\",\n    \"description\": \"A best-selling combination of tours and free time to explore and enjoy the two main islands; this 5-day package includes a round-trip flight Quito-Baltra-Isabela.\",\n    \"discountPercentage\": 30,\n    \"availableTickets\": 40,\n    \"price\": 100,\n    \"availableDates\": \"Year-Round\",\n    \"tag\": \"Land and Water Exploration\",\n    \"landmarks\": [\"Baltra\", \"Santa Cruz\", \"Isabela\"],\n    \"imagePath\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/packageVariant/64fc888dde3bd7172ce2b891",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"packageVariant",
+								"64fc888dde3bd7172ce2b891"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Package Variant",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/packageVariant/disable/64fc888dde3bd7172ce2b891",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"packageVariant",
+								"disable",
+								"64fc888dde3bd7172ce2b891"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Package Variant",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/packageVariant/64fc888dde3bd7172ce2b891",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"packageVariant",
+								"64fc888dde3bd7172ce2b891"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Variant Details",
+			"item": [
+				{
+					"name": "Create Variant Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"variantId\": \"64fc899bdde7aa0e9a94878c\",\n  \"title\": \"Classic Galapagos Experience\",\n  \"description\": \"A best-selling combination of tours and free time to explore and enjoy the two main islands; this 5-day package, just like any other Galapagos all-inclusive package, includes a round-trip flight Quito-Baltra-Isabela. Within this 5-day tour to the Galapagos National Park, you'll get to explore the islands of Baltra, Santa Cruz and Isabela with an English speaking certified guide, just as described in our itinerary. This tour is designed to mix island hikes, water activities and navigable tours to reef an island destinations such as: Fernandina, North Seymour, South Seymour, Plazas, Española, among others.\",\n  \"airPackagePrice\": 1200.0,\n  \"duration\": \"5 Days/4 Nights\",\n  \"rating\": 5,\n  \"packageHighlights\": [\n    {\n        \"key\": \"Location\",\n        \"value\": \"Rio, Brazil\"\n    },\n    {\n        \"key\": \"Arrival Date\",\n        \"value\": \"Nov 12, 2017\"\n    },\n    {\n        \"key\": \"Departure Date\",\n        \"value\": \"Nov 21, 2017\"\n    },\n    {\n        \"key\": \"Perks\",\n        \"value\": \"Free Sightseeing & Hotel\"\n    }\n  ],\n  \"photoGallery\": [\n    \"https://example.com/photo1.jpg\",\n    \"https://example.com/photo2.jpg\"\n  ],\n  \"location\": \"Sample Location\",\n  \"about\": [\n    {\n      \"placesCovered\": \"Itabaca Channel\",\n      \"description\": \"Narrow water crossing\",\n      \"activities\": \"Cross the channel by boat\",\n      \"island\": \"Baltra\"\n    },\n    {\n      \"placesCovered\": \"Rancho Primicias\",\n      \"description\": \"Giant tortoise ranch\",\n      \"activities\": \"Hike along giant tortoises\",\n      \"island\": \"Santa Cruz\"\n    }\n  ],\n  \"inclusions\": [\"Roundtrip plane tickets Quito-Baltra-Isabela\", \"Roundtrip transfer to Baltra airport at the time of arrival and departure\"],\n  \"exclusions\": [\"Alcoholic beverages\", \"Specific foods and beverages not mentioned in the itinerary.\"],\n  \"itinerary\": [\n    {\n      \"dayTitle\": \"Day : 1 Quito-Baltra flight, first sights and arrival at Santa Cruz island\",\n      \"activities\": \"✈️ Air Package on this first day on the Galapagos Islands, we will go from Mariscal Sucre Airport to Baltra Airport which will take approximately 2 hours. When you arrive at the airport and leave it, you will have a transfer to the Itabaca Channel to go to your first destination, which is Santa Cruz, but first you will have a brief visit to the lava tunnels, the twins and the primicias ranch; a place where you can meet the giant Galapagos tortoises in their natural habitat. Later you will go to the hotel in Santa Cruz to leave your belongings and in the afternoon walk the streets of the island and its main street and boardwalk boulevard.\"\n    },\n    {\n      \"dayTitle\": \"Day : 2 Day-at-sea adventure and Charles Darwin Research Station\",\n      \"activities\": \"On our second day in the Galapagos islands, we will go directly from the hotel to the port for the navigable tour from the morning until 2:00 p.m. or 3:00 p.m. depending on the daily destination, subject to weather conditions. It'll be possible to observe different animal species within each island or attraction. The available destinations are: Cerro Dragon, Guy Fawkes, North Seymour, Bachas Beach, Chinese Hat, Sullivan Bay, among others. You will have hiking and snorkeling activities; you will then have lunch on board. Finally, we'll return to the hotel and have the afternoon to further explore Santa Cruz island, with a guided visit to Charles Darwin Research Station, the distinct scientific heritage of the Galapagos archipelago.\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/variantDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"variantDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Variant Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/variantDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"variantDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Variant Details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"variantId\": \"64fc899bdde7aa0e9a94878c\",\n  \"title\": \"Classic Galapagos Experience\",\n  \"description\": \"A best-selling combination of tours and free time to explore and enjoy the two main islands; this 5-day package, just like any other Galapagos all-inclusive package, includes a round-trip flight Quito-Baltra-Isabela. Within this 5-day tour to the Galapagos National Park, you'll get to explore the islands of Baltra, Santa Cruz and Isabela with an English speaking certified guide, just as described in our itinerary. This tour is designed to mix island hikes, water activities and navigable tours to reef an island destinations such as: Fernandina, North Seymour, South Seymour, Plazas, Española, among others.\",\n  \"airPackagePrice\": 1000.0,\n  \"duration\": \"5 Days/4 Nights\",\n  \"rating\": 5,\n  \"packageHighlights\": [\n    {\n        \"key\": \"Location\",\n        \"value\": \"Rio, Brazil\"\n    },\n    {\n        \"key\": \"Arrival Date\",\n        \"value\": \"Nov 12, 2017\"\n    },\n    {\n        \"key\": \"Departure Date\",\n        \"value\": \"Nov 21, 2017\"\n    },\n    {\n        \"key\": \"Perks\",\n        \"value\": \"Free Sightseeing & Hotel\"\n    }\n  ],\n  \"photoGallery\": [\n    \"https://example.com/photo1.jpg\",\n    \"https://example.com/photo2.jpg\"\n  ],\n  \"location\": \"Sample Location\",\n  \"about\": [\n    {\n      \"placesCovered\": \"Itabaca Channel\",\n      \"description\": \"Narrow water crossing\",\n      \"activities\": \"Cross the channel by boat\",\n      \"island\": \"Baltra\"\n    },\n    {\n      \"placesCovered\": \"Rancho Primicias\",\n      \"description\": \"Giant tortoise ranch\",\n      \"activities\": \"Hike along giant tortoises\",\n      \"island\": \"Santa Cruz\"\n    }\n  ],\n  \"inclusions\": [\"Roundtrip plane tickets Quito-Baltra-Isabela\", \"Roundtrip transfer to Baltra airport at the time of arrival and departure\"],\n  \"exclusions\": [\"Alcoholic beverages\", \"Specific foods and beverages not mentioned in the itinerary.\"],\n  \"itinerary\": [\n    {\n      \"dayTitle\": \"Day : 1 Quito-Baltra flight, first sights and arrival at Santa Cruz island\",\n      \"activities\": \"✈️ Air Package on this first day on the Galapagos Islands, we will go from Mariscal Sucre Airport to Baltra Airport which will take approximately 2 hours. When you arrive at the airport and leave it, you will have a transfer to the Itabaca Channel to go to your first destination, which is Santa Cruz, but first you will have a brief visit to the lava tunnels, the twins and the primicias ranch; a place where you can meet the giant Galapagos tortoises in their natural habitat. Later you will go to the hotel in Santa Cruz to leave your belongings and in the afternoon walk the streets of the island and its main street and boardwalk boulevard.\"\n    },\n    {\n      \"dayTitle\": \"Day : 2 Day-at-sea adventure and Charles Darwin Research Station\",\n      \"activities\": \"On our second day in the Galapagos islands, we will go directly from the hotel to the port for the navigable tour from the morning until 2:00 p.m. or 3:00 p.m. depending on the daily destination, subject to weather conditions. It'll be possible to observe different animal species within each island or attraction. The available destinations are: Cerro Dragon, Guy Fawkes, North Seymour, Bachas Beach, Chinese Hat, Sullivan Bay, among others. You will have hiking and snorkeling activities; you will then have lunch on board. Finally, we'll return to the hotel and have the afternoon to further explore Santa Cruz island, with a guided visit to Charles Darwin Research Station, the distinct scientific heritage of the Galapagos archipelago.\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/variantDetail/64fc8beb652c8e61c1879fbd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"variantDetail",
+								"64fc8beb652c8e61c1879fbd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Variant Details",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/variantDetail/64fc8beb652c8e61c1879fbd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"variantDetail",
+								"64fc8beb652c8e61c1879fbd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accommodations",
+			"item": [
+				{
+					"name": "Create Accommodation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"La Gavia\",\n    \"landmarks\": [\"Same\", \"Beach Hopping\", \"Golf\", \"Whale Watching\", \"Fishing\", \"More!\"],\n    \"imagePath\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/accommodation",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accommodation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Accommodations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/accommodation",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accommodation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Accommodation",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"La Gavia\",\n    \"landmarks\": [\"Same\", \"Beach Hopping\", \"Golf\", \"Whale Watching\", \"Fishing\", \"More!\"],\n    \"imagePath\": \"test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/accommodation/64fc8f32e58c793c291245bd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accommodation",
+								"64fc8f32e58c793c291245bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Accommodation",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/accommodation/disable/64fc8f32e58c793c291245bd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accommodation",
+								"disable",
+								"64fc8f32e58c793c291245bd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Accommodation",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/accommodation/64fc8f32e58c793c291245bd",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accommodation",
+								"64fc8f32e58c793c291245bd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accommodation Details",
+			"item": [
+				{
+					"name": "Create Accommodation Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accommodationId\": \"64fc8f30e58c793c291245bb\",\n    \"title\": \"La Gavía Condominium Resort\",\n    \"description\": \"Located in one of the most beautiful and exclusive beaches in the Ecuadorian province of Esmeraldas. This elegant condominium resort, located in the hills within the Playa de Same Casablanca, is undoubtedly the most attractive and exclusive offer to enjoy your vacations. It has luxury apartments ready to receive our guests. Divided into two blocks alienated with the movement of the sun, the breeze and the best view of the mountains and 360 degree view to the bay of Same.\",\n    \"rating\": 4,\n    \"hotelHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Rio, Brazil\"\n        },\n        {\n            \"key\": \"Arrival Date\",\n            \"value\": \"Nov 12, 2017\"\n        },\n        {\n            \"key\": \"Departure Date\",\n            \"value\": \"Nov 21, 2017\"\n        },\n        {\n            \"key\": \"Perks\",\n            \"value\": \"Free Sightseeing & Hotel\"\n        }\n    ],\n    \"photoGallery\": [\n        \"https://example.com/photo1.jpg\",\n        \"https://example.com/photo2.jpg\"\n    ],\n    \"appartments\": [\n        {\n            \"title\": \"A - UPPER FLOOR APARTMENT WITH TERRACE FOR UP TO 7-8 PEOPLE\",\n            \"amenities\": \"satellite tv, wi-fi, cleaning and cooking lady, fully furnished and equiped apartment.\",\n            \"facilities\": \"3 full bathrooms, 1 half-bath, 2 parking spaces, 1 storage area, 3 bedrooms with twin beds, 1 sofa bed in the living room and private terrace.\",\n            \"maxOccupancy\": \"8 people\",\n            \"pricePerNight\": 300,\n            \"imagePath\": \"test\"\n        },\n        {\n            \"title\": \"B - UPPER FLOOR APARTMENT WITH TERRACE FOR UP TO 5-6 PEOPLE\",\n            \"amenities\": \"satellite tv, wi-fi, cleaning and cooking lady, fully furnished and equiped apartment.\",\n            \"facilities\": \"2 full bathrooms, 1 half-bath, 1 storage area, 2 bedrooms with twin beds, 1 sofa bed in the living room and private terrace.\",\n            \"maxOccupancy\": \"6 people\",\n            \"pricePerNight\": 275,\n            \"imagePath\": \"test\"\n        }\n    ],\n    \"amenities\": [\n        \"Infinity Pool\",\n        \"Pool-side bar and restaurant\",\n        \"WiFi\"\n    ],\n    \"location\": \"Sample Location\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/accommodationDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accommodationDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Accommodation Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/accommodationDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accommodationDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Accommodation Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accommodationId\": \"64fc8f30e58c793c291245bb\",\n    \"title\": \"La Gavía Condominium Resort\",\n    \"description\": \"Located in one of the most beautiful and exclusive beaches in the Ecuadorian province of Esmeraldas. This elegant condominium resort, located in the hills within the Playa de Same Casablanca, is undoubtedly the most attractive and exclusive offer to enjoy your vacations. It has luxury apartments ready to receive our guests. Divided into two blocks alienated with the movement of the sun, the breeze and the best view of the mountains and 360 degree view to the bay of Same.\",\n    \"rating\": 5,\n    \"hotelHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Rio, Brazil\"\n        },\n        {\n            \"key\": \"Arrival Date\",\n            \"value\": \"Nov 12, 2017\"\n        },\n        {\n            \"key\": \"Departure Date\",\n            \"value\": \"Nov 21, 2017\"\n        },\n        {\n            \"key\": \"Perks\",\n            \"value\": \"Free Sightseeing & Hotel\"\n        }\n    ],\n    \"photoGallery\": [\n        \"https://example.com/photo1.jpg\",\n        \"https://example.com/photo2.jpg\"\n    ],\n    \"appartments\": [\n        {\n            \"title\": \"A - UPPER FLOOR APARTMENT WITH TERRACE FOR UP TO 7-8 PEOPLE\",\n            \"amenities\": \"satellite tv, wi-fi, cleaning and cooking lady, fully furnished and equiped apartment.\",\n            \"facilities\": \"3 full bathrooms, 1 half-bath, 2 parking spaces, 1 storage area, 3 bedrooms with twin beds, 1 sofa bed in the living room and private terrace.\",\n            \"maxOccupancy\": \"8 people\",\n            \"pricePerNight\": 300,\n            \"imagePath\": \"test\"\n        },\n        {\n            \"title\": \"B - UPPER FLOOR APARTMENT WITH TERRACE FOR UP TO 5-6 PEOPLE\",\n            \"amenities\": \"satellite tv, wi-fi, cleaning and cooking lady, fully furnished and equiped apartment.\",\n            \"facilities\": \"2 full bathrooms, 1 half-bath, 1 storage area, 2 bedrooms with twin beds, 1 sofa bed in the living room and private terrace.\",\n            \"maxOccupancy\": \"6 people\",\n            \"pricePerNight\": 275,\n            \"imagePath\": \"test\"\n        }\n    ],\n    \"amenities\": [\n        \"Infinity Pool\",\n        \"Pool-side bar and restaurant\",\n        \"WiFi\"\n    ],\n    \"location\": \"Sample Location\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/accommodationDetail/64fc918196f41f6aaf05b97b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accommodationDetail",
+								"64fc918196f41f6aaf05b97b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Accommodation Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/accommodationDetail/64fc918196f41f6aaf05b97b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"accommodationDetail",
+								"64fc918196f41f6aaf05b97b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Planning",
+			"item": [
+				{
+					"name": "Create Event Planning",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Wedding and Ceremonies\",\n    \"startingPrice\": \"25k\",\n    \"rating\": 5,\n    \"imagePath\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/eventPlanning",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventPlanning"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Plannings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/eventPlanning",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventPlanning"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event Plannings",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Wedding and Ceremonies\",\n    \"startingPrice\": \"25k\",\n    \"rating\": 4,\n    \"imagePath\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/eventPlanning/64fc92e68c1f62d512d3f0f0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventPlanning",
+								"64fc92e68c1f62d512d3f0f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Event Plannings",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/eventPlanning/disable/64fc92e68c1f62d512d3f0f0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventPlanning",
+								"disable",
+								"64fc92e68c1f62d512d3f0f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event Plannings",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/eventPlanning/64fc92e68c1f62d512d3f0f0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventPlanning",
+								"64fc92e68c1f62d512d3f0f0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Planning Details",
+			"item": [
+				{
+					"name": "Create Event Planning Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"eventPlanningId\": \"64fc92e48c1f62d512d3f0ee\",\n    \"title\": \"Weddings and Ceremonies Destination Event Planning\",\n    \"description\": \"Discover two of South America's greatest cities, Rio de Janeiro and Buenos Aires, at a leisurely pace. A major highlight on this journey is a visit to Iguassu Falls in between your two city stays. It truly is one of the most spectacular sights on Earth. See the impressive falls from both the Brazilian and Argentine sides. Brazil's view takes you through clouds of mist and the opportunity to see these 275 falls, spanning nearly two miles! Argentina's side allows you to walk along the boardwalk network and embark on a jungle train through the forest for unforgettable views. Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world.\",\n    \"rating\": 5,\n    \"timeshareHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Canoa\"\n        },\n        {\n            \"key\": \"Price\",\n            \"value\": \"$200/Night\"\n        }\n    ],\n    \"venueOptions\": [\n        {\n            \"location\": \"HighLand Moors\",\n            \"description\": \"Hacienda Manor and Estate\",\n            \"rooms\": \"20 Rooms\",\n            \"capacity\": \"50 People Max.\",\n            \"experience\": \"Trails and Andes Mountains\"\n        },\n        {\n            \"location\": \"By The Beach\",\n            \"description\": \"Beachside Villa\",\n            \"rooms\": \"20 Rooms\",\n            \"capacity\": \"50 People Max.\",\n            \"experience\": \"Ocean and Sandy Beaches\"\n        }\n    ],\n    \"photoGallery\": [\n        \"photo1.jpg\",\n        \"photo2.jpg\"\n    ],\n    \"inclusions\": [\n        \"Number of floors - 9\",\n        \"Coffee shop or café\"\n    ],\n    \"pricePerPerson\": [\n        {\n            \"title\": \"HIGHLAND MOORS EXPERIENCE\",\n            \"about\": \"all weeks between the first week of June until the last week of August.\",\n            \"rate\": 5643.03,\n            \"imagePath\": \"standard.jpg\"\n        },\n        {\n            \"title\": \"BEACHSIDE EXPERIENCE\",\n            \"about\": \"all weeks between the first week of September until the second week of December.\",\n            \"rate\": 4514.42,\n            \"imagePath\": \"premium.jpg\"\n        }\n    ],\n    \"location\": \"Sample Location\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/eventPlanningDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventPlanningDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Planning Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/eventPlanningDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventPlanningDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event Planning Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"eventPlanningId\": \"64fc92e48c1f62d512d3f0ee\",\n    \"title\": \"Weddings and Ceremonies Destination Event Planning\",\n    \"description\": \"Discover two of South America's greatest cities, Rio de Janeiro and Buenos Aires, at a leisurely pace. A major highlight on this journey is a visit to Iguassu Falls in between your two city stays. It truly is one of the most spectacular sights on Earth. See the impressive falls from both the Brazilian and Argentine sides. Brazil's view takes you through clouds of mist and the opportunity to see these 275 falls, spanning nearly two miles! Argentina's side allows you to walk along the boardwalk network and embark on a jungle train through the forest for unforgettable views. Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world.\",\n    \"rating\": 3,\n    \"timeshareHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Canoa\"\n        },\n        {\n            \"key\": \"Price\",\n            \"value\": \"$200/Night\"\n        }\n    ],\n    \"venueOptions\": [\n        {\n            \"location\": \"HighLand Moors\",\n            \"description\": \"Hacienda Manor and Estate\",\n            \"rooms\": \"20 Rooms\",\n            \"capacity\": \"50 People Max.\",\n            \"experience\": \"Trails and Andes Mountains\"\n        },\n        {\n            \"location\": \"By The Beach\",\n            \"description\": \"Beachside Villa\",\n            \"rooms\": \"20 Rooms\",\n            \"capacity\": \"50 People Max.\",\n            \"experience\": \"Ocean and Sandy Beaches\"\n        }\n    ],\n    \"photoGallery\": [\n        \"photo1.jpg\",\n        \"photo2.jpg\"\n    ],\n    \"inclusions\": [\n        \"Number of floors - 9\",\n        \"Coffee shop or café\"\n    ],\n    \"pricePerPerson\": [\n        {\n            \"title\": \"HIGHLAND MOORS EXPERIENCE\",\n            \"about\": \"all weeks between the first week of June until the last week of August.\",\n            \"rate\": 5643.03,\n            \"imagePath\": \"standard.jpg\"\n        },\n        {\n            \"title\": \"BEACHSIDE EXPERIENCE\",\n            \"about\": \"all weeks between the first week of September until the second week of December.\",\n            \"rate\": 4514.42,\n            \"imagePath\": \"premium.jpg\"\n        }\n    ],\n    \"location\": \"Sample Location\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/eventPlanningDetail/64fca2e73e6d258081c5d0e3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventPlanningDetail",
+								"64fca2e73e6d258081c5d0e3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event Planning Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/eventPlanningDetail/64fca2e73e6d258081c5d0e3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventPlanningDetail",
+								"64fca2e73e6d258081c5d0e3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rentals",
+			"item": [
+				{
+					"name": "Create Rental",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"ANDES Rentals\",\n    \"options\": [\n        {\n            \"title\": \"Casa Bonita\",\n            \"landmarks\": [\"La Floresta\", \"Quito\"],\n            \"imagePath\": \"test\"\n        },\n        {\n            \"title\": \"Pool Condo Apartment\",\n            \"landmarks\": [\"Tumbaco\", \"Quito\"],\n            \"imagePath\": \"test\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/rental",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"rental"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rentals",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/rental",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"rental"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rental",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Test Rentals\",\n    \"options\": [\n        {\n            \"title\": \"Casa Bonita\",\n            \"landmarks\": [\"La Floresta\", \"Quito\"],\n            \"imagePath\": \"test\"\n        },\n        {\n            \"title\": \"Pool Condo Apartment\",\n            \"landmarks\": [\"Tumbaco\", \"Quito\"],\n            \"imagePath\": \"test\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/rental/64fc95c8ad52aa56433e9da6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"rental",
+								"64fc95c8ad52aa56433e9da6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Rental",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/rental/disable/64fc95c8ad52aa56433e9da6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"rental",
+								"disable",
+								"64fc95c8ad52aa56433e9da6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rental",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/rental/64fc95c8ad52aa56433e9da6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"rental",
+								"64fc95c8ad52aa56433e9da6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rental Details",
+			"item": [
+				{
+					"name": "Create Rental Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rentalId\": \"64fc96f0feb9d351e29c2355\",\n    \"title\": \"Casa Bonita, Canoa\",\n    \"description\": \"Discover two of South America’s greatest cities, Rio de Janeiro and Buenos Aires, at a leisurely pace. A major highlight on this journey is a visit to Iguassu Falls in between your two city stays. It truly is one of the most spectacular sights on Earth. See the impressive falls from both the Brazilian and Argentine sides. Brazil's view takes you through clouds of mist and the opportunity to see these 275 falls, spanning nearly two miles! Argentina’s side allows you to walk along the boardwalk network and embark on a jungle train through the forest for unforgettable views. Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world. From vibrant cities to scenic beauty, this vacation to Rio de Janeiro, Iguassu Falls, and Buenos Aires will leave you with vacation memories you’ll cherish for life.\",\n    \"pricePerNight\": 200,\n    \"capacity\": 7,\n    \"rating\": 5,\n    \"rentalHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Canoa\"\n        },\n        {\n            \"key\": \"Perks\",\n            \"value\": \"Beachfront Rustic House\"\n        }\n    ],\n    \"photoGallery\": [\n        \"photo1.jpg\",\n        \"photo2.jpg\"\n    ],\n    \"amenities\": [\n        \"Dry cleaning/laundry service\",\n        \"Health Club\"\n    ],\n    \"location\": \"Sample Location\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/rentalDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"rentalDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rental Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/rentalDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"rentalDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rental Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rentalId\": \"64fc96f0feb9d351e29c2355\",\n    \"title\": \"Casa Bonita, Canoa\",\n    \"description\": \"Discover two of South America’s greatest cities, Rio de Janeiro and Buenos Aires, at a leisurely pace. A major highlight on this journey is a visit to Iguassu Falls in between your two city stays. It truly is one of the most spectacular sights on Earth. See the impressive falls from both the Brazilian and Argentine sides. Brazil's view takes you through clouds of mist and the opportunity to see these 275 falls, spanning nearly two miles! Argentina’s side allows you to walk along the boardwalk network and embark on a jungle train through the forest for unforgettable views. Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world. From vibrant cities to scenic beauty, this vacation to Rio de Janeiro, Iguassu Falls, and Buenos Aires will leave you with vacation memories you’ll cherish for life.\",\n    \"pricePerNight\": 250,\n    \"capacity\": 7,\n    \"rating\": 5,\n    \"rentalHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Canoa\"\n        },\n        {\n            \"key\": \"Perks\",\n            \"value\": \"Beachfront Rustic House\"\n        }\n    ],\n    \"photoGallery\": [\n        \"photo1.jpg\",\n        \"photo2.jpg\"\n    ],\n    \"amenities\": [\n        \"Dry cleaning/laundry service\",\n        \"Health Club\"\n    ],\n    \"location\": \"Sample Location\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/rentalDetail/64fca47fd50e6844f9a309c6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"rentalDetail",
+								"64fca47fd50e6844f9a309c6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rental Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/rentalDetail/64fca47fd50e6844f9a309c6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"rentalDetail",
+								"64fca47fd50e6844f9a309c6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tours",
+			"item": [
+				{
+					"name": "Create Tour",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Quito City And Old Town\",\n    \"tagLine\": \"QUITO, WHOLE DAY.\",\n    \"description\": \"The beautiful capital of Ecuador welcomes you in all its historic, cultural and natural splendor.\",\n    \"imagePath\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tour",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tours",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tour",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tour",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Quito City And Old Town\",\n    \"tagLine\": \"QUITO, WHOLE DAY.\",\n    \"description\": \"The beautiful capital of Ecuador welcomes you in all its historic, cultural and natural splendor.\",\n    \"imagePath\": \"test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tour/64fc98369d2a854c352cc136",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tour",
+								"64fc98369d2a854c352cc136"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Tour",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tour/disable/64fc98369d2a854c352cc136",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tour",
+								"disable",
+								"64fc98369d2a854c352cc136"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tour",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tour/64fc98369d2a854c352cc136",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tour",
+								"64fc98369d2a854c352cc136"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tour Details",
+			"item": [
+				{
+					"name": "Create Tour Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tourId\": \"64fc98329d2a854c352cc134\",\n  \"title\": \"Quito City and Old Town\",\n  \"description\": \"Quito, the capital of Ecuador, today a modern and cosmopolitan south american capital, was founded in the 16th century on the ruins of an Inca city and stands at an altitude of 2,850 m. Despite the 1917 earthquake, the city has the best-preserved, least altered historic centre in Latin America. The monasteries of San Francisco and Santo Domingo, and the Church and Jesuit College of La Compañía, with their rich interiors, are pure examples of the 'Baroque school of Quito', which is a fusion of Spanish, Italian, Moorish, Flemish and indigenous art. The great majority of attributes upon which the Outstanding Universal Value of the City of Quito is based are present and intact. The Historic Centre of Quito has conserved its original configuration, new constructions being built outside of the colonial centre. Indeed, based on the first plan of Quito designed in 1734 by Dionisio Alcedo y Herrera, one notes that the original plan of the streets, the blocks of houses and squares – with a few rare exceptions – is the same can be seen today. Despite numerous earthquakes that have affected it over the course of history, the city conserves the least modified historic centre of all Latin America because of the concerted action of the Municipal authorities of the Metropolitan District of Quito and the Ecuadorean government.\",\n  \"price\": 200,\n  \"rating\": 5,\n  \"tourHighlights\": [\n    {\n      \"key\": \"Location\",\n      \"value\": \"Rio,Brazil\"\n    },\n    {\n      \"key\": \"Arrival Date\",\n      \"value\": \"Nov 12, 2017\"\n    }\n  ],\n  \"photoGallery\": [\"photo1.jpg\", \"photo2.jpg\"],\n  \"location\": \"Sample Location\",\n  \"about\": [\n    {\n      \"placesCovered\": \"Naciones Unidas Boulevard\",\n      \"description\": \"Park Boulevard\",\n      \"activities\": \"Meeting Point\",\n      \"itinerary\": \"10:00-10:15\"\n    },\n    {\n      \"placesCovered\": \"La Carolina Park\",\n      \"description\": \"Centro-Norte City Park\",\n      \"activities\": \"Guided Walk\",\n      \"itinerary\": \"10:00-10:40\"\n    }\n  ],\n  \"notes\": \"Being in the equator, yet high up in the Andes, the city of Quito and its surroundings enjoy overall spring-like weather conditions, but be advised to bring comfy walking shoes, sunscreen and a warm jacket on the side; water ponchos will be provided if the weather conditions call for it.\",\n  \"inclusions\": [\"Panoramic tour in double-decker tourist bus\", \"Certified tour guide ENG-SPA\"],\n  \"exclusions\": [\"Alcoholic beverages\", \"Personal travel and health insurance\"]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tourDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tourDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tour Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tourDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tourDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tour Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tourId\": \"64fc98329d2a854c352cc134\",\n  \"title\": \" City and Old Town\",\n  \"description\": \"Quito, the capital of Ecuador, today a modern and cosmopolitan south american capital, was founded in the 16th century on the ruins of an Inca city and stands at an altitude of 2,850 m. Despite the 1917 earthquake, the city has the best-preserved, least altered historic centre in Latin America. The monasteries of San Francisco and Santo Domingo, and the Church and Jesuit College of La Compañía, with their rich interiors, are pure examples of the 'Baroque school of Quito', which is a fusion of Spanish, Italian, Moorish, Flemish and indigenous art. The great majority of attributes upon which the Outstanding Universal Value of the City of Quito is based are present and intact. The Historic Centre of Quito has conserved its original configuration, new constructions being built outside of the colonial centre. Indeed, based on the first plan of Quito designed in 1734 by Dionisio Alcedo y Herrera, one notes that the original plan of the streets, the blocks of houses and squares – with a few rare exceptions – is the same can be seen today. Despite numerous earthquakes that have affected it over the course of history, the city conserves the least modified historic centre of all Latin America because of the concerted action of the Municipal authorities of the Metropolitan District of Quito and the Ecuadorean government.\",\n  \"price\": 200,\n  \"rating\": 5,\n  \"tourHighlights\": [\n    {\n      \"key\": \"Location\",\n      \"value\": \"Rio,Brazil\"\n    },\n    {\n      \"key\": \"Arrival Date\",\n      \"value\": \"Nov 12, 2017\"\n    }\n  ],\n  \"photoGallery\": [\"photo1.jpg\", \"photo2.jpg\"],\n  \"location\": \"Sample Location\",\n  \"about\": [\n    {\n      \"placesCovered\": \"Naciones Unidas Boulevard\",\n      \"description\": \"Park Boulevard\",\n      \"activities\": \"Meeting Point\",\n      \"itinerary\": \"10:00-10:15\"\n    },\n    {\n      \"placesCovered\": \"La Carolina Park\",\n      \"description\": \"Centro-Norte City Park\",\n      \"activities\": \"Guided Walk\",\n      \"itinerary\": \"10:00-10:40\"\n    }\n  ],\n  \"notes\": \"Being in the equator, yet high up in the Andes, the city of Quito and its surroundings enjoy overall spring-like weather conditions, but be advised to bring comfy walking shoes, sunscreen and a warm jacket on the side; water ponchos will be provided if the weather conditions call for it.\",\n  \"inclusions\": [\"Panoramic tour in double-decker tourist bus\", \"Certified tour guide ENG-SPA\"],\n  \"exclusions\": [\"Alcoholic beverages\", \"Personal travel and health insurance\"]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/tourDetail/64fca6a6dc4230df464d2fa1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tourDetail",
+								"64fca6a6dc4230df464d2fa1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tour Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/tourDetail/64fca6a6dc4230df464d2fa1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"tourDetail",
+								"64fca6a6dc4230df464d2fa1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Tickets",
+			"item": [
+				{
+					"name": "Create Event Ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Mago de Oz\",\n  \"date\": \"May 15th\",\n  \"location\": \"Plaza de Toros, Quito\",\n  \"time\": \"8:30 PM\",\n  \"price\": 120,\n  \"imagePath\": \"/path/to/image.jpg\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/eventTicket",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventTicket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Tickets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/eventTicket",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventTicket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event Ticket",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Mago de Oz\",\n  \"date\": \"May 15th\",\n  \"location\": \"Plaza de Toros, Quito\",\n  \"time\": \"8:30 PM\",\n  \"price\": 100,\n  \"imagePath\": \"/path/to/image.jpg\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/eventTicket/64fc9a4fb9439de0d87b6893",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventTicket",
+								"64fc9a4fb9439de0d87b6893"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Event Ticket",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/eventTicket/disable/64fc9a4fb9439de0d87b6893",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventTicket",
+								"disable",
+								"64fc9a4fb9439de0d87b6893"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event Ticket",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/eventTicket/64fc9a4fb9439de0d87b6893",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventTicket",
+								"64fc9a4fb9439de0d87b6893"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Ticket Details",
+			"item": [
+				{
+					"name": "Create Event Ticket Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"eventTicketId\": \"64fc9a4bb9439de0d87b6891\",\n    \"title\": \"Mago de Oz\",\n    \"description\": \"A sample event ticket description.\",\n    \"price\": 50,\n    \"duration\": \"3 Days/2 Nights\",\n    \"rating\": 5,\n    \"eventPackageHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Rio,Brazil\"\n        },\n        {\n            \"key\": \"Arrival Date\",\n            \"value\": \"Nov 12, 2017\"\n        }\n    ],\n    \"photoGallery\": [\n        \"photo1.jpg\",\n        \"photo2.jpg\"\n    ],\n    \"location\": \"Sample Location\",\n    \"about\": [\n        {\n            \"placesCovered\": \"Plaza de San Francisco\",\n            \"description\": \"Colonial Square\",\n            \"activities\": \"History/Walk/Architecture\",\n            \"cityParish\": \"Casco Colonial\"\n        }\n    ],\n    \"inclusions\": [\n        \"All land transportation and transfers\"\n    ],\n    \"exclusions\": [\n        \"Alcoholic beverages and other personal expenses\"\n    ],\n    \"itinerary\": [\n        {\n            \"dayTitle\": \"Day : 1 Casco Colonial, Calle de las 7 Cruces and Visit to \\\"La Ronda\\\" Street\",\n            \"activities\": \"After breakfast you will have a tour of Quito's casco colonial where you will discover unique attractions such as the Plaza de San Francisco, Santo Domingo, El Ejido, the artisan market, among others. You will have a typical lunch to later walk the famous street of the 7 crosses that takes us through the most representative churches of Quito in neoclassical, gothic and quitenian school baroque styles. You will then return to your hotel for some rest before an evening visit to \\\"La Ronda\\\", one of the most cheerful and well-known colonial neighborhoods of Quito.\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/eventTicketDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventTicketDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Ticket Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/eventTicketDetail",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventTicketDetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event Ticket Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"eventTicketId\": \"64fc9a4bb9439de0d87b6891\",\n    \"title\": \"Mago de\",\n    \"description\": \"A sample event ticket description.\",\n    \"price\": 50,\n    \"duration\": \"3 Days/2 Nights\",\n    \"rating\": 5,\n    \"eventPackageHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Rio,Brazil\"\n        },\n        {\n            \"key\": \"Arrival Date\",\n            \"value\": \"Nov 12, 2017\"\n        }\n    ],\n    \"photoGallery\": [\n        \"photo1.jpg\",\n        \"photo2.jpg\"\n    ],\n    \"location\": \"Sample Location\",\n    \"about\": [\n        {\n            \"placesCovered\": \"Plaza de San Francisco\",\n            \"description\": \"Colonial Square\",\n            \"activities\": \"History/Walk/Architecture\",\n            \"cityParish\": \"Casco Colonial\"\n        }\n    ],\n    \"inclusions\": [\n        \"All land transportation and transfers\"\n    ],\n    \"exclusions\": [\n        \"Alcoholic beverages and other personal expenses\"\n    ],\n    \"itinerary\": [\n        {\n            \"dayTitle\": \"Day : 1 Casco Colonial, Calle de las 7 Cruces and Visit to \\\"La Ronda\\\" Street\",\n            \"activities\": \"After breakfast you will have a tour of Quito's casco colonial where you will discover unique attractions such as the Plaza de San Francisco, Santo Domingo, El Ejido, the artisan market, among others. You will have a typical lunch to later walk the famous street of the 7 crosses that takes us through the most representative churches of Quito in neoclassical, gothic and quitenian school baroque styles. You will then return to your hotel for some rest before an evening visit to \\\"La Ronda\\\", one of the most cheerful and well-known colonial neighborhoods of Quito.\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/eventTicketDetail/64fca8a841b44dbae15d8182",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventTicketDetail",
+								"64fca8a841b44dbae15d8182"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event Ticket Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/eventTicketDetail/64fca8a841b44dbae15d8182",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"eventTicketDetail",
+								"64fca8a841b44dbae15d8182"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Create Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Packages\",\n    \"userId\": \"64fc81643f85792c6765217f\",\n    \"name\": \"Huzaifah Tariq\",\n    \"nationality\": \"Pakistani\",\n    \"idType\": \"CNIC\",\n    \"idNumber\": \"1234567890\",\n    \"phone\": \"090078601\",\n    \"email\": \"huzaifahtariq@gmail.com\",\n    \"package\": \"Coast: Beach Hopping\",\n    \"adultsCount\": \"1\",\n    \"childrenCount\": \"0\",\n    \"checkIn\": \"2023-09-15\",\n    \"checkOut\": \"2023-09-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/booking",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/booking",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/booking/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"booking",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Packages\",\n    \"userId\": \"64fc81643f85792c6765217f\",\n    \"name\": \"Huzaifah Tariq\",\n    \"nationality\": \"Pakistani\",\n    \"idType\": \"CNIC\",\n    \"idNumber\": \"1234567890\",\n    \"phone\": \"090078601\",\n    \"email\": \"huzaifahtariq@gmail.com\",\n    \"package\": \"Coast: Beach Hopping\",\n    \"adultsCount\": \"1\",\n    \"childrenCount\": \"2\",\n    \"checkIn\": \"2023-09-15\",\n    \"checkOut\": \"2023-09-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/booking/64fc9d890a42b8792e1e9c95",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"booking",
+								"64fc9d890a42b8792e1e9c95"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update My Booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Packages\",\n    \"userId\": \"64fc81643f85792c6765217f\",\n    \"name\": \"Huzaifah Tariq\",\n    \"nationality\": \"Pakistani\",\n    \"idType\": \"CNIC\",\n    \"idNumber\": \"1234567890\",\n    \"phone\": \"090078601\",\n    \"email\": \"huzaifahtariq@gmail.com\",\n    \"package\": \"Coast: Beach Hopping\",\n    \"adultsCount\": \"1\",\n    \"childrenCount\": \"0\",\n    \"checkIn\": \"2023-09-15\",\n    \"checkOut\": \"2023-09-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/booking/me/64fc9d890a42b8792e1e9c95",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"booking",
+								"me",
+								"64fc9d890a42b8792e1e9c95"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/booking/64fc9d890a42b8792e1e9c95",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"booking",
+								"64fc9d890a42b8792e1e9c95"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete My Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/booking/me/64fc9f3f8465ea41cc322610",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"booking",
+								"me",
+								"64fc9f3f8465ea41cc322610"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inquiries",
+			"item": [
+				{
+					"name": "Create Inquiry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"64fc81643f85792c6765217f\",\n    \"firstName\": \"Huzaifah\",\n    \"lastName\": \"Tariq\",\n    \"phoneNumber\": \"090078601\",\n    \"email\": \"huzaifahtariq@gmail.com\",\n    \"helpType\": \"Accomodation\",\n    \"message\": \"This is a test message\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/inquiry",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"inquiry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Inquiries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/inquiry",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"inquiry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Inquiry",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"64fc81643f85792c6765217f\",\n    \"firstName\": \"Huzaifah\",\n    \"lastName\": \"Tariq\",\n    \"phoneNumber\": \"090078601\",\n    \"email\": \"huzaifahtariq08@gmail.com\",\n    \"helpType\": \"Accomodation\",\n    \"message\": \"This is a test message\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/inquiry/64fca0256875e72fb3e71076",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"inquiry",
+								"64fca0256875e72fb3e71076"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Inquiry",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/inquiry/64fca0256875e72fb3e71076",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"inquiry",
+								"64fca0256875e72fb3e71076"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
