@@ -5,11 +5,13 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IconContext } from "react-icons";
 import MobileNavbar from "./mobilenavbar";
 import Submenu from "./submenu";
+import { Modal } from "./modal";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showSubMenu, setShowSubMenu] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   const toggleMobileMenu = () => {
     console.log("Clicked");
@@ -125,9 +127,17 @@ const Navbar = () => {
             <li>
               <Link to="/contact">Contact us</Link>
             </li>
+           
           </ul>
+         
         </div>
-        <div className="navbar-hamburger">
+        <button onClick={()=> setShowModal(true)} className="login-btn">
+              Login
+            </button>
+           {showModal && <Modal title='Login'>
+<h1>HI, WOrld</h1>
+              </Modal>   }  
+                 <div className="navbar-hamburger">
           <a href="#" onClick={toggleMobileMenu}>
             <IconContext.Provider value={{ size: "2em" }}>
               <GiHamburgerMenu></GiHamburgerMenu>

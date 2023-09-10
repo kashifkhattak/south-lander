@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Hero from "../components/hero";
@@ -11,8 +11,22 @@ import Rentalbar from "../components/rentalbar";
 import ToursGallery from "../components/toursgallery";
 import Events from "../components/events";
 import Tips from "../components/tips";
+import packageService from "../services/package-service";
 
 const Home = () => {
+
+  const [packages, setPackages] = useState([])
+  console.log("packages", packages);
+
+
+  useEffect(()=>{
+    console.log('jujug');
+    packageService.getPackages().then(response => {
+      console.log("response", response);
+      setPackages(response)
+    })
+  },[])
+
   return (
     <>
       <Navbar></Navbar>
@@ -30,7 +44,7 @@ const Home = () => {
           "The 9 perfect destination categories to travel around Ecuador and get the most out of your time and money."
         }
       ></SectionHeader>
-      <Packagebar></Packagebar>
+      <Packagebar packages={packages}/>
       <SectionHeader
         id="accomodation"
         header={"Accomodation"}
