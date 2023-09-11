@@ -9,7 +9,7 @@ const Itinerary = () => {
       <div className="itin-main">
         <div className="itin-left">
           <FaClock className="left-clock" />
-          <div class="vertical-line"></div>
+          <div className="vertical-line"></div>
         </div>
         <div className="itin-right">
           <h4>

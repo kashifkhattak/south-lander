@@ -23,19 +23,19 @@ const Rental = () => {
             </div>
           </div> */}
         <div className="rental-content">
-          <div class="hot-page2-hom-pre">
+          <div className="hot-page2-hom-pre">
             <ul>
               <li>
                 <Link to="/rental-details">
-                  <div class="hot-page2-hom-pre-1">
+                  <div className="hot-page2-hom-pre-1">
                     {" "}
                     <img src={one} alt="" />{" "}
                   </div>
-                  <div class="hot-page2-hom-pre-2">
+                  <div className="hot-page2-hom-pre-2">
                     <h5>Park Apartment</h5>{" "}
                     <span>San Cristobal, San Cristobal</span>{" "}
                   </div>
-                  <div class="hot-page2-hom-pre-3">
+                  <div className="hot-page2-hom-pre-3">
                     {" "}
                     <FaRegHandPointRight className="hand-icon" />
                     {/* <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "} */}
@@ -44,15 +44,15 @@ const Rental = () => {
               </li>
               <li>
               <Link to="/rental-details">
-                  <div class="hot-page2-hom-pre-1">
+                  <div className="hot-page2-hom-pre-1">
                     {" "}
                     <img src={two} alt="" />{" "}
                   </div>
-                  <div class="hot-page2-hom-pre-2">
+                  <div className="hot-page2-hom-pre-2">
                     <h5>Organic Farmhouse</h5>{" "}
                     <span>Bellavista, Santa Cruz</span>{" "}
                   </div>
-                  <div class="hot-page2-hom-pre-3">
+                  <div className="hot-page2-hom-pre-3">
                     {" "}
                     <FaRegHandPointRight className="hand-icon" />
                     {/* <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "} */}
@@ -61,15 +61,15 @@ const Rental = () => {
               </li>
               <li>
               <Link to="/rental-details">
-                  <div class="hot-page2-hom-pre-1">
+                  <div className="hot-page2-hom-pre-1">
                     {" "}
                     <img src={three} alt="" />{" "}
                   </div>
-                  <div class="hot-page2-hom-pre-2">
+                  <div className="hot-page2-hom-pre-2">
                     <h5>Rustic Beach House</h5>{" "}
                     <span>Puerto Villamil, Isabela</span>{" "}
                   </div>
-                  <div class="hot-page2-hom-pre-3">
+                  <div className="hot-page2-hom-pre-3">
                     {" "}
                     <FaRegHandPointRight className="hand-icon" />
                     {/* <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "} */}

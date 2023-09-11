@@ -1,10 +1,10 @@
 const express = require('express');
 const connectToDB = require('./startup/dbConnection');
-const cors = require('cors'); // Import the cors middleware
+const cors = require('cors'); 
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:3001' })); // Allow requests from localhost:3001
+app.use(cors({ origin: 'http://localhost:3001' }));
 
 require('./startup/routes')(app);
 

@@ -10,5 +10,5 @@ export const getAuthHeader = async () => {
 		return value
 	})?.auth?.jwt
 
-	return 'Bearer ' + jwt
+	return jwt
 }

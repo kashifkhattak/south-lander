@@ -1,12 +1,12 @@
 import React from "react";
 import Package from "./package";
-import corsImage from '../assets/images/t1.png'
+import coastImage from '../assets/images/t1.png'
 
 const Packagebar = ({packages}) => {
   const imageMap = [{
-    cors: corsImage
+    COAST: coastImage
   }]
-  console.log("image path", imageMap["cors"]);
+
   return (
     <>
       <div className="packagebar-main">
@@ -15,10 +15,11 @@ const Packagebar = ({packages}) => {
             key={index}
             title={p.title}
             tagLine={p.tagLine}
-            image={imageMap[p.title]} 
+            image={imageMap[index][p.title]} 
             imagePath={p.imagePath}
           />
         ))}        
+        {/* <Package></Package>
         <Package></Package>
         <Package></Package>
         <Package></Package>
@@ -26,8 +27,7 @@ const Packagebar = ({packages}) => {
         <Package></Package>
         <Package></Package>
         <Package></Package>
-        <Package></Package>
-        <Package></Package>
+        <Package></Package> */}
       </div>
     </>
   );

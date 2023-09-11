@@ -29,25 +29,25 @@ const Hero = ({tabs, title, subtitle , forms}) => {
           </p>
           <div className="hero-buttons">
             <ul>
-              <li class="fadeInLeft1">
+              <li className="fadeInLeft1">
                 <a>
                   <img src={icon1} alt="" />
                   <p>All Inclusive</p>
                 </a>
               </li>
-              <li class="fadeInLeft2">
+              <li className="fadeInLeft2">
                 <a>
                   <img src={icon2} alt="" />
                   <p>Events</p>
                 </a>
               </li>
-              <li class="fadeInLeft3">
+              <li className="fadeInLeft3">
                 <a>
                   <img src={icon3} alt="" />
                   <p>Rentals</p>
                 </a>
               </li>
-              <li class="fadeInLeft4">
+              <li className="fadeInLeft4">
                 <a>
                   <img src={icon4} alt="" />
                   <p>Ecuador 360°</p>

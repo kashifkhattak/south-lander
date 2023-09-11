@@ -12,19 +12,18 @@ import ToursGallery from "../components/toursgallery";
 import Events from "../components/events";
 import Tips from "../components/tips";
 import packageService from "../services/package-service";
+import accomodationService from "../services/accomodation-service";
 
 const Home = () => {
 
   const [packages, setPackages] = useState([])
+  const [accomodation, setAccomodation] = useState([])
   console.log("packages", packages);
-
+  console.log("accomodation", accomodation);
 
   useEffect(()=>{
-    console.log('jujug');
-    packageService.getPackages().then(response => {
-      console.log("response", response);
-      setPackages(response)
-    })
+    packageService.getPackages().then(response => setPackages(response))
+    accomodationService.getAccomodations().then(response => setAccomodation(response))
   },[])
 
   return (
@@ -53,7 +52,7 @@ const Home = () => {
           "Top 4-star infraestructure around Ecuador, from modern resorts, small cruise-ships, to fully restored old hacienda houses on the andean highlands, give us try and have the experience of a lifetime."
         }
       ></SectionHeader>
-      <AccomodationGallery></AccomodationGallery>
+      <AccomodationGallery accomodation={accomodation} />
       <SectionHeader
         id="event"
         header={"Southlander"}

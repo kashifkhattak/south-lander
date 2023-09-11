@@ -1,13 +1,16 @@
 import React from "react";
 import Accomodation from "./accomodation";
 
-const AccomodationGallery = () => {
+const AccomodationGallery = ({accomodation}) => {
   return (
     <>
       <div className="accomodation-gallery-main">
         <div className="gallery-main">
-          <Accomodation></Accomodation>
+        {accomodation.map(a => <Accomodation title={a.title} landmarks={a.landmarks} imagePath={a.imagePath}/>)}
         </div>
+        {/* <div className="gallery-main">
+          <Accomodation></Accomodation>
+        </div> */}
         <div className="sub-one">
           <Accomodation></Accomodation>
         </div>

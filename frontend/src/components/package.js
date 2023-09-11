@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import t1 from "../assets/images/t1.png";
 import clock from "../assets/images/clock.png";
 import info from "../assets/images/info.png";
 import price from "../assets/images/price.png";
@@ -8,7 +7,7 @@ import map from "../assets/images/map.png";
 
 const Package = ({title, tagLine, image, imagePath}) => {
   const packageRef = useRef(null);
-console.log("image", image);
+
   useEffect(() => {
     const packageElement = packageRef.current;
 
