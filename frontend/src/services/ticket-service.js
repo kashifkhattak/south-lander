@@ -5,9 +5,14 @@ const getEventTickets = () => {
 		return response.data
 	})
 }
-
+const getEventTicketDetail = () => {
+	return axios.get('/eventTicketDetail').then(response => {
+		return response.data
+	})
+}
 const ticketService = {
-	getEventTickets
+	getEventTickets,
+	getEventTicketDetail
 }
 
 export default ticketService

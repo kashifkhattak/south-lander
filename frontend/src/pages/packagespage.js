@@ -10,22 +10,22 @@ import SinglePackage from "../components/singlepackage";
 const PackagesPage = () => {
   return (
     <>
-      <Navbar></Navbar>
-      <Thumbnail></Thumbnail>
+      <Navbar />
+      <Thumbnail />
       <div className="pp-main">
         <div className="pp-content">
           <SectionHeader
             header={"Discover Ecuador's"}
             subheader={"Galapagos Islands"}
-          ></SectionHeader>
-          <SinglePackage></SinglePackage>
-          <SinglePackage></SinglePackage>
-          <SinglePackage></SinglePackage>
-          <SinglePackage></SinglePackage>
+          />
+          <SinglePackage />
+          <SinglePackage />
+          <SinglePackage />
+          <SinglePackage />
         </div>
       </div>
-      <Tips></Tips>
-      <Footer></Footer>
+      <Tips />
+      <Footer />
     </>
   );
 };

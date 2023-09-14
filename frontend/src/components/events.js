@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import iplace from "../assets/images/iplace-3.jpg";
 
 const Events = ({data}) => {
-  console.log("DAAA", data);
   return (
     <>
       <div className="events-main">
@@ -16,20 +15,20 @@ const Events = ({data}) => {
         <table className="events-table">
           <tbody>
             <tr>
-              <th style={{textAlign: 'center'}}>#</th>
+              <th >#</th>
               <th style={{textAlign: 'center'}}>Event | Date</th>
-              <th style={{textAlign: 'center'}}>Location</th>
-              <th style={{textAlign: 'center'}}>Time</th>
-              <th style={{textAlign: 'center'}}>Price</th>
-              <th style={{textAlign: 'center', whiteSpace: 'nowrap'}}>Save a Spot!</th>
+              <th >Location</th>
+              <th >Time</th>
+              <th >Price</th>
+              <th >Save a Spot!</th>
             </tr>
             {data.map((d, index) => <tr>
               <td>{index + 1}</td>
-              <td style={{display: 'flex', alignItems: 'center'}}>
+              <td style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                 <img src={d.imagePath} alt="" />
-                <Link to="/package-details" className="events-title">
+                <Link to={`/package-details/${d._id}`}>
                   {d.title} | {d.date}
-                </Link>{" "}
+                </Link>
               </td>
               <td>{d.location}</td>
               <td>{d.time}</td>

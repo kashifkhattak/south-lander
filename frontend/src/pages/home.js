@@ -36,7 +36,6 @@ const Home = () => {
     ticketService.getEventTickets().then(response => setEventTickets(response))
   },[])
 
-  console.log("TICKERS", eventTickets);
 
   return (
     <>
@@ -102,8 +101,8 @@ const Home = () => {
         }
       ></SectionHeader>
       <Events data={eventTickets}/>
-      <Tips></Tips>
-      <Footer></Footer>
+      <Tips />
+      <Footer />
     </>
   );
 };

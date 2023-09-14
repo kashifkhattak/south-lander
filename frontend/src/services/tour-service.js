@@ -5,9 +5,14 @@ const getTours = () => {
 		return response.data
 	})
 }
-
+const getTourDetails = () => {
+	return axios.get('/tourDetail').then(response => {
+		return response.data
+	})
+}
 const tourService = {
-	getTours
+	getTours,
+	getTourDetails
 }
 
 export default tourService
