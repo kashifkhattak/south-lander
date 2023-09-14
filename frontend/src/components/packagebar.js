@@ -3,10 +3,6 @@ import Package from "./package";
 import coastImage from '../assets/images/t1.png'
 
 const Packagebar = ({packages}) => {
-  const imageMap = [{
-    COAST: coastImage
-  }]
-
   return (
     <>
       <div className="packagebar-main">
@@ -15,8 +11,7 @@ const Packagebar = ({packages}) => {
             key={index}
             title={p.title}
             tagLine={p.tagLine}
-            image={imageMap[index][p.title]} 
-            imagePath={p.imagePath}
+            image={p.imagePath} 
           />
         ))}        
         {/* <Package></Package>

@@ -7,13 +7,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandPointRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Rental = () => {
+const Rental = ({data}) => {
   return (
     <>
       <div className="rental-main">
         <div className="rental-header">
-          <p>GALAPAGOS</p>
-          <span>Rentals</span>
+          <p>{data.title}</p>
         </div>
         {/* <div className="rental-content">
             <div className="rental-text">
@@ -25,57 +24,17 @@ const Rental = () => {
         <div className="rental-content">
           <div className="hot-page2-hom-pre">
             <ul>
-              <li>
-                <Link to="/rental-details">
+              {data.options.map(option => <li key={option.title}>
+                <Link to={`/rental-details/${data._id}`}>
                   <div className="hot-page2-hom-pre-1">
-                    {" "}
-                    <img src={one} alt="" />{" "}
+                    <img src={option.imagePath} alt="optionImage" />
                   </div>
                   <div className="hot-page2-hom-pre-2">
-                    <h5>Park Apartment</h5>{" "}
-                    <span>San Cristobal, San Cristobal</span>{" "}
+                    <h5>{option.title}</h5>{" "}
+                    <span>{option.landmarks.map((landmark, index) => index !== 0 ? ', ' + landmark : landmark)}</span>{" "}
                   </div>
-                  <div className="hot-page2-hom-pre-3">
-                    {" "}
-                    <FaRegHandPointRight className="hand-icon" />
-                    {/* <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "} */}
-                  </div>
-                </Link>
-              </li>
-              <li>
-              <Link to="/rental-details">
-                  <div className="hot-page2-hom-pre-1">
-                    {" "}
-                    <img src={two} alt="" />{" "}
-                  </div>
-                  <div className="hot-page2-hom-pre-2">
-                    <h5>Organic Farmhouse</h5>{" "}
-                    <span>Bellavista, Santa Cruz</span>{" "}
-                  </div>
-                  <div className="hot-page2-hom-pre-3">
-                    {" "}
-                    <FaRegHandPointRight className="hand-icon" />
-                    {/* <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "} */}
-                  </div>
-                </Link>
-              </li>
-              <li>
-              <Link to="/rental-details">
-                  <div className="hot-page2-hom-pre-1">
-                    {" "}
-                    <img src={three} alt="" />{" "}
-                  </div>
-                  <div className="hot-page2-hom-pre-2">
-                    <h5>Rustic Beach House</h5>{" "}
-                    <span>Puerto Villamil, Isabela</span>{" "}
-                  </div>
-                  <div className="hot-page2-hom-pre-3">
-                    {" "}
-                    <FaRegHandPointRight className="hand-icon" />
-                    {/* <FontAwesomeIcon icon={faHandPointRight} className="hand-icon"></FontAwesomeIcon>{" "} */}
-                  </div>
-                </Link>
-              </li>
+                  </Link>
+              </li>)}
             </ul>
           </div>
         </div>

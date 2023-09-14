@@ -5,7 +5,7 @@ import info from "../assets/images/info.png";
 import price from "../assets/images/price.png";
 import map from "../assets/images/map.png";
 
-const Package = ({title, tagLine, image, imagePath}) => {
+const Package = ({title, tagLine, image}) => {
   const packageRef = useRef(null);
 
   useEffect(() => {
@@ -38,11 +38,7 @@ const Package = ({title, tagLine, image, imagePath}) => {
   return (
     <div className="package-main" ref={packageRef}>
         <div className="package-image">
-        <Link to={`/${imagePath}`}>
-
           <img src={image} alt=""></img>
-          </Link>
-
         </div>
         <div className="package-content">
           <div className="package-text">

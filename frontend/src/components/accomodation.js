@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 import home from "../assets/images/home.jpg";
 
-const Accomodation = ({title, landmarks, imagePath}) => {
+const Accomodation = ({id, title, landmarks, image}) => {
   return (
     <>
-    <Link to={`/${imagePath}`}>
+     <Link to={`/hotel-details/${id}`}>
       <div className="accomodation-main">
-        <img src={home} alt="accomodation"/>
+        <img src={image} alt="accomodation"/>
         <div className="accomodation-text">
           <p>{title}</p>
           <span>{landmarks?.map((l, index) => (

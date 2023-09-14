@@ -6,8 +6,15 @@ const getAccomodations = () => {
 	})
 }
 
+const getAccomodationDetails = () => {
+	return axios.get('/accommodationDetail').then(response => {
+		return response.data
+	})
+}
+
 const accomodationService = {
-	getAccomodations
+	getAccomodations,
+	getAccomodationDetails
 }
 
 export default accomodationService

@@ -2,19 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import place from "../assets/images/place2.jpg";
 
-const Tours = () => {
+const Tours = ({data}) => {
   return (
     <>
       <div className="tours-main">
-        <img src={place}></img>
+        <img src={data.imagePath} alt="tourImage"></img>
         <div className="tours-text">
-          <span>Quito City And Old Town</span>
-          <h5>QUITO, WHOLE DAY.</h5>
+          <span>{data.title}</span>
+          <h5>{data.tagLine}</h5>
           <p>
-            The beautiful capital of Ecuador welcomes you in all its historic,
-            cultural and natural splendor.
+           {data.description}
           </p>
-          <Link to="/tour-details">Explore</Link>
+          <Link to={`/tour-details/${data._id}`}>Explore</Link>
         </div>
       </div>
     </>

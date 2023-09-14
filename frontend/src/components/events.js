@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import iplace from "../assets/images/iplace-3.jpg";
 
-const Events = () => {
+const Events = ({data}) => {
+  console.log("DAAA", data);
   return (
     <>
       <div className="events-main">
@@ -15,103 +16,25 @@ const Events = () => {
         <table className="events-table">
           <tbody>
             <tr>
-              <th>#</th>
-              <th>Event | Date</th>
-              <th className="e_h1">Location</th>
-              <th className="e_h1">Time</th>
-              <th className="e_h1">Price</th>
-              <th>Save a Spot!</th>
+              <th style={{textAlign: 'center'}}>#</th>
+              <th style={{textAlign: 'center'}}>Event | Date</th>
+              <th style={{textAlign: 'center'}}>Location</th>
+              <th style={{textAlign: 'center'}}>Time</th>
+              <th style={{textAlign: 'center'}}>Price</th>
+              <th style={{textAlign: 'center', whiteSpace: 'nowrap'}}>Save a Spot!</th>
             </tr>
-            <tr>
-              <td>1</td>
+            {data.map((d, index) => <tr>
+              <td>{index + 1}</td>
               <td style={{display: 'flex', alignItems: 'center'}}>
-                <img src={iplace} alt="" />
+                <img src={d.imagePath} alt="" />
                 <Link to="/package-details" className="events-title">
-                  Mago de Oz | May 15th
+                  {d.title} | {d.date}
                 </Link>{" "}
               </td>
-              <td className="e_h1">Plaza de Toros, Quito</td>
-              <td className="e_h1">8:30 PM</td>
-              <td className="e_h1">$120.00</td>
-              <td>
-                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td style={{display: 'flex', alignItems: 'center'}}>
-                <img src={iplace} alt="" />
-                <Link to="/package-details" className="events-title">
-                  Mago de Oz | May 15th
-                </Link>{" "}
-              </td>
-              <td className="e_h1">Plaza de Toros, Quito</td>
-              <td className="e_h1">8:30 PM</td>
-              <td className="e_h1">$120.00</td>
-              <td>
-                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td style={{display: 'flex', alignItems: 'center'}}>
-                <img src={iplace} alt="" />
-                <Link to="/package-details" className="events-title">
-                  Mago de Oz | May 15th
-                </Link>{" "}
-              </td>
-              <td className="e_h1">Plaza de Toros, Quito</td>
-              <td className="e_h1">8:30 PM</td>
-              <td className="e_h1">$120.00</td>
-              <td>
-                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td style={{display: 'flex', alignItems: 'center'}}>
-                <img src={iplace} alt="" />
-                <Link to="/package-details" className="events-title">
-                  Mago de Oz | May 15th
-                </Link>{" "}
-              </td>
-              <td className="e_h1">Plaza de Toros, Quito</td>
-              <td className="e_h1">8:30 PM</td>
-              <td className="e_h1">$120.00</td>
-              <td>
-                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td style={{display: 'flex', alignItems: 'center'}}>
-                <img src={iplace} alt="" />
-                <Link to="/package-details" className="events-title">
-                  Mago de Oz | May 15th
-                </Link>{" "}
-              </td>
-              <td className="e_h1">Plaza de Toros, Quito</td>
-              <td className="e_h1">8:30 PM</td>
-              <td className="e_h1">$120.00</td>
-              <td>
-                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td style={{display: 'flex', alignItems: 'center'}}>
-                <img src={iplace} alt="" />
-                <Link to="/package-details" className="events-title">
-                  Mago de Oz | May 15th
-                </Link>{" "}
-              </td>
-              <td className="e_h1">Plaza de Toros, Quito</td>
-              <td className="e_h1">8:30 PM</td>
-              <td className="e_h1">$120.00</td>
-              <td>
-                <Link to="/package-details" className="link-btn" >Details</Link>{" "}
-              </td>
-            </tr>
+              <td>{d.location}</td>
+              <td>{d.time}</td>
+              <td>${d.price}</td>
+            </tr>)}
           </tbody>
         </table>
       </div>

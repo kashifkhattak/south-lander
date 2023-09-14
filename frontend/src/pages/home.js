@@ -13,18 +13,30 @@ import Events from "../components/events";
 import Tips from "../components/tips";
 import packageService from "../services/package-service";
 import accomodationService from "../services/accomodation-service";
+import eventService from "../services/event-service";
+import rentalService from "../services/rental-service";
+import tourService from "../services/tour-service";
+import ticketService from "../services/ticket-service";
 
 const Home = () => {
 
   const [packages, setPackages] = useState([])
   const [accomodation, setAccomodation] = useState([])
-  console.log("packages", packages);
-  console.log("accomodation", accomodation);
+  const [eventPlanning, setEventPlanning] = useState([])
+  const [rentals, setRentals] = useState([])
+  const [tours, setTours] = useState([])
+  const [eventTickets, setEventTickets] = useState([])
 
   useEffect(()=>{
     packageService.getPackages().then(response => setPackages(response))
     accomodationService.getAccomodations().then(response => setAccomodation(response))
+    eventService.getEventPlannings().then(response => setEventPlanning(response))
+    rentalService.getRentals().then(response => setRentals(response))
+    tourService.getTours().then(response => setTours(response))
+    ticketService.getEventTickets().then(response => setEventTickets(response))
   },[])
+
+  console.log("TICKERS", eventTickets);
 
   return (
     <>
@@ -61,7 +73,7 @@ const Home = () => {
           "Enjoy our destination experience offer, sit back and enjoy while our staff make it happen: weddings, mitzvahs, expos, conventions, summits, spiritual retreats, etc. including invites, RSVPs, cash gifts and/or ticket sale managing."
         }
       ></SectionHeader>
-      <Destinationbar></Destinationbar>
+      <Destinationbar data={eventPlanning} />
       <WeddingBanner></WeddingBanner>
       <SectionHeader
         id="rentals"
@@ -71,7 +83,7 @@ const Home = () => {
           "Our stock of vacation-perfect certified properties up for rent all around continental Ecuador and the Galapagos."
         }
       ></SectionHeader>
-      <Rentalbar></Rentalbar>
+      <Rentalbar data={rentals}/>
       <SectionHeader
         id="tours"
         header={"Ecuador"}
@@ -80,7 +92,7 @@ const Home = () => {
           "Modern infraestructure, cultural splendor, wildlife watching, sublime scenery, snowed peaked volcanoes, waves splashing white-sand beaches and more! wrapped-up in an easy-access compact territory the size of Nevada!"
         }
       ></SectionHeader>
-      <ToursGallery></ToursGallery>
+      <ToursGallery data={tours} />
       <SectionHeader
         id="tickets"
         header={"Hands On"}
@@ -89,7 +101,7 @@ const Home = () => {
           "Experience the thrill of unique tourism attractions with our all-inclusive special events packages; from world-renowned events to charming community festivals and park programs, we've got you covered. Book now and let us take care of everything, so you can focus on enjoying every moment of your unforgettable event experience!"
         }
       ></SectionHeader>
-      <Events></Events>
+      <Events data={eventTickets}/>
       <Tips></Tips>
       <Footer></Footer>
     </>
