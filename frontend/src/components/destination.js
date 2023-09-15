@@ -13,7 +13,7 @@ const Destination = ({data}) => {
       <div className="destination-main">
         <div className="destination-image">
           <Link to={`/event-planning/${data._id}`}>
-            <img src={data.imagePath} alt=""></img>
+            <img src={data.imagePath} alt="" />
           </Link>
         </div>
         <div className="destination-content">
@@ -24,20 +24,6 @@ const Destination = ({data}) => {
             <span>Custom experiences from:</span>
             <span>{data.rating}-Star</span>
           </div>
-          {/* <div className="destination-icons">
-            <a href="#">
-              <img src={clock}></img>
-            </a>
-            <a href="#">
-              <img src={info}></img>
-            </a>
-            <a href="#">
-              <img src={price}></img>
-            </a>
-            <a href="#">
-              <img src={map}></img>
-            </a>
-          </div> */}
         </div>
       </div>
     </>

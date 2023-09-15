@@ -26,7 +26,7 @@ const TourDetails = () => {
   }, [])
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <Thumbnail
         header={"Ecuador Sights and Tours"}
         subheader={"Whole Day Tours"}

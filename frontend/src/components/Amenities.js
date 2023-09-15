@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 import UmbrellaHeader from "./umbrellaheader";
 
@@ -9,9 +8,9 @@ const Amenitites = ({ header, data }) => {
       <UmbrellaHeader header={header} />
       <div className="amen-main">
         <div className="amen-one">
-          {data.map((d) => (
+          {data?.map((d) => (
             <div className="tick-header-y">
-              <FaCheck className="y-check"></FaCheck>
+              <FaCheck className="y-check" />
               <h5>{d}</h5>
             </div>
           ))}

@@ -5,9 +5,15 @@ const getRentals = () => {
 		return response.data
 	})
 }
+const getrentalDetail = () => {
+	return axios.get('/rentalDetail').then(response => {
+		return response.data
+	})
+}
 
 const rentalService = {
-	getRentals
+	getRentals,
+	getrentalDetail
 }
 
 export default rentalService
