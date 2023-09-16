@@ -1,7 +1,10 @@
 const express = require('express');
 const connectToDB = require('./startup/dbConnection');
+const cors = require('cors'); 
 
 const app = express();
+
+app.use(cors({ origin: 'http://localhost:3001' }));
 
 require('./startup/routes')(app);
 

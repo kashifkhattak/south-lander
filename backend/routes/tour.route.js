@@ -6,7 +6,7 @@ const authorizationMiddleware = require('../middlewares/authorization');
 const tourController = require('../controllers/tour.controller');
 
 router.post('/', [authenticationMiddleware, authorizationMiddleware], tourController.createTour);
-router.get('/', authenticationMiddleware, tourController.getTours);
+router.get('/', tourController.getTours);
 router.put('/:id', [authenticationMiddleware, authorizationMiddleware], tourController.updateTour);
 router.put('/disable/:id', [authenticationMiddleware, authorizationMiddleware], tourController.disableTour);
 router.delete('/:id', [authenticationMiddleware, authorizationMiddleware], tourController.deleteTour);

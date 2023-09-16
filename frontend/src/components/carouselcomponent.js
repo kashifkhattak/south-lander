@@ -2,7 +2,7 @@ import React from "react";
 import { Carousel } from "react-carousel-minimal";
 import UmbrellaHeader from "./umbrellaheader";
 
-const CarouselComponent = () => {
+const CarouselComponent = ({ images }) => {
   const data = [
     {
       image:
@@ -47,7 +47,7 @@ const CarouselComponent = () => {
     <UmbrellaHeader header={"Photo Gallery"} />
       <div className="carousel-container-main">
         <Carousel
-          data={data}
+          data={images}
           time={9000}
           width="100%"
           height="345px"

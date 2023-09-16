@@ -1,14 +1,25 @@
 import React from "react";
 import Accomodation from "./accomodation";
 
-const AccomodationGallery = () => {
+const AccomodationGallery = ({ accomodation }) => {
   return (
     <>
       <div className="accomodation-gallery-main">
-        <div className="gallery-main">
+        {accomodation?.map((a, index) => (
+          <div key={a._id} className={index === 0 ? "gallery-main" : "sub-one"}>
+            <Accomodation
+              id={a._id}
+              title={a.title}
+              landmarks={a.landmarks}
+              imagePath={a.imagePath}
+            />
+          </div>
+        ))}
+
+        {/* <div className="gallery-main">
           <Accomodation></Accomodation>
-        </div>
-        <div className="sub-one">
+        </div> */}
+        {/* <div className="sub-one">
           <Accomodation></Accomodation>
         </div>
         <div className="sub-two">
@@ -31,7 +42,7 @@ const AccomodationGallery = () => {
         </div>
         <div className="sub-eight">
           <Accomodation></Accomodation>
-        </div>
+        </div> */}
       </div>
     </>
   );

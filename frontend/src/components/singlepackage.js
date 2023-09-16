@@ -1,64 +1,32 @@
 import React from "react";
-
-import iplace from "../assets/images/iplace-1.jpg";
-import flag from "../assets/images/flag.png";
-import tick from "../assets/images/tick.png";
 import { Link } from "react-router-dom";
 
-const SinglePackage = () => {
+import flag from "../assets/images/flag.png";
+import tick from "../assets/images/tick.png";
+
+const SinglePackage = ({data}) => {
   return (
     <div className="pp-packages">
       <div className="pp-left">
-        <img src={iplace}></img>
+        <img src={data?.imagePath} alt=""/>
       </div>
       <div className="pp-right">
-        <h3>Galapagos Island Hopping Experience 9 Days / 8 Nights</h3>
-        <p>
-          All-Aboard on this 9-day land and water experience, you will get to
-          know the Galapagos Islands in greater depth, with navigable tours and
-          many dives; includes a round-trip flight Quito-Baltra.
-        </p>
+        <h3>{data?.title}</h3>
+        <p>{data?.description}</p>
         <div className="pp-tags">
-          <h4 className="pp-orange">Available Tickets: 40</h4>
-          <h4 className="pp-green">Price: $XXXXX</h4>
-          <h4 className="pp-green">Available Dates: Year-Round</h4>
+          <h4 className="pp-orange">Available Tickets: {data?.availableTickets}</h4>
+          <h4 className="pp-green">Price: ${data?.price}</h4>
+          <h4 className="pp-green">Available Dates: {data?.availableDates}</h4>
         </div>
         <div className="flag-header">
-          <img src={flag}></img>
-          <h4>Land and Water Exploration</h4>
+          <img src={flag} alt=""/>
+          <h4>{data?.tag}</h4>
         </div>
-        <h6>
-          Baltra | Santa Cruz | Isabela | Bartolomé | Seymour | Chinese Hat |
-          Kicker Rock | Witch Hill
-        </h6>
+        {data.landmarks.map(l => <h6>{l}</h6>)}
         <div className="pp-facilities">
           <div className="tick-header">
-            <img src={tick}></img>
-            <h5>Land and Water Exploration</h5>
-          </div>
-          <div className="tick-header">
-            <img src={tick}></img>
-            <h5>All Meals</h5>
-          </div>
-          <div className="tick-header">
-            <img src={tick}></img>
-            <h5>Soft Drinks</h5>
-          </div>
-          <div className="tick-header">
-            <img src={tick}></img>
-            <h5>Activities</h5>
-          </div>
-          <div className="tick-header">
-            <img src={tick}></img>
-            <h5>Round Trip Plane Ticket</h5>
-          </div>
-          <div className="tick-header">
-            <img src={tick}></img>
-            <h5>Transfers</h5>
-          </div>
-          <div className="tick-header">
-            <img src={tick}></img>
-            <h5>Tour Guide</h5>
+            <img src={tick} alt="" />
+            <h5>{data?.tag}</h5>
           </div>
         </div>
         <div className="pp-buttons">

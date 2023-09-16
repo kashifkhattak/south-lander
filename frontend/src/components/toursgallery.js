@@ -2,24 +2,11 @@ import React from "react";
 
 import Tours from "./tours";
 
-const ToursGallery = () => {
+const ToursGallery = ({data}) => {
   return (
     <>
       <div className="toursgallery-main">
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
-        <Tours></Tours>
+        {data?.map(d => <Tours key={d._id} data={d}/>)}
       </div>
     </>
   );

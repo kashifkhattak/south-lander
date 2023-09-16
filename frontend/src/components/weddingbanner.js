@@ -38,7 +38,7 @@ const WeddingBanner = () => {
     <>
       <div className="banner-main" ref={bannerRef}>
         <div className="content-left">
-          <span class="ol-1"></span>
+          <span className="ol-1"></span>
           <span className="ol-2">
             <FontAwesomeIcon icon={faStar} className="ol-icon" />
             <FontAwesomeIcon icon={faStar} className="ol-icon" />
@@ -47,7 +47,7 @@ const WeddingBanner = () => {
             <FontAwesomeIcon icon={faStar} className="ol-icon" />
           </span>
           <h5>DESTINATION WEDDINGS</h5>
-          <span class="ol-3"></span>
+          <span className="ol-3"></span>
           <p>starting $25,000</p>
           <div className="content-icons">
           <Link to="/event-planning" className="animate-icon">
@@ -69,22 +69,22 @@ const WeddingBanner = () => {
 
         </div>
         <div className="content-right">
-          <div class="offer-r">
+          <div className="offer-r">
             <Link to="/event-planning">
               {" "}
-              <div class="or-1">
+              <div className="or-1">
                 {" "}
-                <span class="or-11">Buy</span> <span class="or-12">OnLine</span>{" "}
+                <span className="or-11">Buy</span> <span className="or-12">OnLine</span>{" "}
               </div>{" "}
             </Link>
             <Link to="/event-planning">
               {" "}
-              <div class="or-2">
+              <div className="or-2">
                 {" "}
-                <span class="or-21">Get</span> <span class="or-22">20%</span>{" "}
-                <span class="or-23">Off</span>{" "}
-                <span class="or-24">use code: RG54ER1</span>{" "}
-                <span class="or-25"></span>{" "}
+                <span className="or-21">Get</span> <span className="or-22">20%</span>{" "}
+                <span className="or-23">Off</span>{" "}
+                <span className="or-24">use code: RG54ER1</span>{" "}
+                <span className="or-25"></span>{" "}
               </div>{" "}
             </Link>
           </div>

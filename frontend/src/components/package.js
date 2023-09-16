@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import t1 from "../assets/images/t1.png";
 import clock from "../assets/images/clock.png";
 import info from "../assets/images/info.png";
 import price from "../assets/images/price.png";
 import map from "../assets/images/map.png";
 
-const Package = () => {
+const Package = ({title, tagLine, image}) => {
   const packageRef = useRef(null);
 
   useEffect(() => {
@@ -39,13 +38,13 @@ const Package = () => {
   return (
     <div className="package-main" ref={packageRef}>
         <div className="package-image">
-          <img src={t1} alt=""></img>
+          <img src={image} alt=""></img>
         </div>
         <div className="package-content">
           <div className="package-text">
             <Link to="/packages">
-              <p>Coast</p>
-              <span>Beach Hopping</span>
+              <p>{title}</p>
+              <span>{tagLine}</span>
             </Link>
           </div>
           <div className="package-icons">

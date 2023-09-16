@@ -2,31 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 import blueimg from "../assets/images/02.jpeg";
 
-const Apartments = () => {
+const Apartments = ({data}) => {
   return (
     <>
       <div className="apart-main">
         <div className="apart-one">
-          <img src={blueimg}></img>
+          <img src={data.imagePath}></img>
         </div>
         <div className="apart-two">
-          <h4>A - UPPER FLOOR APARTMENT WITH TERRACE FOR UP TO 7-8 PEOPLE</h4>
+          <h4>{data.title}</h4>
           <p>
-            <b>Amenities: </b>satellite tv, wi-fi, cleaning and cooking lady,
-            fully furnished and equiped apartment.
+            <b>Amenities: </b>{data.amenities}
           </p>
           <p>
-            <b>Facilities: </b>3 full bathrooms, 1 half-bath, 2 parking spaces,
-            1 storage area, 3 bedrooms with twin beds, 1 sofa bed in the living
-            room and private terrace.
+            <b>Facilities: </b>{data.facilities}
           </p>
           <p>
-            <b>Max. Occupancy: </b>8 people
+            <b>Max. Occupancy: </b>{data.maxOccupancy}
           </p>
         </div>
         <div className="apart-three">
           <h5>Price Per Night</h5>
-          <span>$300</span>
+          <span>{data.pricePerNight}</span>
           <Link>Book Now</Link>
         </div>
       </div>

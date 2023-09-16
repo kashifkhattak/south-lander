@@ -125,9 +125,13 @@ const Navbar = () => {
             <li>
               <Link to="/contact">Contact us</Link>
             </li>
+           
           </ul>
+         
         </div>
-        <div className="navbar-hamburger">
+      
+      
+                 <div className="navbar-hamburger">
           <a href="#" onClick={toggleMobileMenu}>
             <IconContext.Provider value={{ size: "2em" }}>
               <GiHamburgerMenu></GiHamburgerMenu>

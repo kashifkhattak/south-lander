@@ -48,6 +48,7 @@ const accommodationController = {
     const accommodations = await Accomodation.find(dynamicQuery).select(
       projection
     );
+    console.log("HELLO", accommodations);
 
     if (!accommodations || accommodations.length === 0) {
       console.log(

@@ -9,17 +9,17 @@ const Booking = () => {
   const [tabs, setTabs] = useState()
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <Hero
         tabs={tabs}
         title={"BOOKING MADE EASY"}
         subtitle={
           "EXPLORE ECUADOR'S MOST INNOVATIVE DESTINATION EXPERIENCE OFFER: ALL-INCLUSIVE VACATION PACKAGES, DESTINATION EVENTS, EXPLORE ECUADOR THROUGH OUR UNIQUE TOURS, OR ENJOY OUR EXCLUSIVE VACATION RENTALS AROUND THE COUNTRY."
         }
-        forms={<BookingForms setTab={setTabs}/>}
-      ></Hero>
-      <Tips></Tips>
-      <Footer></Footer>
+        forms={<BookingForms setTab={setTabs} tabs={tabs} />}
+    />
+      <Tips />
+       <Footer />
     </>
   );
 };

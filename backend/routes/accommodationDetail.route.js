@@ -6,7 +6,7 @@ const authorizationMiddleware = require('../middlewares/authorization');
 const accommodationDetailController = require('../controllers/accommodationDetail.controller');
 
 router.post('/', [authenticationMiddleware, authorizationMiddleware], accommodationDetailController.createAccomodationDetail);
-router.get('/', authenticationMiddleware, accommodationDetailController.getAccomodationDetails);
+router.get('/', accommodationDetailController.getAccomodationDetails);
 router.put('/:id', [authenticationMiddleware, authorizationMiddleware], accommodationDetailController.updateAccomodationDetail);
 router.delete('/:id',[authenticationMiddleware, authorizationMiddleware], accommodationDetailController.deleteAccomodationDetail);
 

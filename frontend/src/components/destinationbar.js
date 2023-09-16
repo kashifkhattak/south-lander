@@ -1,13 +1,11 @@
 import React from "react";
 import Destination from "./destination";
 
-const Destinationbar = () => {
+const Destinationbar = ({data}) => {
   return (
     <>
       <div className="destinationbar-main">
-       <Destination></Destination>
-       <Destination></Destination>
-       <Destination></Destination>
+       {data?.map(d => <Destination key={d._id} data={d} />)}
       </div>
     </>
   );

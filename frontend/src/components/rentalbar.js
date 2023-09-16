@@ -1,13 +1,11 @@
 import React from "react";
 import Rental from "./rental";
 
-const Rentalbar = () => {
+const Rentalbar = ({data}) => {
   return (
     <>
       <div className="rentalbar-main">
-        <Rental></Rental>
-        <Rental></Rental>
-        <Rental></Rental>
+        {data?.map(d => <Rental key={d._id} data={d}/>)}
       </div>
     </>
   );

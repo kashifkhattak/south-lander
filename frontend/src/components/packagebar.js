@@ -1,19 +1,18 @@
 import React from "react";
 import Package from "./package";
 
-const Packagebar = () => {
+const Packagebar = ({packages}) => {
   return (
     <>
       <div className="packagebar-main">
-        <Package></Package>
-        <Package></Package>
-        <Package></Package>
-        <Package></Package>
-        <Package></Package>
-        <Package></Package>
-        <Package></Package>
-        <Package></Package>
-        <Package></Package>
+      {packages?.map((p, index) => (
+          <Package
+            key={index}
+            title={p.title}
+            tagLine={p.tagLine}
+            image={p.imagePath} 
+          />
+        ))}        
       </div>
     </>
   );
