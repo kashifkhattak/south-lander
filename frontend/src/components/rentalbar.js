@@ -5,7 +5,7 @@ const Rentalbar = ({data}) => {
   return (
     <>
       <div className="rentalbar-main">
-        {data.map(d => <Rental key={d._id} data={d}/>)}
+        {data?.map(d => <Rental key={d._id} data={d}/>)}
       </div>
     </>
   );

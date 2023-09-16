@@ -5,9 +5,15 @@ const getPackageVariant = () => {
 		return response.data
 	})
 }
+const getPackageVariantDetail = () => {
+	return axios.get('/variantDetail').then(response => {
+		return response.data
+	})
+}
 
 const variantService = {
-	getPackageVariant
+	getPackageVariant,
+	getPackageVariantDetail
 }
 
 export default variantService

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import iplace from "../assets/images/iplace-3.jpg";
 
 const Events = ({data}) => {
   return (
@@ -22,7 +21,7 @@ const Events = ({data}) => {
               <th >Price</th>
               <th >Save a Spot!</th>
             </tr>
-            {data.map((d, index) => <tr>
+            {data?.map((d, index) => <tr>
               <td>{index + 1}</td>
               <td style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                 <img src={d.imagePath} alt="" />

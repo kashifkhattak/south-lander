@@ -5,7 +5,7 @@ const AccomodationGallery = ({ accomodation }) => {
   return (
     <>
       <div className="accomodation-gallery-main">
-        {accomodation.map((a, index) => (
+        {accomodation?.map((a, index) => (
           <div key={a._id} className={index === 0 ? "gallery-main" : "sub-one"}>
             <Accomodation
               id={a._id}

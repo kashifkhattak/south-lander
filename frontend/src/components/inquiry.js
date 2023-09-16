@@ -1,6 +1,27 @@
-import React from "react";
+import inquiryService from "../services/inquiry-service";
+import { React, useEffect, useState } from "react";
+import {
+  useForm,
+  Controller
+} from 'react-hook-form'
 
 const Inquiry = () => {
+
+  const {
+    register,
+    handleSubmit
+  } = useForm({ mode: 'all' })
+
+
+  const onFormSubmit = (data) => {
+    const payload = {
+      ...data,
+      userId: '64fc81643f85792c6765217f'
+    }
+    inquiryService.createInquiry(payload).then(response =>
+      console.log("submit sucessfully", response))
+  }
+
   return (
     <>
       <div className="inquiry-main">
@@ -8,21 +29,22 @@ const Inquiry = () => {
           <h4>Submit Your Inquiry</h4>
           <p>Let us know</p>
           <span>We'll get back to you ASAP</span>
-          <form>
+          <form onSubmit={handleSubmit(onFormSubmit)} >
             <div className="inquiry-row">
-              <input type="text" id="firstname" name="firstname" placeholder="First Name" required />
-              <input type="text" id="lastname" name="lastname" placeholder="Last Name" required />
+              <input type="text" id="firstname" placeholder="First Name" required             
+                {...register("firstName")} />
+              <input type="text" id="lastname" placeholder="Last Name" required {...register("lastName")}/>
             </div>
             <div className="inquiry-row">
-              <input type="text" id="phonenum" name="phonenum" placeholder="Phone Number" required />
-              <input type="text" id="email" name="email" placeholder="Email" required />
+              <input type="text" {...register("phoneNumber")} id="phoneNumber" placeholder="Phone Number" required />
+              <input type="text"{...register("email")}  id="email" placeholder="Email" required />
             </div>
             <div className="inquiry-row">
-              <select id="request" name="request" required>
+              <select {...register("helpType")} id="helpType"  required>
                 <option value="" disabled selected>
                   How may we help you?
                 </option>
-                <option value="Packages">All-Inclusive Packages</option>
+                <option value="All-Inclusive Packages">All-Inclusive Packages</option>
                 <option value="Accommodation">Accommodation</option>
                 <option value="Timesharing">Timesharing</option>
                 <option value="Rentals">Rentals</option>
@@ -35,10 +57,10 @@ const Inquiry = () => {
             <div className="inquiry-row">
               <textarea
                 id="message"
-                name="message"
                 rows="4"
                 required
-              ></textarea>
+                {...register("message")}
+              />
             </div>
             <div className="inquiry-row">
               <button type="submit">Send</button>

@@ -19,7 +19,6 @@ import ticketService from "../services/ticket-service";
 const PackagesDetails = () => {
   const {id} = useParams()
   const [eventTicketDetails, setEventTicketDetails] = useState()
-  console.log("eventTicketDetails", eventTicketDetails);
   useEffect(() => {
     ticketService.getEventTicketDetail().then(response => {
       const filteredDetails = response?.find(r => r.eventTicketId === id)
@@ -46,15 +45,15 @@ const PackagesDetails = () => {
                 p={eventTicketDetails?.description}
 
               />
-              <CarouselComponent />
+             {eventTicketDetails && <CarouselComponent images={eventTicketDetails?.photoGallery}/>}
               <Map header={"Location"} />
               <div className="umbrella-header">
-                <img src={umbrella}></img>
+                <img src={umbrella} alt=""/>
                 <h4>About The Package</h4>
               </div>
               <AboutPackage data={eventTicketDetails}/>
               <div className="umbrella-header">
-                <img src={umbrella}></img>
+                <img src={umbrella} alt="" />
                 <h4>Detailed Day Wise Itinerary</h4>
               </div>
               {eventTicketDetails?.Itinerary?.map(i => <Itinerary data={i}/>)}
