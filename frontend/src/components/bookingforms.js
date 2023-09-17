@@ -1,62 +1,52 @@
 import { React, useEffect, useState } from "react";
-import {
-  useForm,
-  Controller
-} from 'react-hook-form'
+import { useForm, Controller } from "react-hook-form";
 import bookingService from "../services/booking-service";
+import toast from "react-hot-toast";
 
 const BookingForms = ({ setTab, tabs }) => {
   const [activeIndex, setActiveIndex] = useState(1);
 
-  const {
-    register,
-    control,
-    handleSubmit
-  } = useForm({ mode: 'all' })
+  const { register, control, handleSubmit } = useForm({ mode: "all" });
 
   const handleClick = (index) => {
     setActiveIndex(index);
   };
-  let type = 'Packages';
+  let type = "Packages";
 
   switch (tabs) {
     case 1:
-      type = 'Packages';
+      type = "Packages";
       break;
     case 2:
-      type = 'Accommodation';
+      type = "Accommodation";
       break;
     case 3:
-      type = 'Event Planning';
+      type = "Event Planning";
       break;
     case 4:
-      type = 'Rentals';
+      type = "Rentals";
       break;
     case 5:
-      type = 'Tours';
+      type = "Tours";
       break;
     default:
-      type = 'Packages';
+      type = "Packages";
   }
-
-
 
   useEffect(() => {
     setTab(activeIndex);
   }, [activeIndex]);
 
-
   const onFormSubmit = (data) => {
     const payload = {
       ...data,
       type: type,
-      userId: '64fc81643f85792c6765217f'
-    }
-    bookingService.createBooking(payload).then(response =>
-      console.log("submit sucessfully", response))
-  }
-
-
+      userId: "64fc81643f85792c6765217f",
+    };
+    bookingService
+      .createBooking(payload)
+      .then((response) => toast.success("Booking created sucessfully"));
+  };
 
   return (
     <div className="bookingforms-main">
@@ -148,13 +138,15 @@ const BookingForms = ({ setTab, tabs }) => {
               />
             </div>
             <div className="bf-row">
-              <select id="idType" required  {...register("idType")}>
+              <select id="idType" required {...register("idType")}>
                 <option value="" disabled selected>
                   Type of ID
                 </option>
                 <option value="Passport">Passport</option>
                 <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">Other Government Issued ID</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
               </select>
               <input
                 type="text"
@@ -163,39 +155,54 @@ const BookingForms = ({ setTab, tabs }) => {
                 required
                 {...register("idNumber")}
               />
-           
             </div>
             <div className="bf-row">
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  placeholder="Enter your Email"
-                  required
-                  {...register("email")}
-                />
-                   <input
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Enter your Email"
+                required
+                {...register("email")}
+              />
+              <input
                 type="text"
                 id="phone"
                 placeholder="Enter your phone"
                 required
                 {...register("phone")}
               />
-              </div>
+            </div>
             <div className="bf-row-single">
               <select id="package" required {...register("package")}>
                 <option value="" disabled selected>
                   Select your package
                 </option>
-                <option value="Galapagos: Island Hopping">Galapagos: Island Hopping</option>
-                <option value="Galapagos: Isabela Island">Galapagos: Isabela Island</option>
-                <option value="Coast: Beach Hopping">Coast: Beach Hopping</option>
-                <option value="Andes: Quito & Beyond">Andes: Quito & Beyond</option>
-                <option value="Andes: Cuenca & Beyond">Andes: Cuenca & Beyond</option>
+                <option value="Galapagos: Island Hopping">
+                  Galapagos: Island Hopping
+                </option>
+                <option value="Galapagos: Isabela Island">
+                  Galapagos: Isabela Island
+                </option>
+                <option value="Coast: Beach Hopping">
+                  Coast: Beach Hopping
+                </option>
+                <option value="Andes: Quito & Beyond">
+                  Andes: Quito & Beyond
+                </option>
+                <option value="Andes: Cuenca & Beyond">
+                  Andes: Cuenca & Beyond
+                </option>
                 <option value="Amazonia: Cuyabeno">Amazonia: Cuyabeno</option>
-                <option value="Summits: High Altitude Ecuador">Summits: High Altitude Ecuador</option>
-                <option value="3 Worlds: Mainland Ecuador">3 Worlds: Mainland Ecuador</option>
-                <option value="4 Worlds: Mainland Ecuador + Galapagos">4 Worlds: Mainland Ecuador + Galapagos</option>
+                <option value="Summits: High Altitude Ecuador">
+                  Summits: High Altitude Ecuador
+                </option>
+                <option value="3 Worlds: Mainland Ecuador">
+                  3 Worlds: Mainland Ecuador
+                </option>
+                <option value="4 Worlds: Mainland Ecuador + Galapagos">
+                  4 Worlds: Mainland Ecuador + Galapagos
+                </option>
               </select>
             </div>
             <div className="bf-row">
@@ -210,7 +217,11 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value="5">5</option>
                 <option value="6+">6+</option>
               </select>
-              <select id="childrenCount" required {...register("childrenCount")}>
+              <select
+                id="childrenCount"
+                required
+                {...register("childrenCount")}
+              >
                 <option value="" disabled selected>
                   No. of Children
                 </option>
@@ -286,7 +297,9 @@ const BookingForms = ({ setTab, tabs }) => {
                 </option>
                 <option value="Passport">Passport</option>
                 <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">Other Government Issued ID</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
               </select>
               <input
                 type="text"
@@ -314,11 +327,17 @@ const BookingForms = ({ setTab, tabs }) => {
               />
             </div>
             <div className="bf-row-single">
-              <select id="facilitiesList" required {...register("facilitiesList")}>
+              <select
+                id="facilitiesList"
+                required
+                {...register("facilitiesList")}
+              >
                 <option value="" disabled selected>
                   Facilities List
                 </option>
-                <option value="All-Inclusive Packages">All-Inclusive Packages</option>
+                <option value="All-Inclusive Packages">
+                  All-Inclusive Packages
+                </option>
                 <option value="Accommodation">Accommodation</option>
                 <option value="Timesharing">Timesharing</option>
                 <option value="Rentals">Rentals</option>
@@ -329,7 +348,7 @@ const BookingForms = ({ setTab, tabs }) => {
               </select>
             </div>
             <div className="bf-row">
-              <select id="noOfRooms" required  {...register("noOfRooms")}>
+              <select id="noOfRooms" required {...register("noOfRooms")}>
                 <option value="" disabled selected>
                   No. of Rooms
                 </option>
@@ -340,7 +359,11 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value="5">5</option>
                 <option value="6+">6+</option>
               </select>
-              <select id="occupantsPerRoom" required {...register("occupantsPerRoom")}>
+              <select
+                id="occupantsPerRoom"
+                required
+                {...register("occupantsPerRoom")}
+              >
                 <option value="" disabled selected>
                   Occupants Per Room
                 </option>
@@ -364,7 +387,10 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value="5">5</option>
                 <option value="6+">6+</option>
               </select>
-              <select id="childrenCount" required {...register("childrenCount")}
+              <select
+                id="childrenCount"
+                required
+                {...register("childrenCount")}
               >
                 <option value="" disabled selected>
                   No. of Children
@@ -432,13 +458,15 @@ const BookingForms = ({ setTab, tabs }) => {
               />
             </div>
             <div className="bf-row">
-              <select id="idType" required  {...register("idType")}>
+              <select id="idType" required {...register("idType")}>
                 <option value="" disabled selected>
                   Type of ID
                 </option>
                 <option value="Passport">Passport</option>
                 <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">Other Government Issued ID</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
               </select>
               <input
                 type="number"
@@ -470,7 +498,9 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value="" disabled selected>
                   Event Type
                 </option>
-                <option value="Weddings and Ceremonies">Weddings and Ceremonies</option>
+                <option value="Weddings and Ceremonies">
+                  Weddings and Ceremonies
+                </option>
                 <option value="Fairs, Expos and Conventions">
                   Fairs, Expos and Conventions
                 </option>
@@ -479,16 +509,34 @@ const BookingForms = ({ setTab, tabs }) => {
                 </option>
               </select>
             </div>
-            {activeIndex === 3 && <div style={{ display: "flex", paddingBottom: "10px", flexDirection: "column", alignItems: "flex-start" }}>
-              <label style={{ fontSize: "14.5px", fontFamily: "poppins", color: "#333" }} htmlFor="event-description">Briefly describe the event you want us to customize:</label>
-              <textarea
-                style={{ width: "100%", border: "1px solid #efefef" }}
-                id="event-description"
-                name="event-description"
-                rows={4}
-                {...register("eventDescription")}
-              />
-            </div>}
+            {activeIndex === 3 && (
+              <div
+                style={{
+                  display: "flex",
+                  paddingBottom: "10px",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                }}
+              >
+                <label
+                  style={{
+                    fontSize: "14.5px",
+                    fontFamily: "poppins",
+                    color: "#333",
+                  }}
+                  htmlFor="event-description"
+                >
+                  Briefly describe the event you want us to customize:
+                </label>
+                <textarea
+                  style={{ width: "100%", border: "1px solid #efefef" }}
+                  id="event-description"
+                  name="event-description"
+                  rows={4}
+                  {...register("eventDescription")}
+                />
+              </div>
+            )}
             <div className="bf-row">
               <select id="adultsCount" required {...register("adultsCount")}>
                 <option value="" disabled selected>
@@ -496,15 +544,23 @@ const BookingForms = ({ setTab, tabs }) => {
                 </option>
                 <option value="Passport">Passport</option>
                 <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">Other Government Issued ID</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
               </select>
-              <select id="childrenCount" required {...register("childrenCount")}>
+              <select
+                id="childrenCount"
+                required
+                {...register("childrenCount")}
+              >
                 <option value="" disabled selected>
                   No. of Children
                 </option>
                 <option value="Passport">Passport</option>
                 <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">Other Government Issued ID</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
               </select>
             </div>
             <div className="in-out-header">
@@ -570,7 +626,9 @@ const BookingForms = ({ setTab, tabs }) => {
                 </option>
                 <option value="Passport">Passport</option>
                 <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">Other Government Issued ID</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
               </select>
               <input
                 type="number"
@@ -602,7 +660,9 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value="" disabled selected>
                   Choose your rental
                 </option>
-                <option value="Galapagos Park Apartment">Galapagos Park Apartment</option>
+                <option value="Galapagos Park Apartment">
+                  Galapagos Park Apartment
+                </option>
                 <option value="Galapagos Organic Farmhouse">
                   Galapagos Organic Farmhouse
                 </option>
@@ -612,7 +672,7 @@ const BookingForms = ({ setTab, tabs }) => {
               </select>
             </div>
             <div className="bf-row">
-              <select id="adultsCount" required  {...register("adultsCount")}>
+              <select id="adultsCount" required {...register("adultsCount")}>
                 <option value="" disabled selected>
                   No. of Adults
                 </option>
@@ -623,7 +683,11 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value="5">5</option>
                 <option value="6+">6+</option>
               </select>
-              <select id="childrenCount" required {...register("childrenCount")}>
+              <select
+                id="childrenCount"
+                required
+                {...register("childrenCount")}
+              >
                 <option value="" disabled selected>
                   No. of Children
                 </option>
@@ -645,7 +709,6 @@ const BookingForms = ({ setTab, tabs }) => {
                 id="checkIn"
                 required
                 {...register("checkIn")}
-
               />
               <input
                 type="date"
@@ -692,18 +755,17 @@ const BookingForms = ({ setTab, tabs }) => {
               />
             </div>
             <div className="bf-row">
-              <select id="idType" required  {...register("idType")}>
+              <select id="idType" required {...register("idType")}>
                 <option value="" disabled selected>
                   Type of ID
                 </option>
                 <option value="Passport">Passport</option>
                 <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">Other Government Issued ID</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
               </select>
-              <input
-                type="number"
-                placeholder="Enter your ID number"
-              />
+              <input type="number" placeholder="Enter your ID number" />
             </div>
             <div className="bf-row">
               <input
@@ -722,22 +784,46 @@ const BookingForms = ({ setTab, tabs }) => {
               />
             </div>
             <div className="bf-row-single">
-              <select id="interest" required   {...register("interest")}>
+              <select id="interest" required {...register("interest")}>
                 <option value="" disabled selected>
                   Select your tour of interest
                 </option>
-                <option value="Quito City and Old Town">Quito City and Old Town</option>
-                <option value="Cotopaxi Volcano, Limpiopungo Lagoon and Forest Hike">Cotopaxi Volcano, Limpiopungo Lagoon and Forest Hike</option>
-                <option value="San Pablo Lake, Bird Sanctuary and Otavalo Market">San Pablo Lake, Bird Sanctuary and Otavalo Market</option>
-                <option value="Quilotoa High Altitude Volcano Lagoon Hike">Quilotoa High Altitude Volcano Lagoon Hike</option>
-                <option value="Palmira Desert and Riobamba City">Palmira Desert and Riobamba City</option>
-                <option value="Pailón del Diablo and Waterfall Experience">Pailón del Diablo and Waterfall Experience</option>
-                <option value="Cuenca City and Old Town">Cuenca City and Old Town</option>
-                <option value="Cajas National Park Paramo Hike">Cajas National Park Paramo Hike</option>
-                <option value="Cuyabeno River Canoeing, Hike and Laguna Grande Swim">Cuyabeno River Canoeing, Hike and Laguna Grande Swim</option>
-                <option value="Cuyabeno Deep Jungle Hike and Wildlife Experience">Cuyabeno Deep Jungle Hike and Wildlife Experience</option>
-                <option value="Mompiche Beach and Surf">Mompiche Beach and Surf</option>
-                <option value="Same Fishing and Whale Watching">Same Fishing and Whale Watching</option>
+                <option value="Quito City and Old Town">
+                  Quito City and Old Town
+                </option>
+                <option value="Cotopaxi Volcano, Limpiopungo Lagoon and Forest Hike">
+                  Cotopaxi Volcano, Limpiopungo Lagoon and Forest Hike
+                </option>
+                <option value="San Pablo Lake, Bird Sanctuary and Otavalo Market">
+                  San Pablo Lake, Bird Sanctuary and Otavalo Market
+                </option>
+                <option value="Quilotoa High Altitude Volcano Lagoon Hike">
+                  Quilotoa High Altitude Volcano Lagoon Hike
+                </option>
+                <option value="Palmira Desert and Riobamba City">
+                  Palmira Desert and Riobamba City
+                </option>
+                <option value="Pailón del Diablo and Waterfall Experience">
+                  Pailón del Diablo and Waterfall Experience
+                </option>
+                <option value="Cuenca City and Old Town">
+                  Cuenca City and Old Town
+                </option>
+                <option value="Cajas National Park Paramo Hike">
+                  Cajas National Park Paramo Hike
+                </option>
+                <option value="Cuyabeno River Canoeing, Hike and Laguna Grande Swim">
+                  Cuyabeno River Canoeing, Hike and Laguna Grande Swim
+                </option>
+                <option value="Cuyabeno Deep Jungle Hike and Wildlife Experience">
+                  Cuyabeno Deep Jungle Hike and Wildlife Experience
+                </option>
+                <option value="Mompiche Beach and Surf">
+                  Mompiche Beach and Surf
+                </option>
+                <option value="Same Fishing and Whale Watching">
+                  Same Fishing and Whale Watching
+                </option>
               </select>
             </div>
 
@@ -756,7 +842,7 @@ const BookingForms = ({ setTab, tabs }) => {
             </div>
 
             <div className="bf-row">
-              <select id="carType" required  {...register("carType")}>
+              <select id="carType" required {...register("carType")}>
                 <option value="" disabled selected>
                   Select car type
                 </option>
@@ -769,7 +855,11 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value="Small Bus">Small Bus</option>
                 <option value="Luxury Bus">Luxury Bus</option>
               </select>
-              <select id="noOfPassenger" required   {...register("noOfPassenger")}>
+              <select
+                id="noOfPassenger"
+                required
+                {...register("noOfPassenger")}
+              >
                 <option value="" disabled selected>
                   Total Passenger
                 </option>
@@ -786,7 +876,7 @@ const BookingForms = ({ setTab, tabs }) => {
               </select>
             </div>
             <div className="bf-row">
-              <select id="adultsCounts" required  {...register("adultsCounts")}>
+              <select id="adultsCounts" required {...register("adultsCounts")}>
                 <option value="" disabled selected>
                   No. of Adults
                 </option>
@@ -801,7 +891,11 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value={50}>50</option>
                 <option value={100}>100</option>
               </select>
-              <select id="childrenCount" required  {...register("childrenCount")}>
+              <select
+                id="childrenCount"
+                required
+                {...register("childrenCount")}
+              >
                 <option value="" disabled selected>
                   No. of Children
                 </option>
@@ -896,13 +990,15 @@ const BookingForms = ({ setTab, tabs }) => {
               />
             </div>
             <div className="bf-row">
-              <select id="idType" required  {...register("idType")}>
+              <select id="idType" required {...register("idType")}>
                 <option value="" disabled selected>
                   Type of ID
                 </option>
                 <option value="Passport">Passport</option>
                 <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">Other Government Issued ID</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
               </select>
               <input
                 type="number"
@@ -930,15 +1026,19 @@ const BookingForms = ({ setTab, tabs }) => {
               />
             </div>
             <div className="bf-row-single">
-              <select id="eventType" required  {...register("eventType")}>
+              <select id="eventType" required {...register("eventType")}>
                 <option value="" disabled selected>
                   Choose your event
                 </option>
                 <option value="Mago de Oz">Mago de Oz</option>
                 <option value="Miley Cyrus">Miley Cyrus</option>
                 <option value="Boda Aguilar-Vielma">Boda Aguilar-Vielma</option>
-                <option value="Christ King Convention">Christ King Convention</option>
-                <option value="Charles Darwin Fund Project">Charles Darwin Fund Project</option>
+                <option value="Christ King Convention">
+                  Christ King Convention
+                </option>
+                <option value="Charles Darwin Fund Project">
+                  Charles Darwin Fund Project
+                </option>
               </select>
             </div>
             <div className="bf-row">
@@ -1000,13 +1100,15 @@ const BookingForms = ({ setTab, tabs }) => {
               />
             </div>
             <div className="bf-row">
-              <select id="idType" required  {...register("idType")}>
+              <select id="idType" required {...register("idType")}>
                 <option value="" disabled selected>
                   Type of ID
                 </option>
                 <option value="Passport">Passport</option>
                 <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">Other Government Issued ID</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
               </select>
               <input
                 type="number"
@@ -1051,7 +1153,7 @@ const BookingForms = ({ setTab, tabs }) => {
 
             <div className="transport">
               <Controller
-                name={'transport'}
+                name={"transport"}
                 control={control}
                 render={({ field: { onChange, value } }) => (
                   <>
@@ -1060,15 +1162,17 @@ const BookingForms = ({ setTab, tabs }) => {
                       id="transport1"
                       onChange={(e) => onChange(e.target.value)}
                       value="transport1"
-                      checked={value === 'transport1'}
+                      checked={value === "transport1"}
                     />
-                    <label for="transport1">Flight (If Available b/w Locations)</label>
+                    <label for="transport1">
+                      Flight (If Available b/w Locations)
+                    </label>
                     <input
                       type="checkbox"
                       id="transport2"
                       onChange={(e) => onChange(e.target.value)}
                       value="transport2"
-                      checked={value === 'transport2'}
+                      checked={value === "transport2"}
                     />
                     <label for="transport2">Exclusive Land Transport</label>
                     <input
@@ -1076,16 +1180,22 @@ const BookingForms = ({ setTab, tabs }) => {
                       id="transport3"
                       onChange={(e) => onChange(e.target.value)}
                       value="transport3"
-                      checked={value === 'transport3'}
+                      checked={value === "transport3"}
                     />
                     <label for="transport3">Public Land Transport</label>
                   </>
                 )}
               />
-
             </div>
 
-            <div style={{ display: "flex", paddingBottom: "10px", flexDirection: "column", alignItems: "flex-start" }}>
+            <div
+              style={{
+                display: "flex",
+                paddingBottom: "10px",
+                flexDirection: "column",
+                alignItems: "flex-start",
+              }}
+            >
               <textarea
                 style={{ width: "100%", border: "1px solid #efefef" }}
                 id="eventDescription"
@@ -1101,15 +1211,23 @@ const BookingForms = ({ setTab, tabs }) => {
                 </option>
                 <option value="Passport">Passport</option>
                 <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">Other Government Issued ID</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
               </select>
-              <select id="childrenCount" required  {...register("childrenCount")}>
+              <select
+                id="childrenCount"
+                required
+                {...register("childrenCount")}
+              >
                 <option value="" disabled selected>
                   No. of Children
                 </option>
                 <option value="Passport">Passport</option>
                 <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">Other Government Issued ID</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
               </select>
             </div>
             <div className="bf-row">

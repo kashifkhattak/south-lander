@@ -31,7 +31,7 @@ const SinglePackage = ({data}) => {
         </div>
         <div className="pp-buttons">
             <button className="pp-book">Book Now</button>
-            <Link to="/package-details" className="pp-view">View Package</Link>
+            <Link to={`/package-details/${data._id}`} className="pp-view">View Package</Link>
         </div>
       </div>
     </div>

@@ -14,17 +14,18 @@ import Description from "../components/description";
 import Map from "../components/map";
 import AdBar from "../components/adbar";
 import InfoBannerSmall from "../components/infobannersmall";
-import ticketService from "../services/ticket-service";
+import variantService from "../services/variant-service";
 
 const PackagesDetails = () => {
   const {id} = useParams()
-  const [eventTicketDetails, setEventTicketDetails] = useState()
+  const [packageDetails, setPackageDetails] = useState()
   useEffect(() => {
-    ticketService.getEventTicketDetail().then(response => {
-      const filteredDetails = response?.find(r => r.eventTicketId === id)
-      setEventTicketDetails(filteredDetails)
+    variantService.getPackageVariantDetail().then(response => {
+      const filteredDetails = response?.find(r => r.variantId === id)
+      setPackageDetails(filteredDetails)
     })
   }, [])
+
   return (
     <>
       <Navbar />
@@ -34,30 +35,30 @@ const PackagesDetails = () => {
         tagline={"Let's hop around the Galapagos Islands."}
         navigation={"Galapagos Island Hopping"}
       />
-      <InfoBanner b1={"Quito"} b2={eventTicketDetails?.price} b3={eventTicketDetails?.duration} />
+      <InfoBanner data={packageDetails} />
       <div className="pp-main">
         <div className="pp-content">
           <div className="pd-main">
             <div className="pd-left">
-              <DetailsPageHeader header={eventTicketDetails?.title} />
+              <DetailsPageHeader header={packageDetails?.title} />
               <Description
                 header={"Description"}
-                p={eventTicketDetails?.description}
+                p1={packageDetails?.description}
 
               />
-             {eventTicketDetails && <CarouselComponent images={eventTicketDetails?.photoGallery}/>}
+             {packageDetails && <CarouselComponent images={packageDetails?.photoGallery}/>}
               <Map header={"Location"} />
               <div className="umbrella-header">
                 <img src={umbrella} alt=""/>
                 <h4>About The Package</h4>
               </div>
-              <AboutPackage data={eventTicketDetails}/>
+              <AboutPackage data={packageDetails}/>
               <div className="umbrella-header">
                 <img src={umbrella} alt="" />
                 <h4>Detailed Day Wise Itinerary</h4>
               </div>
-              {eventTicketDetails?.Itinerary?.map(i => <Itinerary data={i}/>)}
-              <InfoBannerSmall data={eventTicketDetails}/>
+              {packageDetails?.itinerary?.map(i => <Itinerary data={i}/>)}
+              <InfoBannerSmall data={packageDetails}/>
             </div>
             <div className="pd-right">
               <AdBar />

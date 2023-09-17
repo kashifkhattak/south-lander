@@ -4,6 +4,7 @@ import {
   useForm,
   Controller
 } from 'react-hook-form'
+import toast from "react-hot-toast";
 
 const Inquiry = () => {
 
@@ -19,7 +20,7 @@ const Inquiry = () => {
       userId: '64fc81643f85792c6765217f'
     }
     inquiryService.createInquiry(payload).then(response =>
-      console.log("submit sucessfully", response))
+      toast.success("Inquiry submitted sucessfully", response))
   }
 
   return (

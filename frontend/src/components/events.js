@@ -25,7 +25,7 @@ const Events = ({data}) => {
               <td>{index + 1}</td>
               <td style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                 <img src={d.imagePath} alt="" />
-                <Link to={`/package-details/${d._id}`}>
+                <Link to={'/'}>
                   {d.title} | {d.date}
                 </Link>
               </td>
