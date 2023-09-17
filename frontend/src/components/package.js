@@ -49,16 +49,16 @@ const Package = ({title, tagLine, image}) => {
           </div>
           <div className="package-icons">
             <Link to="/packages">
-              <img src={clock}></img>
+              <img src={clock} alt="" />
             </Link>
             <Link to="/packages">
-              <img src={info}></img>
+              <img src={info} alt="" />
             </Link>
             <Link to="/packages">
-              <img src={price}></img>
+              <img src={price} alt="" />
             </Link>
             <Link to="/packages">
-              <img src={map}></img>
+              <img src={map} alt="" />
             </Link>
           </div>
         </div>
