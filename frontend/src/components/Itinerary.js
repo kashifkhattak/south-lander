@@ -1,8 +1,5 @@
 import React from "react";
 import { FaClock } from "react-icons/fa";
-
-import home from "../assets/images/home.jpg";
-
 const Itinerary = ({data}) => {
   return (
     <>

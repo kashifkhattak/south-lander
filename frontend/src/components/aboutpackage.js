@@ -4,7 +4,7 @@ import UmbrellaHeader from "./umbrellaheader";
 const AboutPackage = ({ header, data }) => {
   return (
     <>
-      <UmbrellaHeader header={header} />
+      {header && <UmbrellaHeader header={header} />}
       <div className="tour_head1">
         <table>
           <tbody>
@@ -17,10 +17,10 @@ const AboutPackage = ({ header, data }) => {
 
             {data?.about?.map(a => (
               <tr>
-                <td>{a.placesCovered}</td>
-                <td>{a.description}</td>
-                <td>{a.activities}</td>
-                <td>Baltra</td>
+                <td>{a?.placesCovered}</td>
+                <td>{a?.description}</td>
+                <td>{a?.activities}</td>
+                <td>{a?.island}</td>
               </tr>
 
             ))}

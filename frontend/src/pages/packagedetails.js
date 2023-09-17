@@ -26,7 +26,6 @@ const PackagesDetails = () => {
     })
   }, [])
 
-  console.log("ASA", packageDetails);
   return (
     <>
       <Navbar />
@@ -36,7 +35,7 @@ const PackagesDetails = () => {
         tagline={"Let's hop around the Galapagos Islands."}
         navigation={"Galapagos Island Hopping"}
       />
-      <InfoBanner b1={"Quito"} b2={packageDetails?.airPackagePrice} b3={packageDetails?.duration} />
+      <InfoBanner data={packageDetails} />
       <div className="pp-main">
         <div className="pp-content">
           <div className="pd-main">
@@ -44,7 +43,7 @@ const PackagesDetails = () => {
               <DetailsPageHeader header={packageDetails?.title} />
               <Description
                 header={"Description"}
-                p={packageDetails?.description}
+                p1={packageDetails?.description}
 
               />
              {packageDetails && <CarouselComponent images={packageDetails?.photoGallery}/>}
@@ -58,7 +57,7 @@ const PackagesDetails = () => {
                 <img src={umbrella} alt="" />
                 <h4>Detailed Day Wise Itinerary</h4>
               </div>
-              {packageDetails?.Itinerary?.map(i => <Itinerary data={i}/>)}
+              {packageDetails?.itinerary?.map(i => <Itinerary data={i}/>)}
               <InfoBannerSmall data={packageDetails}/>
             </div>
             <div className="pd-right">
