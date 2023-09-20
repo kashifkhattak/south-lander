@@ -2479,7 +2479,23 @@ li {
   font-size: 14px;
   border: 1px solid #efefef;
 }
-
+.select-label{
+  margin-top: 2%;
+}
+.select-dropdown{
+  width: 50%;
+  background: #fff;
+  padding-left: 10px; 
+  padding-right: 10px;
+  border: 0px;
+  height: 45px;
+  border-radius: 2px;
+  margin-top: 2%;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #efefef;
+  border-top: 2px solid black;
+}
 .inquiry-row option {
   clear: both;
   color: rgba(0, 0, 0, 0.87);

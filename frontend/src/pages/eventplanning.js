@@ -18,6 +18,7 @@ import AdBar from "../components/adbar";
 import accomodationService from "../services/accomodation-service";
 import { useParams } from "react-router-dom";
 import eventService from "../services/event-service";
+import Pax from "../components/pax";
 
 const EventPlanning = () => {
   const { id } = useParams();
@@ -64,8 +65,8 @@ const EventPlanning = () => {
                 <UmbrellaHeader
                   header={"PAX / Per Person Rates"}
                 />
-                {accomodation.map((a) => (
-                  <Apartments data={a} />
+                {eventDetails.pricePerPerson.map((a) => (
+                  <Pax data={a} />
                 ))}
                 <Map header={"Venue Locations"} location={eventDetails.location}/>
                 <InfoBannerSmall data={eventDetails}/>
