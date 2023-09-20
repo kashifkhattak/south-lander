@@ -23,6 +23,7 @@ const RentalDetails = () => {
       setRentalDetails(filteredDetails)
     })
   }, [])
+
   return (
     <>
       <Navbar />
@@ -41,15 +42,16 @@ const RentalDetails = () => {
             <div className="pd-left">
               <DetailsPageHeader
                 header={rentalDetails?.title}
+                rating={rentalDetails?.rating}
               />
               <Description
                 header={"About Casa Bonita"}
-                p1={rentalDetails?.Description}
+                p1={rentalDetails?.description}
 
               />
               {rentalDetails && <CarouselComponent images={rentalDetails?.photoGallery}/>}
               <Amenitites header={"Rental Amenities"} data={rentalDetails?.amenities} />
-              <Map header={rentalDetails?.location} />
+              <Map header={"Location"} location={rentalDetails?.location} />
               <InfoBannerSmall data={rentalDetails}/>
             </div>
             <div className="pd-right">

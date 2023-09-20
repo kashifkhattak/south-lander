@@ -12,10 +12,8 @@ const PackagesPage = () => {
   const [packageVariant, setPackageVariant] = useState([])
   useEffect(() => { 
     variantService.getPackageVariant().then(response => {
-    console.log("package variant", packageVariant);
       setPackageVariant(response)
     })
-  
   }, [])
   return (
     <>

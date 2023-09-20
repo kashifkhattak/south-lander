@@ -39,7 +39,7 @@ const HotelDetails = () => {
           <div className="pp-content">
             <div className="pd-main">
               <div className="pd-left">
-                <DetailsPageHeader header={details.title} />
+                <DetailsPageHeader header={details.title} rating={details.rating} />
                 <Description header={"Description"} p1={details.description} />
                 <CarouselComponent images={details.photoGallery} />
                 <div className="umbrella-header">
@@ -53,7 +53,7 @@ const HotelDetails = () => {
                   header={"Condominium Resort Amenities"}
                   data={details.amenities}
                 />
-                <Map header={"Location"} />
+                <Map header={"Location"} location={details.location} />
               </div>
               <div className="pd-right">
                 <AdBar />

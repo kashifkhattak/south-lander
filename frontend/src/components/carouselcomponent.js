@@ -3,6 +3,7 @@ import { Carousel } from "react-carousel-minimal";
 import UmbrellaHeader from "./umbrellaheader";
 
 const CarouselComponent = ({ images }) => {
+  const imageToDisplay = images.map(imageUrl => ({ image: imageUrl }));
   const data = [
     {
       image:
@@ -47,7 +48,7 @@ const CarouselComponent = ({ images }) => {
     <UmbrellaHeader header={"Photo Gallery"} />
       <div className="carousel-container-main">
         <Carousel
-          data={images}
+          data={imageToDisplay}
           time={9000}
           width="100%"
           height="345px"

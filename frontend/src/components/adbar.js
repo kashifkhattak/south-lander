@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import bookbg from "../assets/images/book-bg.png";
 import tick from "../assets/images/tick.png";
 import { BsFacebook } from "react-icons/bs";
@@ -8,28 +7,36 @@ import { AiFillTwitterCircle } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
 import { FaWhatsappSquare } from "react-icons/fa";
 import { BsWhatsapp } from "react-icons/bs";
+import variantService from "../services/variant-service";
 
 const AdBar = () => {
+  const [packageVariant, setPackageVariant] = useState([]);
+  useEffect(() => {
+    variantService.getPackageVariant().then((response) => {
+      setPackageVariant(response);
+    });
+  }, []);
+
   return (
     <>
-      <img src={bookbg} className="pd-book-img"></img>
+      <img src={bookbg} className="pd-book-img" alt="" />
       <div className="pd-highlights">
         <h3>PACKAGE HIGHLIGHTS</h3>
         <div className="pd-facilities">
           <div className="pd-tick">
-            <img src={tick} className="pd-tick-img"></img>
+            <img src={tick} className="pd-tick-img" alt="" />
             <h5>Location : Rio,Brazil</h5>
           </div>
           <div className="pd-tick">
-            <img src={tick} className="pd-tick-img"></img>
+            <img src={tick} className="pd-tick-img" alt="" />
             <h5>Arrival Date: Nov 12, 2017</h5>
           </div>
           <div className="pd-tick">
-            <img src={tick} className="pd-tick-img"></img>
+            <img src={tick} className="pd-tick-img" alt="" />
             <h5>Departure Date: Nov 21, 2017</h5>
           </div>
           <div className="pd-tick">
-            <img src={tick} className="pd-tick-img"></img>
+            <img src={tick} className="pd-tick-img" alt="" />
             <h5>Free Sightseeing & Hotel</h5>
           </div>
         </div>
@@ -57,33 +64,14 @@ const AdBar = () => {
       <div className="pd-highlights">
         <h3>Popular Packages</h3>
         <div className="popular-container">
-          <div className="popular-packs">
-            <img src={bookbg} className="popular-img"></img>
-            <h4>Dubai 7Days / 6Nights</h4>
-            <p>
-              Many desktop publishing packages and web page editors now use
-              Lorem Ipsum as their default model text
-            </p>
-            <a>View This Package</a>
-          </div>
-          <div className="popular-packs">
-            <img src={bookbg} className="popular-img"></img>
-            <h4>Dubai 7Days / 6Nights</h4>
-            <p>
-              Many desktop publishing packages and web page editors now use
-              Lorem Ipsum as their default model text
-            </p>
-            <a>View This Package</a>
-          </div>
-          <div className="popular-packs">
-            <img src={bookbg} className="popular-img"></img>
-            <h4>Dubai 7Days / 6Nights</h4>
-            <p>
-              Many desktop publishing packages and web page editors now use
-              Lorem Ipsum as their default model text
-            </p>
-            <a>View This Package</a>
-          </div>
+          {packageVariant.slice(0, 4).map((p) => (
+            <div className="popular-packs">
+              <img src={p.imagePath} className="popular-img" alt="" />
+              <h4>{p.title}</h4>
+              <p>{p.description}</p>
+              <a href={`/package-details/${p._id}`}>View This Package</a>
+            </div>
+          ))}
         </div>
       </div>
     </>

@@ -15,15 +15,23 @@ const AboutPackage = ({ header, data }) => {
               <th>Island</th>
             </tr>
 
-            {data?.about?.map(a => (
-              <tr>
-                <td>{a?.placesCovered}</td>
-                <td>{a?.description}</td>
-                <td>{a?.activities}</td>
-                <td>{a?.island}</td>
-              </tr>
-
-            ))}
+            {data?.about
+              ? data?.about?.map((a) => (
+                  <tr>
+                    <td>{a?.placesCovered}</td>
+                    <td>{a?.description}</td>
+                    <td>{a?.activities}</td>
+                    <td>{a?.island}</td>
+                  </tr>
+                ))
+              : data?.map((a) => (
+                  <tr>
+                    <td>{a?.location}</td>
+                    <td>{a?.description}</td>
+                    <td>{a?.experience}</td>
+                    <td>{a?.rooms}</td>
+                  </tr>
+                ))}
           </tbody>
         </table>
         <br />
@@ -33,16 +41,19 @@ const AboutPackage = ({ header, data }) => {
             <p>{data?.notes}</p>
           </>
         )}
-        <p>
+      {data?.inclusions && <p>
           <strong>Inclusions</strong>
-        </p>
-        {data?.inclusions?.map(i => <p>{i}</p>)}
-  
-        <p>
+        </p>}
+        {data?.inclusions?.map((i) => (
+          <p>{i}</p>
+        ))}
+
+       {data?.exclusions && <p>
           <strong>Exclusions</strong>
-        </p>
-        {data?.exclusions?.map(e => <p>{e}</p>)}
-       
+        </p>}
+        {data?.exclusions?.map((e) => (
+          <p>{e}</p>
+        ))}
       </div>
     </>
   );
