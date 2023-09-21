@@ -6,7 +6,10 @@ const AccomodationGallery = ({ accomodation }) => {
     <>
       <div className="accomodation-gallery-main">
         {accomodation?.map((a, index) => (
-          <div key={a._id} className={index === 0 ? "gallery-main" : "sub-one"}>
+          <div
+            key={a._id}
+            className={index === 0 ? "gallery-main" : `sub-${index}`}
+          >
             <Accomodation
               id={a._id}
               title={a.title}
@@ -15,34 +18,6 @@ const AccomodationGallery = ({ accomodation }) => {
             />
           </div>
         ))}
-
-        {/* <div className="gallery-main">
-          <Accomodation></Accomodation>
-        </div> */}
-        {/* <div className="sub-one">
-          <Accomodation></Accomodation>
-        </div>
-        <div className="sub-two">
-          <Accomodation></Accomodation>
-        </div>
-        <div className="sub-three">
-          <Accomodation></Accomodation>
-        </div>
-        <div className="sub-four">
-          <Accomodation></Accomodation>
-        </div>
-        <div className="sub-five">
-          <Accomodation></Accomodation>
-        </div>
-        <div className="sub-six">
-          <Accomodation></Accomodation>
-        </div>
-        <div className="sub-seven">
-          <Accomodation></Accomodation>
-        </div>
-        <div className="sub-eight">
-          <Accomodation></Accomodation>
-        </div> */}
       </div>
     </>
   );

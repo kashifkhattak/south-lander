@@ -12,7 +12,6 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
 
   const toggleMobileMenu = () => {
-    console.log("Clicked");
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
@@ -47,12 +46,10 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    // Add event listener to track scroll position
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    // Clean up the event listener when the component unmounts
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -67,31 +64,30 @@ const Navbar = () => {
   const scrollLinks = document.querySelectorAll(".scroll-link");
 
   scrollLinks.forEach((link) => {
-      link.addEventListener("click", function (e) {
-          e.preventDefault()
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
 
-          const targetId = link.getAttribute("href").substring(1);
+      const targetId = link.getAttribute("href").substring(1);
 
-          const targetElement = document.getElementById(targetId);
+      const targetElement = document.getElementById(targetId);
 
-          if (targetElement) {
-              const offset = 100;
-              const targetPosition = targetElement.offsetTop - offset;
+      if (targetElement) {
+        const offset = 100;
+        const targetPosition = targetElement.offsetTop - offset;
 
-              window.scrollTo({
-                  top: targetPosition,
-                  behavior: "smooth"
-              });
-          }
-      });
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
   });
-
 
   return (
     <>
-      <nav className={`navbar-main ${isSticky ? 'sticky' : ''}`}>
+      <nav className={`navbar-main ${isSticky ? "sticky" : ""}`}>
         <div className="navbar-logo">
-          <img src={logo} alt=""></img>
+          <img src={logo} alt="" />
         </div>
         <div className={"navbar-routes"}>
           <ul>
@@ -102,22 +98,34 @@ const Navbar = () => {
               onMouseEnter={handleNavItemHover}
               onMouseLeave={handleNavItemLeave}
             >
-              <a className="scroll-link" href="#packages">Packages</a>
+              <a className="scroll-link" href="#packages">
+                Packages
+              </a>
             </li>
             <li>
-              <a className="scroll-link" href="#accomodation">Accomodation</a>
+              <a className="scroll-link" href="#accomodation">
+                Accomodation
+              </a>
             </li>
             <li>
-              <a className="scroll-link" href="#event">Event Planning</a>
+              <a className="scroll-link" href="#event">
+                Event Planning
+              </a>
             </li>
             <li>
-              <a className="scroll-link" href="#rentals">Rentals</a>
+              <a className="scroll-link" href="#rentals">
+                Rentals
+              </a>
             </li>
             <li>
-              <a className="scroll-link" href="#tours">Tours</a>
+              <a className="scroll-link" href="#tours">
+                Tours
+              </a>
             </li>
             <li>
-              <a className="scroll-link" href="#tickets">Event Tickets</a>
+              <a className="scroll-link" href="#tickets">
+                Event Tickets
+              </a>
             </li>
             <li>
               <Link to="/booking">Book Now</Link>
@@ -125,13 +133,10 @@ const Navbar = () => {
             <li>
               <Link to="/contact">Contact us</Link>
             </li>
-           
           </ul>
-         
         </div>
-      
-      
-                 <div className="navbar-hamburger">
+
+        <div className="navbar-hamburger">
           <a href="#" onClick={toggleMobileMenu}>
             <IconContext.Provider value={{ size: "2em" }}>
               <GiHamburgerMenu></GiHamburgerMenu>

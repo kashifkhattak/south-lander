@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import submenuImage from "../assets/images/t9.png";
 import packageService from "../services/package-service";
-import accomodationService from "../services/accomodation-service"
+import accomodationService from "../services/accomodation-service";
 
 const Submenu = ({ onMouseEnter, onMouseLeave, visibility }) => {
   const [visible, setVisible] = useState(true);
@@ -40,7 +40,7 @@ const Submenu = ({ onMouseEnter, onMouseLeave, visibility }) => {
       <div className="submenu-section">
         <div className="submenu-links">
           <ul>
-            {packages?.map((p) => (
+            {packages.slice(0, 6)?.map((p) => (
               <li>
                 <span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 <a href={`/package-details/${p._id}`}>
@@ -55,18 +55,14 @@ const Submenu = ({ onMouseEnter, onMouseLeave, visibility }) => {
       <div className="submenu-section-no-border">
         <div className="submenu-links">
           <ul>
-            <li>
-              <span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <a href="#">SUMMITS - High-Altitude EC</a>
-            </li>
-            <li>
-              <span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <a href="#">3 WORLDS - Continental EC</a>
-            </li>
-            <li>
-              <span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <a href="#">4 WORLDS - Total EC</a>
-            </li>
+            {packages.slice(6, packages.length - 1)?.map((p) => (
+              <li>
+                <span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <a href={`/package-details/${p._id}`}>
+                  {p.title} - {p.tagLine}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

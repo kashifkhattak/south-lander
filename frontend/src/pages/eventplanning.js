@@ -18,6 +18,7 @@ import AdBar from "../components/adbar";
 import accomodationService from "../services/accomodation-service";
 import { useParams } from "react-router-dom";
 import eventService from "../services/event-service";
+import Pax from "../components/pax";
 
 const EventPlanning = () => {
   const { id } = useParams();
@@ -30,15 +31,14 @@ const EventPlanning = () => {
       .getAccomodations()
       .then((response) => setAccomodation(response));
     eventService.getEventPlanningDetail().then((response) => {
-      console.log("RES", response);
-      const filteredEvents = response.find((r) => r._id === id);
+      const filteredEvents = response.find((r) => r.eventPlanningId === id);
       setEventDetails(filteredEvents);
     });
   }, []);
 
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <Thumbnail
         header={"Southlander Destination Experience"}
         subheader={""}
@@ -46,33 +46,30 @@ const EventPlanning = () => {
           "Enjoy our professional event planning services and uniquely customized destination experiences."
         }
         navigation={"Weddings and Ceremonies"}
-      ></Thumbnail>
-      <InfoBanner
-        b1={"PAX / Per Person Rates"}
-        b2={"Customized Experience"}
-        b3={"24/7 Dedicated Assistance"}
+      />
+      <InfoBanner data={eventDetails}
       />
       {eventDetails && (
         <div className="pp-main">
           <div className="pp-content">
             <div className="pd-main">
               <div className="pd-left">
-                <DetailsPageHeader header={eventDetails.title} />
+                <DetailsPageHeader header={eventDetails.title} rating={eventDetails.rating} />
                 <Description
                   header={"About"}
                   p1={eventDetails.description}
                 />
-                <AboutPackage header={"Venue Options"} />
+                <AboutPackage header={"Venue Options"} data={eventDetails.venueOptions}/>
                 <CarouselComponent images={eventDetails.photoGallery} />
-                <Amenitites header={"Inclusions"} />
+                <Amenitites header={"Inclusions"} data={eventDetails.inclusions}/>
                 <UmbrellaHeader
                   header={"PAX / Per Person Rates"}
-                ></UmbrellaHeader>
-                {accomodation.map((a) => (
-                  <Apartments data={a} />
+                />
+                {eventDetails.pricePerPerson.map((a) => (
+                  <Pax data={a} />
                 ))}
-                <Map header={"Venue Locations"} />
-                <InfoBannerSmall />
+                <Map header={"Venue Locations"} location={eventDetails.location}/>
+                <InfoBannerSmall data={eventDetails}/>
               </div>
               <div className="pd-right">
                 <AdBar />
@@ -81,8 +78,8 @@ const EventPlanning = () => {
           </div>
         </div>
       )}
-      <Tips></Tips>
-      <Footer></Footer>
+      <Tips />
+      <Footer />
     </>
   );
 };

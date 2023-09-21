@@ -1092,7 +1092,7 @@ li {
   background: #14addb;
 }
 
-.sub-one {
+.sub-1 {
   grid-row: 1 / 2;
   grid-column: 3 / 4;
   /* padding-right: 5%;
@@ -1100,18 +1100,18 @@ li {
   padding: 5%;
 }
 
-.sub-one img:hover {
+.sub-1 img:hover {
   opacity: 0.5;
 }
 
-.sub-one:hover {
+.sub-1:hover {
   backdrop-filter: sepia(100%);
   background: #14addb;
   padding: 0;
   margin: 5%
 }
 
-.sub-two {
+.sub-2 {
   grid-row: 1 / 2;
   grid-column: 4 / 5;
   /* padding-left: 5%;
@@ -1119,18 +1119,18 @@ li {
   padding: 5%;
 }
 
-.sub-two img:hover {
+.sub-2 img:hover {
   opacity: 0.5;
 }
 
-.sub-two:hover {
+.sub-2:hover {
   backdrop-filter: sepia(100%);
   background: #14addb;
   padding: 0;
   margin: 5%
 }
 
-.sub-three {
+.sub-3 {
   grid-row: 2 / 3;
   grid-column: 3 / 4;
   /* padding-right: 5%;
@@ -1138,18 +1138,18 @@ li {
   padding: 5%;
 }
 
-.sub-three img:hover {
+.sub-3 img:hover {
   opacity: 0.5;
 }
 
-.sub-three:hover {
+.sub-3:hover {
   backdrop-filter: sepia(100%);
   background: #14addb;
   padding: 0;
   margin: 5%
 }
 
-.sub-four {
+.sub-4 {
   grid-row: 2 / 3;
   grid-column: 4 / 5;
   /* padding-left: 5%;
@@ -1157,82 +1157,82 @@ li {
   padding: 5%;
 }
 
-.sub-four img:hover {
+.sub-4 img:hover {
   opacity: 0.5;
 }
 
-.sub-four:hover {
+.sub-4:hover {
   backdrop-filter: sepia(100%);
   background: #14addb;
   padding: 0;
   margin: 5%
 }
 
-.sub-five {
+.sub-5 {
   grid-row: 3 / 4;
   grid-column: 1 / 2;
   /* padding-right: 10%; */
   padding: 5%;
 }
 
-.sub-five img:hover {
+.sub-5 img:hover {
   opacity: 0.5;
 }
 
-.sub-five:hover {
+.sub-5:hover {
   backdrop-filter: sepia(100%);
   background: #14addb;
   padding: 0;
   margin: 5%
 }
 
-.sub-six {
+.sub-6 {
   grid-row: 3 / 4;
   grid-column: 2 / 3;
   /* padding-right: 10%; */
   padding: 5%;
 }
 
-.sub-six img:hover {
+.sub-6 img:hover {
   opacity: 0.5;
 }
 
-.sub-six:hover {
+.sub-6:hover {
   backdrop-filter: sepia(100%);
   background: #14addb;
   padding: 0;
   margin: 5%
 }
 
-.sub-seven {
+.sub-7 {
   grid-row: 3 / 4;
   grid-column: 3 / 4;
   /* padding-right: 10%; */
   padding: 5%;
 }
 
-.sub-seven img:hover {
+.sub-7 img:hover {
   opacity: 0.5;
 }
 
-.sub-seven:hover {
+.sub-7:hover {
   backdrop-filter: sepia(100%);
   background: #14addb;
   padding: 0;
   margin: 5%
 }
 
-.sub-eight {
+.sub-8 {
   grid-row: 3 / 4;
   grid-column: 4 / 5;
   padding: 5%;
 }
 
-.sub-eight img:hover {
+.sub-8 img:hover {
   opacity: 0.5;
 }
 
-.sub-eight:hover {
+.sub-8:hover {
   backdrop-filter: sepia(100%);
   background: #14addb;
   padding: 0;
@@ -1249,35 +1249,35 @@ li {
     padding: 2.5% 10% 2.5% 10%;
   }
 
-  .sub-one {
+  .sub-1 {
     padding: 2.5% 10% 2.5% 10%;
   }
 
-  .sub-two {
+  .sub-2 {
     padding: 2.5% 10% 2.5% 10%;
   }
 
-  .sub-three {
+  .sub-3 {
     padding: 2.5% 10% 2.5% 10%;
   }
 
-  .sub-four {
+  .sub-4 {
     padding: 2.5% 10% 2.5% 10%;
   }
 
-  .sub-five {
+  .sub-5 {
     padding: 2.5% 10% 2.5% 10%;
   }
 
-  .sub-six {
+  .sub-6 {
     padding: 2.5% 10% 2.5% 10%;
   }
 
-  .sub-seven {
+  .sub-7 {
     padding: 2.5% 10% 2.5% 10%;
   }
 
-  .sub-eight {
+  .sub-8 {
     padding: 2.5% 10% 2.5% 10%;
   }
 }
@@ -2479,7 +2479,23 @@ li {
   font-size: 14px;
   border: 1px solid #efefef;
 }
-
+.select-label{
+  margin-top: 2%;
+}
+.select-dropdown{
+  width: 50%;
+  background: #fff;
+  padding-left: 10px; 
+  padding-right: 10px;
+  border: 0px;
+  height: 45px;
+  border-radius: 2px;
+  margin-top: 2%;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid #efefef;
+  border-top: 2px solid black;
+}
 .inquiry-row option {
   clear: both;
   color: rgba(0, 0, 0, 0.87);
