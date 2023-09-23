@@ -3,7 +3,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Tips from "../components/tips";
 import Thumbnail from "../components/thumbnail";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import umbrella from "../assets/images/umbrella.png";
 import CarouselComponent from "../components/carouselcomponent";
 import AboutPackage from "../components/aboutpackage";
@@ -40,14 +40,14 @@ const PackagesDetails = () => {
         <div className="pp-content">
           <div className="pd-main">
             <div className="pd-left">
-              <DetailsPageHeader header={packageDetails?.title} rating={packageDetails.rating} />
+              <DetailsPageHeader header={packageDetails?.title} rating={packageDetails?.rating} />
               <Description
                 header={"Description"}
                 p1={packageDetails?.description}
 
               />
              {packageDetails && <CarouselComponent images={packageDetails?.photoGallery}/>}
-              <Map header={"Location"} location={packageDetails.location}/>
+              <Map header={"Location"} location={packageDetails?.location}/>
               <div className="umbrella-header">
                 <img src={umbrella} alt=""/>
                 <h4>About The Package</h4>
