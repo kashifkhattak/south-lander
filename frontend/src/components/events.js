@@ -38,7 +38,7 @@ const Events = ({ data }) => {
                 <td>{d.time}</td>
                 <td>${d.price}</td>
                 <td>
-                <Link to={`/tour-details/${data._id}`}>Explore</Link>
+                <Link to={`/ticket-details/${d._id}`}>Explore</Link>
                 </td>
               </tr>
             ))}
