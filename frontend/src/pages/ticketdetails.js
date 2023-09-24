@@ -14,17 +14,17 @@ import Description from "../components/description";
 import Map from "../components/map";
 import AdBar from "../components/adbar";
 import InfoBannerSmall from "../components/infobannersmall";
-import variantService from "../services/variant-service";
+import ticketService from "../services/ticket-service";
 
-const PackagesDetails = () => {
+const TicketDetails = () => {
   const {id} = useParams()
-  const [packageDetails, setPackageDetails] = useState()
+  const [ticketDetails, setTicketDetails] = useState()
   useEffect(() => {
-    variantService.getPackageVariantDetail().then(response => {
-      const filteredDetails = response?.find(r => r.variantId === id)
-      setPackageDetails(filteredDetails)
+    ticketService.getEventTicketDetail().then(response => {
+      const filteredDetails = response?.find(r => r.eventTicketId === id)
+      setTicketDetails(filteredDetails)
     })
-  }, [])
+  }, [id])
 
   return (
     <>
@@ -35,30 +35,30 @@ const PackagesDetails = () => {
         tagline={"Let's hop around the Galapagos Islands."}
         navigation={"Galapagos Island Hopping"}
       />
-      <InfoBanner data={packageDetails} />
+      <InfoBanner data={ticketDetails} />
       <div className="pp-main">
         <div className="pp-content">
           <div className="pd-main">
             <div className="pd-left">
-              <DetailsPageHeader header={packageDetails?.title} rating={packageDetails?.rating} />
+              <DetailsPageHeader header={ticketDetails?.title} rating={ticketDetails?.rating} />
               <Description
                 header={"Description"}
-                p1={packageDetails?.description}
+                p1={ticketDetails?.description}
 
               />
-             {packageDetails && <CarouselComponent images={packageDetails?.photoGallery}/>}
-              <Map header={"Location"} location={packageDetails?.location}/>
+             {ticketDetails && <CarouselComponent images={ticketDetails?.photoGallery}/>}
+              <Map header={"Location"} location={ticketDetails?.location}/>
               <div className="umbrella-header">
                 <img src={umbrella} alt=""/>
                 <h4>About The Package</h4>
               </div>
-              <AboutPackage data={packageDetails}/>
+              <AboutPackage data={ticketDetails}/>
               <div className="umbrella-header">
                 <img src={umbrella} alt="" />
                 <h4>Detailed Day Wise Itinerary</h4>
               </div>
-              {packageDetails?.itinerary?.map(i => <Itinerary data={i}/>)}
-              <InfoBannerSmall data={packageDetails}/>
+              {ticketDetails?.itinerary?.map(i => <Itinerary data={i}/>)}
+              <InfoBannerSmall data={ticketDetails}/>
             </div>
             <div className="pd-right">
               <AdBar />
@@ -72,4 +72,4 @@ const PackagesDetails = () => {
   );
 };
 
-export default PackagesDetails;
+export default TicketDetails;

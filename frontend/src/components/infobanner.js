@@ -14,7 +14,7 @@ const InfoBanner = ({ data }) => {
       >
         {data?.title}
       </h3>
-      <h3 id="ib-two">${data?.pricePerNight || data?.airPackagePrice}</h3>
+      <h3 id="ib-two">${data?.pricePerNight || data?.airPackagePrice || data?.price}</h3>
       <h3 id="ib-three">{data?.capacity}</h3>
       <Link>Book Now</Link>
     </div>

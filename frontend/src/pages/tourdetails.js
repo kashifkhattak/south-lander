@@ -24,6 +24,8 @@ const TourDetails = () => {
       setTourDetails(filteredDetails)
     })
   }, [])
+
+  console.log("to", tourDetails);
   return (
     <>
       <Navbar />
@@ -34,20 +36,21 @@ const TourDetails = () => {
           "Nothing like a professionally guided experience of your site of choosing."
         }
         navigation={"Ecuador"} />
-      <InfoBanner b1={"Quito"} b2={"$XXX"} b3={"Whole Day"} />
+      <InfoBanner data={tourDetails} />
       <div className="pp-main">
         <div className="pp-content">
           <div className="pd-main">
             <div className="pd-left">
               <DetailsPageHeader
                 header={tourDetails?.title}
+                rating={tourDetails?.rating}
               />
               <Description
                 header={"Description"}
-                p1={tourDetails?.Description}
+                p1={tourDetails?.description}
               />
               {tourDetails && <CarouselComponent images={tourDetails?.photoGallery}/>}
-              <Map header={tourDetails?.location} />
+              <Map header={"Location"} location={tourDetails?.location} />
               <AboutPackage
                 header={"About The Tour & Itinerary"}
                 data={tourDetails}

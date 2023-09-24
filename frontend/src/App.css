@@ -2060,6 +2060,30 @@ li {
   text-align: left;
 }
 
+.events-table a {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px 15px;
+  border-radius: 2px;
+  display: inline-block;
+  font-family: "Quicksand", sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff !important;
+  /* font-family: Arial; */
+  font-size: 13px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  background: #c09373;
+  background: linear-gradient(to bottom, #83999e, #c09373);
+  line-height: 2.5rem;
+}
+
 .tours-text a {
   text-transform: uppercase;
   font-weight: 700;
