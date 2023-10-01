@@ -56,7 +56,7 @@ const HotelDetails = () => {
                 <Map header={"Location"} location={details.location} />
               </div>
               <div className="pd-right">
-                <AdBar />
+                <AdBar data={details?.hotelHighlights}/>
               </div>
             </div>
           </div>

@@ -15,6 +15,7 @@ const InfoBannerSmall = ({ data }) => {
           {data?.title}
         </h3>
         <h3>${data?.price || data?.pricePerNight || data?.airPackagePrice}</h3>
+        <h3>{data?.capacity || data?.duration}</h3>
         <Link>Book Now</Link>
       </div>
     </>

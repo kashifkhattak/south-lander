@@ -271,7 +271,7 @@ const BookingForms = ({ setTab, tabs }) => {
               and the Galapagos.
             </span>
           </div>
-          <form className="bf-form">
+          <form onSubmit={handleSubmit(onFormSubmit)} className="bf-form">
             <div className="bf-row-single">
               <input
                 type="text"
@@ -438,7 +438,7 @@ const BookingForms = ({ setTab, tabs }) => {
               you the perfect vacation package.
             </span>
           </div>
-          <form className="bf-form">
+          <form onSubmit={handleSubmit(onFormSubmit)} className="bf-form">
             <div className="bf-row-single">
               <input
                 type="text"
@@ -600,7 +600,7 @@ const BookingForms = ({ setTab, tabs }) => {
               and the Galapagos.
             </span>
           </div>
-          <form className="bf-form">
+          <form onSubmit={handleSubmit(onFormSubmit)}  className="bf-form">
             <div className="bf-row-single">
               <input
                 type="text"
@@ -735,7 +735,7 @@ const BookingForms = ({ setTab, tabs }) => {
               territory the size of Nevada!
             </span>
           </div>
-          <form className="bf-form">
+          <form onSubmit={handleSubmit(onFormSubmit)} className="bf-form">
             <div className="bf-row-single">
               <input
                 type="text"
@@ -970,7 +970,7 @@ const BookingForms = ({ setTab, tabs }) => {
               around continental Ecuador and its Galapagos Archipelago!
             </span>
           </div>
-          <form className="bf-form">
+          <form onSubmit={handleSubmit(onFormSubmit)} className="bf-form">
             <div className="bf-row-single">
               <input
                 type="text"
@@ -1080,7 +1080,7 @@ const BookingForms = ({ setTab, tabs }) => {
               of transportation with Southlander®.
             </span>
           </div>
-          <form className="bf-form">
+          <form onSubmit={handleSubmit(onFormSubmit)} className="bf-form">
             <div className="bf-row-single">
               <input
                 type="text"

@@ -24,7 +24,7 @@ const PackagesDetails = () => {
       const filteredDetails = response?.find(r => r.variantId === id)
       setPackageDetails(filteredDetails)
     })
-  }, [])
+  }, [id])
 
   return (
     <>
@@ -61,7 +61,7 @@ const PackagesDetails = () => {
               <InfoBannerSmall data={packageDetails}/>
             </div>
             <div className="pd-right">
-              <AdBar />
+              <AdBar data={packageDetails?.packageHighlights}/>
             </div>
           </div>
         </div>

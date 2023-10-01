@@ -9,7 +9,7 @@ import { FaWhatsappSquare } from "react-icons/fa";
 import { BsWhatsapp } from "react-icons/bs";
 import variantService from "../services/variant-service";
 
-const AdBar = () => {
+const AdBar = ({ data }) => {
   const [packageVariant, setPackageVariant] = useState([]);
   useEffect(() => {
     variantService.getPackageVariant().then((response) => {
@@ -23,22 +23,14 @@ const AdBar = () => {
       <div className="pd-highlights">
         <h3>PACKAGE HIGHLIGHTS</h3>
         <div className="pd-facilities">
-          <div className="pd-tick">
-            <img src={tick} className="pd-tick-img" alt="" />
-            <h5>Location : Rio,Brazil</h5>
-          </div>
-          <div className="pd-tick">
-            <img src={tick} className="pd-tick-img" alt="" />
-            <h5>Arrival Date: Nov 12, 2017</h5>
-          </div>
-          <div className="pd-tick">
-            <img src={tick} className="pd-tick-img" alt="" />
-            <h5>Departure Date: Nov 21, 2017</h5>
-          </div>
-          <div className="pd-tick">
-            <img src={tick} className="pd-tick-img" alt="" />
-            <h5>Free Sightseeing & Hotel</h5>
-          </div>
+          {data?.map((d) => (
+            <div className="pd-tick">
+              <img src={tick} className="pd-tick-img" alt="" />
+              <h5>
+                {d.key}: {d.value}
+              </h5>
+            </div>
+          ))}
         </div>
       </div>
       <div className="pd-highlights">

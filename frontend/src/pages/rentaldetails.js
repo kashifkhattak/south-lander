@@ -22,7 +22,7 @@ const RentalDetails = () => {
       const filteredDetails = response.find(r => r.rentalId === id)
       setRentalDetails(filteredDetails)
     })
-  }, [])
+  }, [id])
 
   return (
     <>
@@ -55,7 +55,7 @@ const RentalDetails = () => {
               <InfoBannerSmall data={rentalDetails}/>
             </div>
             <div className="pd-right">
-              <AdBar />
+              <AdBar data={rentalDetails?.rentalHighlights}/>
             </div>
           </div>
         </div>
