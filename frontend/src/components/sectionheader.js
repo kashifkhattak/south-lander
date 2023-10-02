@@ -1,12 +1,13 @@
 import React from "react";
 
-const SectionHeader = ({ header, subheader, description, id }) => {
+const SectionHeader = ({ header, subheader, secondaryheader, description, id }) => {
   return (
     <>
       <div id={id} className="secheader-main">
         <div className="spe-title">
           <h2>
-            {header} <span>{subheader}</span>
+            {header} <span>{subheader}</span>{" "}
+            {secondaryheader}
           </h2>
           <div className="title-line">
             <div className="tl-1"></div>

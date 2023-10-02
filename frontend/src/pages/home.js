@@ -66,7 +66,8 @@ const Home = () => {
       <SectionHeader
         id="event"
         header={"Southlander"}
-        subheader={"Destination Experience"}
+        subheader={"Destination"}
+        secondaryheader={"Experience"}
         description={
           "Enjoy our destination experience offer, sit back and enjoy while our staff make it happen: weddings, mitzvahs, expos, conventions, summits, spiritual retreats, etc. including invites, RSVPs, cash gifts and/or ticket sale managing."
         }
