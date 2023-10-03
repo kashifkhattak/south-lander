@@ -621,7 +621,7 @@ const BookingForms = ({ setTab, tabs }) => {
               />
             </div>
             <div className="bf-row-single">
-              <select id="event" required name="event" {...register("event")}>
+              <select id="event" required name="eventType" {...register("eventType")}>
                 <option value="" disabled selected>
                   Event Type
                 </option>
@@ -656,7 +656,7 @@ const BookingForms = ({ setTab, tabs }) => {
                   Briefly describe the event you want us to customize:
                 </label>
                 <textarea
-                  style={{ width: "100%", border: "1px solid #efefef" }}
+                  style={{ width: "100%", border: "1px solid #efefef", paddingLeft: "10px", paddingRight: "10px", paddingTop: "5px" }}
                   id="event-description"
                   name="event-description"
                   rows={4}
@@ -1329,7 +1329,7 @@ const BookingForms = ({ setTab, tabs }) => {
               }}
             >
               <textarea
-                style={{ width: "100%", border: "1px solid #efefef" }}
+                style={{ width: "100%", border: "1px solid #efefef", paddingLeft: "10px", paddingRight: "10px", paddingTop: "5px" }}
                 id="transportDescription"
                 placeholder="Briefly describe your transport needs..."
                 rows={4}
