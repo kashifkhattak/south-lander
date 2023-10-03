@@ -1,4 +1,4 @@
-let fallbackHost = 'localhost:4000'
+let fallbackHost = '35.245.107.23:4000'
 let host = fallbackHost
 
 let schemeForHttp = 'https://'
