@@ -53,9 +53,7 @@ const BookingForms = ({ setTab, tabs }) => {
     const filteredPayload = Object.fromEntries(
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
-    
-    console.log(filteredPayload);
- 
+
     bookingService
       .createBooking(filteredPayload)
       .then((response) => toast.success("Booking created sucessfully"));
@@ -73,8 +71,6 @@ const BookingForms = ({ setTab, tabs }) => {
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
     
-    console.log(filteredPayload);
- 
     bookingService
       .createBooking(filteredPayload)
       .then((response) => toast.success("Booking created sucessfully"));
@@ -93,8 +89,6 @@ const BookingForms = ({ setTab, tabs }) => {
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
     
-    console.log(filteredPayload);
- 
     bookingService
       .createBooking(filteredPayload)
       .then((response) => toast.success("Booking created sucessfully"));
@@ -111,8 +105,6 @@ const BookingForms = ({ setTab, tabs }) => {
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
     
-    console.log(filteredPayload);
- 
     bookingService
       .createBooking(filteredPayload)
       .then((response) => toast.success("Booking created sucessfully"));
@@ -129,8 +121,7 @@ const BookingForms = ({ setTab, tabs }) => {
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
     
-    console.log(filteredPayload);
- 
+
     bookingService
       .createBooking(filteredPayload)
       .then((response) => toast.success("Booking created sucessfully"));
@@ -146,9 +137,7 @@ const BookingForms = ({ setTab, tabs }) => {
     const filteredPayload = Object.fromEntries(
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
-    
-    console.log(filteredPayload);
- 
+
     bookingService
       .createBooking(filteredPayload)
       .then((response) => toast.success("Booking created sucessfully"));
@@ -165,8 +154,6 @@ const BookingForms = ({ setTab, tabs }) => {
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
     
-    console.log(filteredPayload);
- 
     bookingService
       .createBooking(filteredPayload)
       .then((response) => toast.success("Booking created sucessfully"));
@@ -669,11 +656,12 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value="" disabled selected>
                   No. of Adults
                 </option>
-                <option value="Passport">Passport</option>
-                <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">
-                  Other Government Issued ID
-                </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6+">6+</option>
               </select>
               <select
                 id="childrenCount"
@@ -683,11 +671,12 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value="" disabled selected>
                   No. of Children
                 </option>
-                <option value="Passport">Passport</option>
-                <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">
-                  Other Government Issued ID
-                </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6+">6+</option>
               </select>
             </div>
             <div className="in-out-header">
@@ -1341,11 +1330,12 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value="" disabled selected>
                   No. of Adults
                 </option>
-                <option value="Passport">Passport</option>
-                <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">
-                  Other Government Issued ID
-                </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6+">6+</option>
               </select>
               <select
                 id="childrenCount"
@@ -1355,11 +1345,12 @@ const BookingForms = ({ setTab, tabs }) => {
                 <option value="" disabled selected>
                   No. of Children
                 </option>
-                <option value="Passport">Passport</option>
-                <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">
-                  Other Government Issued ID
-                </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6+">6+</option>
               </select>
             </div>
             <div className="bf-row">
