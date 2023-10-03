@@ -1,13 +1,16 @@
-import axios from './axios'
+import axios from "./axios";
 
 const createBooking = (data) => {
-	return axios.post('/booking', data).then(response => {
-		return response.data
-	})
-}
+  return axios
+    .post("/booking", data)
+    .then((response) => {
+      return response;
+    })
+    .catch((err) => err.response);
+};
 
 const bookingService = {
-	createBooking,
-}
+  createBooking,
+};
 
-export default bookingService
+export default bookingService;

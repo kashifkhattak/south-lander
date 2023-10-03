@@ -54,11 +54,14 @@ const BookingForms = ({ setTab, tabs }) => {
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
 
-    bookingService
-      .createBooking(filteredPayload)
-      .then((response) => toast.success("Booking created sucessfully"));
+    bookingService.createBooking(filteredPayload).then((response) => {
+      if (response.status === 201) {
+        toast.success("Booking created sucessfully");
+      } else {
+        toast.error(response.response.data.error);
+      }
+    });
   };
-
 
   const onAccomodationFormSubmit = (data) => {
     const payload = {
@@ -70,13 +73,15 @@ const BookingForms = ({ setTab, tabs }) => {
     const filteredPayload = Object.fromEntries(
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
-    
-    bookingService
-      .createBooking(filteredPayload)
-      .then((response) => toast.success("Booking created sucessfully"));
+
+    bookingService.createBooking(filteredPayload).then((response) => {
+      if (response.status === 201) {
+        toast.success("Booking created sucessfully");
+      } else {
+        toast.error(response.response.data.error);
+      }
+    });
   };
-
-
 
   const onFlightFormSubmit = (data) => {
     const payload = {
@@ -88,10 +93,14 @@ const BookingForms = ({ setTab, tabs }) => {
     const filteredPayload = Object.fromEntries(
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
-    
-    bookingService
-      .createBooking(filteredPayload)
-      .then((response) => toast.success("Booking created sucessfully"));
+
+    bookingService.createBooking(filteredPayload).then((response) => {
+      if (response.status === 201) {
+        toast.success("Booking created sucessfully");
+      } else {
+        toast.error(response.response.data.error);
+      }
+    });
   };
 
   const onToursFormSubmit = (data) => {
@@ -104,10 +113,14 @@ const BookingForms = ({ setTab, tabs }) => {
     const filteredPayload = Object.fromEntries(
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
-    
-    bookingService
-      .createBooking(filteredPayload)
-      .then((response) => toast.success("Booking created sucessfully"));
+
+    bookingService.createBooking(filteredPayload).then((response) => {
+      if (response.status === 201) {
+        toast.success("Booking created sucessfully");
+      } else {
+        toast.error(response.response.data.error);
+      }
+    });
   };
 
   const onEventPlanningFormSubmit = (data) => {
@@ -120,11 +133,14 @@ const BookingForms = ({ setTab, tabs }) => {
     const filteredPayload = Object.fromEntries(
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
-    
 
-    bookingService
-      .createBooking(filteredPayload)
-      .then((response) => toast.success("Booking created sucessfully"));
+    bookingService.createBooking(filteredPayload).then((response) => {
+      if (response.status === 201) {
+        toast.success("Booking created sucessfully");
+      } else {
+        toast.error(response.response.data.error);
+      }
+    });
   };
 
   const onTicketsFormSubmit = (data) => {
@@ -138,9 +154,13 @@ const BookingForms = ({ setTab, tabs }) => {
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
 
-    bookingService
-      .createBooking(filteredPayload)
-      .then((response) => toast.success("Booking created sucessfully"));
+    bookingService.createBooking(filteredPayload).then((response) => {
+      if (response.status === 201) {
+        toast.success("Booking created sucessfully");
+      } else {
+        toast.error(response.response.data.error);
+      }
+    });
   };
 
   const onRentalFormSubmit = (data) => {
@@ -153,10 +173,14 @@ const BookingForms = ({ setTab, tabs }) => {
     const filteredPayload = Object.fromEntries(
       Object.entries(payload).filter(([key, value]) => value !== "")
     );
-    
-    bookingService
-      .createBooking(filteredPayload)
-      .then((response) => toast.success("Booking created sucessfully"));
+
+    bookingService.createBooking(filteredPayload).then((response) => {
+      if (response.status === 201) {
+        toast.success("Booking created sucessfully");
+      } else {
+        toast.error(response.response.data.error);
+      }
+    });
   };
 
   return (
@@ -318,7 +342,12 @@ const BookingForms = ({ setTab, tabs }) => {
               </select>
             </div>
             <div className="bf-row">
-              <select id="adultsCount" name="adultsCount" required {...register("adultsCount")}>
+              <select
+                id="adultsCount"
+                name="adultsCount"
+                required
+                {...register("adultsCount")}
+              >
                 <option value="" disabled selected>
                   No. of Adults
                 </option>
@@ -383,7 +412,10 @@ const BookingForms = ({ setTab, tabs }) => {
               and the Galapagos.
             </span>
           </div>
-          <form onSubmit={handleSubmit(onAccomodationFormSubmit)} className="bf-form">
+          <form
+            onSubmit={handleSubmit(onAccomodationFormSubmit)}
+            className="bf-form"
+          >
             <div className="bf-row-single">
               <input
                 type="text"
@@ -489,7 +521,12 @@ const BookingForms = ({ setTab, tabs }) => {
               </select>
             </div>
             <div className="bf-row">
-              <select id="adultsCount" name="adultsCount" required {...register("adultsCount")}>
+              <select
+                id="adultsCount"
+                name="adultsCount"
+                required
+                {...register("adultsCount")}
+              >
                 <option value="" disabled selected>
                   No. of Adults
                 </option>
@@ -551,7 +588,10 @@ const BookingForms = ({ setTab, tabs }) => {
               you the perfect vacation package.
             </span>
           </div>
-          <form onSubmit={handleSubmit(onEventPlanningFormSubmit)} className="bf-form">
+          <form
+            onSubmit={handleSubmit(onEventPlanningFormSubmit)}
+            className="bf-form"
+          >
             <div className="bf-row-single">
               <input
                 type="text"
@@ -608,7 +648,12 @@ const BookingForms = ({ setTab, tabs }) => {
               />
             </div>
             <div className="bf-row-single">
-              <select id="event" required name="eventType" {...register("eventType")}>
+              <select
+                id="event"
+                required
+                name="eventType"
+                {...register("eventType")}
+              >
                 <option value="" disabled selected>
                   Event Type
                 </option>
@@ -643,7 +688,14 @@ const BookingForms = ({ setTab, tabs }) => {
                   Briefly describe the event you want us to customize:
                 </label>
                 <textarea
-                  style={{ width: "100%", border: "1px solid #efefef", paddingLeft: "10px", paddingRight: "10px", paddingTop: "5px" }}
+                  style={{
+                    width: "100%",
+                    border: "1px solid #efefef",
+                    paddingLeft: "10px",
+                    paddingRight: "10px",
+                    paddingTop: "5px",
+                  }}
+                  required
                   id="event-description"
                   name="event-description"
                   rows={4}
@@ -652,7 +704,12 @@ const BookingForms = ({ setTab, tabs }) => {
               </div>
             )}
             <div className="bf-row">
-              <select id="adultsCount" name="adultsCount" required {...register("adultsCount")}>
+              <select
+                id="adultsCount"
+                name="adultsCount"
+                required
+                {...register("adultsCount")}
+              >
                 <option value="" disabled selected>
                   No. of Adults
                 </option>
@@ -716,7 +773,7 @@ const BookingForms = ({ setTab, tabs }) => {
               and the Galapagos.
             </span>
           </div>
-          <form onSubmit={handleSubmit(onRentalFormSubmit)}  className="bf-form">
+          <form onSubmit={handleSubmit(onRentalFormSubmit)} className="bf-form">
             <div className="bf-row-single">
               <input
                 type="text"
@@ -789,7 +846,12 @@ const BookingForms = ({ setTab, tabs }) => {
               </select>
             </div>
             <div className="bf-row">
-              <select id="adultsCount" name="adultsCount" required {...register("adultsCount")}>
+              <select
+                id="adultsCount"
+                name="adultsCount"
+                required
+                {...register("adultsCount")}
+              >
                 <option value="" disabled selected>
                   No. of Adults
                 </option>
@@ -995,7 +1057,12 @@ const BookingForms = ({ setTab, tabs }) => {
               </select>
             </div>
             <div className="bf-row">
-              <select id="adultsCount" name="adultsCount" required {...register("adultsCount")}>
+              <select
+                id="adultsCount"
+                name="adultsCount"
+                required
+                {...register("adultsCount")}
+              >
                 <option value="" disabled selected>
                   No. of Adults
                 </option>
@@ -1035,12 +1102,7 @@ const BookingForms = ({ setTab, tabs }) => {
               <p>- Check Out -</p>
             </div>
             <div className="bf-row">
-              <input
-                type="date"
-                id="date"
-                required
-                {...register("date")}
-              />
+              <input type="date" id="date" required {...register("date")} />
               <select id="time" required {...register("time")}>
                 <option value="" disabled selected>
                   Pick Up time
@@ -1089,7 +1151,10 @@ const BookingForms = ({ setTab, tabs }) => {
               around continental Ecuador and its Galapagos Archipelago!
             </span>
           </div>
-          <form onSubmit={handleSubmit(onTicketsFormSubmit)} className="bf-form">
+          <form
+            onSubmit={handleSubmit(onTicketsFormSubmit)}
+            className="bf-form"
+          >
             <div className="bf-row-single">
               <input
                 type="text"
@@ -1318,7 +1383,14 @@ const BookingForms = ({ setTab, tabs }) => {
               }}
             >
               <textarea
-                style={{ width: "100%", border: "1px solid #efefef", paddingLeft: "10px", paddingRight: "10px", paddingTop: "5px" }}
+                style={{
+                  width: "100%",
+                  border: "1px solid #efefef",
+                  paddingLeft: "10px",
+                  paddingRight: "10px",
+                  paddingTop: "5px",
+                }}
+                required
                 id="transportDescription"
                 placeholder="Briefly describe your transport needs..."
                 rows={4}
@@ -1326,7 +1398,12 @@ const BookingForms = ({ setTab, tabs }) => {
               />
             </div>
             <div className="bf-row">
-              <select id="adultsCount" name="adultsCount" required {...register("adultsCount")}>
+              <select
+                id="adultsCount"
+                name="adultsCount"
+                required
+                {...register("adultsCount")}
+              >
                 <option value="" disabled selected>
                   No. of Adults
                 </option>
@@ -1354,18 +1431,8 @@ const BookingForms = ({ setTab, tabs }) => {
               </select>
             </div>
             <div className="bf-row">
-              <input
-                type="date"
-                id="date"
-                required
-                {...register("date")}
-              />
-              <input
-                type="date"
-                id="time"
-                required
-                {...register("time")}
-              />
+              <input type="date" id="date" required {...register("date")} />
+              <input type="date" id="time" required {...register("time")} />
             </div>
             <div className="bf-row">
               <button type="submit">Buy Now</button>
