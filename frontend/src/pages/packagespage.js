@@ -6,15 +6,19 @@ import Thumbnail from "../components/thumbnail";
 import SectionHeader from "../components/sectionheader";
 import SinglePackage from "../components/singlepackage";
 import variantService from "../services/variant-service";
+import { useParams } from "react-router-dom";
 
 
 const PackagesPage = () => {
+  const {id} = useParams()
   const [packageVariant, setPackageVariant] = useState([])
   useEffect(() => { 
     variantService.getPackageVariant().then(response => {
-      setPackageVariant(response)
+      const filteredResponse = response.filter(r => r.packageId === id)
+      setPackageVariant(filteredResponse)
     })
-  }, [])
+  }, [id])
+
   return (
     <>
       <Navbar />

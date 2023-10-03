@@ -12,6 +12,12 @@ html {
   font-size: 62%;
 }
 
+@media only screen and (max-width: 650px) {
+  * {
+    overflow-x: hidden;
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -716,9 +722,10 @@ li {
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding-left: 75px;
-  padding-right: 75px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
+
 .spe-title h2 {
   margin-bottom: 0px;
   padding-bottom: 20px;

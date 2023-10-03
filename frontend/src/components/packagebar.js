@@ -8,6 +8,7 @@ const Packagebar = ({packages}) => {
       {packages?.map((p, index) => (
           <Package
             key={index}
+            id={p._id}
             title={p.title}
             tagLine={p.tagLine}
             image={p.imagePath} 

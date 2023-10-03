@@ -21,6 +21,10 @@ const TourDetail = mongoose.model(
       type: Number,
       required: true,
     },
+    duration: {
+      type: String,
+      required: true,
+    },
     rating: {
       type: Number,
       required: true,
@@ -76,6 +80,7 @@ function validateTourDetail(tourDetail) {
     title: Joi.string().required(),
     description: Joi.string().required(),
     price: Joi.number().required(),
+    duration: Joi.string().required(),
     rating: Joi.number().min(0).max(5).required(),
     tourHighlights: Joi.array().items(
       Joi.object({

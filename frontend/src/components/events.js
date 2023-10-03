@@ -28,7 +28,8 @@ const Events = ({ data }) => {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
+                    columnGap: "30px",
+                    marginLeft: "80px"
                   }}
                 >
                   <img src={d.imagePath} alt="" />

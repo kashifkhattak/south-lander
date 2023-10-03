@@ -61,7 +61,7 @@ const TicketDetails = () => {
               <InfoBannerSmall data={ticketDetails}/>
             </div>
             <div className="pd-right">
-              <AdBar />
+              <AdBar data={ticketDetails?.eventPackageHighlights}/>
             </div>
           </div>
         </div>

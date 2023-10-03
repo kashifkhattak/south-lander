@@ -3,9 +3,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Tips from "../components/tips";
 import Thumbnail from "../components/thumbnail";
-import umbrella from "../assets/images/umbrella.png";
 import CarouselComponent from "../components/carouselcomponent";
-import Apartments from "../components/apartments";
 import AboutPackage from "../components/aboutpackage";
 import InfoBanner from "../components/infobanner";
 import DetailsPageHeader from "../components/detailspageheader";
@@ -15,26 +13,20 @@ import UmbrellaHeader from "../components/umbrellaheader";
 import Map from "../components/map";
 import InfoBannerSmall from "../components/infobannersmall";
 import AdBar from "../components/adbar";
-import accomodationService from "../services/accomodation-service";
 import { useParams } from "react-router-dom";
 import eventService from "../services/event-service";
 import Pax from "../components/pax";
 
 const EventPlanning = () => {
   const { id } = useParams();
-
-  const [accomodation, setAccomodation] = useState([]);
   const [eventDetails, setEventDetails] = useState();
 
   useEffect(() => {
-    accomodationService
-      .getAccomodations()
-      .then((response) => setAccomodation(response));
     eventService.getEventPlanningDetail().then((response) => {
       const filteredEvents = response.find((r) => r.eventPlanningId === id);
       setEventDetails(filteredEvents);
     });
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -72,7 +64,7 @@ const EventPlanning = () => {
                 <InfoBannerSmall data={eventDetails}/>
               </div>
               <div className="pd-right">
-                <AdBar />
+                <AdBar data={eventDetails?.timeshareHighlights}/>
               </div>
             </div>
           </div>

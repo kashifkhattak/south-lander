@@ -3,7 +3,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Tips from "../components/tips";
 import Thumbnail from "../components/thumbnail";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import CarouselComponent from "../components/carouselcomponent";
 import InfoBanner from "../components/infobanner";
 import AdBar from "../components/adbar";
@@ -11,7 +11,6 @@ import DetailsPageHeader from "../components/detailspageheader";
 import Description from "../components/description";
 import Map from "../components/map";
 import InfoBannerSmall from "../components/infobannersmall";
-import UmbrellaHeader from "../components/umbrellaheader";
 import AboutPackage from "../components/aboutpackage";
 import tourService from "../services/tour-service";
 
@@ -23,9 +22,8 @@ const TourDetails = () => {
       const filteredDetails = response.find(r => r.tourId === id)
       setTourDetails(filteredDetails)
     })
-  }, [])
+  }, [id])
 
-  console.log("to", tourDetails);
   return (
     <>
       <Navbar />
@@ -60,7 +58,7 @@ const TourDetails = () => {
               <InfoBannerSmall data={tourDetails}/>
             </div>
             <div className="pd-right">
-              <AdBar />
+              <AdBar data={tourDetails?.tourHighlights}/>
             </div>
           </div>
         </div>
