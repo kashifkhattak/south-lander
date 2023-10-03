@@ -2840,13 +2840,13 @@ li {
   margin-bottom: 10px;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  column-gap: 1%;
 }
 
 
 .bf-row-date input {
-  width: 49%;
+  flex-basis: 50%;
   background: #fff;
   padding-left: 10px;
   border: 0px;
