@@ -72,7 +72,7 @@ const Navbar = () => {
       const targetElement = document.getElementById(targetId);
 
       if (targetElement) {
-        const offset = 100;
+        const offset = 150;
         const targetPosition = targetElement.offsetTop - offset;
 
         window.scrollTo({
@@ -87,7 +87,9 @@ const Navbar = () => {
     <>
       <nav className={`navbar-main ${isSticky ? "sticky" : ""}`}>
         <div className="navbar-logo">
+        <Link to="/home">
           <img src={logo} alt="" />
+          </Link>
         </div>
         <div className={"navbar-routes"}>
           <ul>

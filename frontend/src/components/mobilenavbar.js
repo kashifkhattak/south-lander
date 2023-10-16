@@ -7,6 +7,7 @@ import eventService from "../services/event-service";
 import rentalService from "../services/rental-service";
 import tourService from "../services/tour-service";
 import ticketService from "../services/ticket-service";
+import { Link } from "react-router-dom";
 
 const MobileNavbar = ({ isOpen, toggleMenu }) => {
   const [packages, setPackages] = useState([]);
@@ -41,7 +42,7 @@ const MobileNavbar = ({ isOpen, toggleMenu }) => {
           <ul className="menu-items">
             <li className="menu-item">
               <span>&gt;</span>
-              <a href="index.html">Return Home</a>
+              <Link to="/home">Return Home</Link>
             </li>
           </ul>
           <h4>Packages</h4>

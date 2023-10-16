@@ -15,6 +15,28 @@ const Hero = ({tabs, title, subtitle , forms}) => {
     "background-position-6",
   ];
 
+  const scrollLinks = document.querySelectorAll(".scroll-link");
+
+  scrollLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = link.getAttribute("href").substring(1);
+
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const offset = 150;
+        const targetPosition = targetElement.offsetTop - offset;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+
   const backgroundClass = backgroundClasses[tabs - 1];
   return (
     <>
@@ -30,25 +52,25 @@ const Hero = ({tabs, title, subtitle , forms}) => {
           <div className="hero-buttons">
             <ul>
               <li className="fadeInLeft1">
-                <a>
+                <a className="scroll-link" href="#packages">
                   <img src={icon1} alt="" />
                   <p>All Inclusive</p>
                 </a>
               </li>
               <li className="fadeInLeft2">
-                <a>
+                <a className="scroll-link" href="#event">
                   <img src={icon2} alt="" />
                   <p>Events</p>
                 </a>
               </li>
               <li className="fadeInLeft3">
-                <a>
+                <a className="scroll-link" href="#rentals">
                   <img src={icon3} alt="" />
                   <p>Rentals</p>
                 </a>
               </li>
               <li className="fadeInLeft4">
-                <a>
+                <a className="scroll-link" href="#tours">
                   <img src={icon4} alt="" />
                   <p>Ecuador 360°</p>
                 </a>

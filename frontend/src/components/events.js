@@ -15,10 +15,10 @@ const Events = ({ data }) => {
           <tbody>
             <tr>
               <th>#</th>
-              <th style={{ textAlign: "center" }}>Event | Date</th>
-              <th>Location</th>
-              <th>Time</th>
-              <th>Price</th>
+              <th style={{ textAlign: "left", paddingLeft:"30px" }}>Event | Date</th>
+              <th id="toHide">Location</th>
+              <th id="toHide">Time</th>
+              <th id="toHide">Price</th>
               <th>Save a Spot!</th>
             </tr>
             {data?.map((d, index) => (
@@ -29,15 +29,15 @@ const Events = ({ data }) => {
                     display: "flex",
                     alignItems: "center",
                     columnGap: "30px",
-                    marginLeft: "80px"
+                    marginLeft: "20px"
                   }}
                 >
                   <img src={d.imagePath} alt="" />
                   {d.title} | {d.date}
                 </td>
-                <td>{d.location}</td>
-                <td>{d.time}</td>
-                <td>${d.price}</td>
+                <td id="toHide">{d.location}</td>
+                <td id="toHide">{d.time}</td>
+                <td id="toHide">${d.price}</td>
                 <td>
                 <Link to={`/ticket-details/${d._id}`}>Explore</Link>
                 </td>
