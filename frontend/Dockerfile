@@ -22,4 +22,10 @@ FROM nginx:alpine
 
 #we copy the output from first stage that is our react build
 #into nginx html directory where it will serve our index file
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 COPY --from=build-stage /app/build/ /usr/share/nginx/html
+
+EXPOSE 80 
+
+CMD ["nginx", "-g", "daemon off;"]
