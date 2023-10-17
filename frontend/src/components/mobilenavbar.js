@@ -50,7 +50,7 @@ const MobileNavbar = ({ isOpen, toggleMenu }) => {
             {packages?.map((p) => (
               <li className="menu-item">
                 <span>&gt;</span>
-                <a href={`/package-details/${p._id}`}>
+                <a href={`/packages/${p._id}`}>
                   {p.title} - {p.tagLine}
                 </a>
               </li>

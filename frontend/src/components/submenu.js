@@ -43,7 +43,7 @@ const Submenu = ({ onMouseEnter, onMouseLeave, visibility }) => {
             {packages.slice(0, 6)?.map((p) => (
               <li>
                 <span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                <a href={`/package-details/${p._id}`}>
+                <a href={`/packages/${p._id}`}>
                   {p.title} - {p.tagLine}
                 </a>
               </li>
@@ -58,7 +58,7 @@ const Submenu = ({ onMouseEnter, onMouseLeave, visibility }) => {
             {packages.slice(6, packages.length - 1)?.map((p) => (
               <li>
                 <span>&gt;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                <a href={`/package-details/${p._id}`}>
+                <a href={`/packages/${p._id}`}>
                   {p.title} - {p.tagLine}
                 </a>
               </li>
