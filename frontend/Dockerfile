@@ -1,25 +1,25 @@
-# Use a Node.js base image with the desired version
-FROM node:18
+#get the latest alpine image from node registry
+FROM node:alpine AS build-stage
 
-# Set the working directory in the container
+#set the working directory
+WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+#copy the package and package lock files
+#from local to container work directory /app
+COPY package*.json /app/
 
-# Install the dependencies
+#Run command npm install to install packages
 RUN npm install
 
-# Copy the rest of the application files to the working directory
+#copy all the folder contents from local to container
 COPY . .
 
-# Build the React application
+#create a react production build
 RUN npm run build
 
-# Expose a port (change it to match your application's port)
-EXPOSE 3000
+#get the latest alpine image from nginx registry
+FROM nginx:alpine
 
-# Install serve globally (if not already installed)
-RUN npm install -g serve
-
-# Start the application with serve
-CMD ["serve", "-s", "build", "-l", "3000"]
+#we copy the output from first stage that is our react build
+#into nginx html directory where it will serve our index file
+COPY --from=build-stage /app/build/ /usr/share/nginx/html

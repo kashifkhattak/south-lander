@@ -13,5 +13,5 @@ services:
     build:
       context: ./frontend
     ports:
-      - "3000:3000"
+      - "3000:80"
     restart: always  # Add this line to specify always restart
