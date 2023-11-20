@@ -10,10 +10,6 @@ const Register = () => {
 
   const [packages, setPackages] = useState([])
 
-  useEffect(()=>{
-    
-  },[])
-
   return (
     <>
       <Navbar />
@@ -24,54 +20,59 @@ const Register = () => {
           <form class="col s12">
             <div class="row">
               <div class="input-field col m6 s12">
-                <input type="text" class="validate full-width" />
-                <label>First Name</label>
+                <input type="text" class="validate full-width" placeholder="First Name" />
               </div>
               <div class="input-field col m6 s12">
-                <input type="text" class="validate full-width" />
-                <label>Last Name</label>
+                <input type="text" class="validate full-width" placeholder="Last Name" />
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input type="number" class="validate" />
-                <label>Nationality</label>
+                <input type="number" class="validate" placeholder="Nationality" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6">
+              <select id="idType" required>
+                <option value="" disabled selected>
+                  Type of ID
+                </option>
+                <option value="Passport">Passport</option>
+                <option value="Driver's License">Driver's License</option>
+                <option value="Other Government Issued ID">
+                  Other Government Issued ID
+                </option>
+              </select>
+
+                {/* <select>
+                <option value="" disabled selected>
+                  Type of ID
+                </option>
+                  <option value="Passport">Passport</option>
+                  <option value="Driver's License">Driver's License</option>
+                  <option value="Other Government Issued ID">Other Government Issued ID</option>
+                </select> */}
+              </div>
+              <div class="input-field col s6">
+                <input type="number"  class="validate" name="id" placeholder="Enter your ID number" required />
               </div>
             </div>
                       <div class="row">
-              <div class="input-field col s6">
-                <select>
-                  <option disabled selected>Type of ID</option>
-                  <option>Passport</option>
-                  <option>Driver's License</option>
-                  <option>Other Government Issued ID</option>
-                </select>
-              </div>
-              <div class="input-field col s6">
-                <input type="number"  class="validate" name="id" required />
-                <label>Enter your ID number</label>
-              </div>
-            </div>
-                      <div class="row">
               <div class="input-field col s12">
-                <input type="number" class="validate" />
-                <label>Enter your phone</label>
+                <input type="number" class="validate" placeholder="Enter your phone" />
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input type="email" class="validate" />
-                <label>Enter your email</label>
+                <input type="email" class="validate" placeholder="Enter your email" />
               </div>
             </div>
             <div class="row">
               <div class="input-field col m6 s12">
-                <input type="password" class="validate" />
-                <label>Password</label>
+                <input type="password" class="validate" placeholder="Password" />
               </div>
                           <div class="input-field col m6 s12">
-                <input type="password" class="validate" />
-                <label>Confirm Password</label>
+                <input type="password" class="validate" placeholder="Confirm Password" />
               </div>
             </div>
             <div class="row">
