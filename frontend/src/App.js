@@ -15,6 +15,7 @@ import TourDetails from "./pages/tourdetails";
 import NotFound from "./pages/404";
 import TicketDetails from "./pages/ticketdetails";
 import Login from "./pages/login";
+import Register from "./pages/register";
 
 function App() {
   // const [loading, setLoading] = useState(true);
@@ -34,6 +35,7 @@ function App() {
           <Route index element={<Login />} />
           {/* <Route index element={<Home />} /> */}
           <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
           <Route path="home" element={<Home />} />
           <Route path="booking" element={<Booking />} />
           <Route path="contact" element={<Contact />} />

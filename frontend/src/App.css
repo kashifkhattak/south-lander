@@ -21,6 +21,28 @@ html {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+a:hover {
+  text-decoration: none;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+a, p, li, td, span {
+  font-size: 14.5px;
+  line-height: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 }
 
 li {
@@ -4159,14 +4181,14 @@ li {
 /* .tr-regi-form p a {
 } */
 
-.full-btn {
+.full-width {
   width: 100%;
   display: block;
 }
 
 .full-btn {
-  height: 45px;
-  line-height: 45px;
+  height: 45px !important;;
+  line-height: 45px !important;;
   background: #f96c71;
   background: linear-gradient(to bottom, #fa6d72, #f45d5d);
   outline: none;
@@ -4461,3 +4483,169 @@ li {
   background: #1da1f2;
 }
 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row .col {
+  float: left;
+  box-sizing: border-box;
+  padding: 0 0.75rem;
+  min-height: 1px;
+}
+
+.row .col[class*="push-"],
+.row .col[class*="pull-"] {
+  position: relative;
+}
+
+.row .col .s12 {
+  width: 100%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+
+.input-field {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.input-field.inline {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.input-field.inline input,
+.input-field.inline .select-dropdown {
+  margin-bottom: 1rem;
+}
+
+.input-field.col .prefix ~ label,
+.input-field.col .prefix ~ .validate ~ label {
+  width: calc(100% - 3rem - 1.5rem);
+}
+
+.input-field label {
+  color: #5f5f5f;
+  font-weight: 500;
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  font-size: 1rem;
+  cursor: text;
+  transition: .2s ease-out;
+  text-align: initial;
+  font-size: 14px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.input-field label:not(.label-icon).active {
+  font-size: 0.8rem;
+  -webkit-transform: translateY(-140%);
+  transform: translateY(-140%);
+  opacity: 0;
+}
+
+.input-field .prefix {
+  position: absolute;
+  width: 3rem;
+  font-size: 2rem;
+  transition: color .2s;
+}
+
+.input-field .prefix.active {
+  color: #26a69a;
+}
+
+.input-field .prefix ~ input,
+.input-field .prefix ~ textarea,
+.input-field .prefix ~ label,
+.input-field .prefix ~ .validate ~ label,
+.input-field .prefix ~ .autocomplete-content {
+  margin-left: 0rem;
+  width: 92%;
+  width: calc(100% - 3rem);
+}
+
+.input-field .prefix ~ label {
+  margin-left: 3rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .input-field .prefix ~ input {
+      width: 86%;
+      width: calc(100% - 3rem);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .input-field .prefix ~ input {
+      width: 80%;
+      width: calc(100% - 3rem);
+  }
+}
+
+.input-field.col .dropdown-content [type="checkbox"] + label {
+  top: 7px;
+  left: 0;
+  height: 18px;
+}
+
+input:not([type]).validate + label,
+input[type=text].validate + label,
+input[type=password].validate + label,
+input[type=email].validate + label,
+input[type=url].validate + label,
+input[type=time].validate + label,
+input[type=date].validate + label,
+input[type=datetime].validate + label,
+input[type=datetime-local].validate + label,
+input[type=tel].validate + label,
+input[type=number].validate + label,
+input[type=search].validate + label,
+textarea.materialize-textarea.validate + label {
+    width: 100%;
+    pointer-events: none;
+}
+
+.row .col .m6 {
+  width: 50%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+
+.row .col .offset-m6 {
+  margin-left: 50%;
+}
+
+.row .col .pull-m6 {
+  right: 50%;
+}
+
+.row .col .push-m6 {
+  left: 50%;
+}
+
+.row .col.s6 {
+  width: 50%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+
+.row .col.offset-s6 {
+  margin-left: 50%;
+}
+
+.row .col.pull-s6 {
+  right: 50%;
+}
+
+.row .col.push-s6 {
+  left: 50%;
+}
