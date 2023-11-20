@@ -23,7 +23,7 @@ const Login = () => {
           <p>Explore Ecuador's most innovative<br />destination experience offer</p>
           <form class="col s12">
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s12 ">
                 <input type="text" class="validate full-width" placeholder="User Name" />
               </div>
             </div>

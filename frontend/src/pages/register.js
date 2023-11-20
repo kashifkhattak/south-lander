@@ -19,7 +19,7 @@ const Register = () => {
           <p>It's free and always will be.</p>
           <form class="col s12">
             <div class="row">
-              <div class="input-field col m6 s12">
+              <div class="input-field col m6 s12 padd">
                 <input type="text" class="validate full-width" placeholder="First Name" />
               </div>
               <div class="input-field col m6 s12">
