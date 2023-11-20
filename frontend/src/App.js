@@ -14,6 +14,7 @@ import RentalDetails from "./pages/rentaldetails";
 import TourDetails from "./pages/tourdetails";
 import NotFound from "./pages/404";
 import TicketDetails from "./pages/ticketdetails";
+import Login from "./pages/login";
 
 function App() {
   // const [loading, setLoading] = useState(true);
@@ -30,7 +31,9 @@ function App() {
         <Preloader />
         <ScrollToTop></ScrollToTop>
         <Routes>
-          <Route index element={<Home />} />
+          <Route index element={<Login />} />
+          {/* <Route index element={<Home />} /> */}
+          <Route path="login" element={<Login />} />
           <Route path="home" element={<Home />} />
           <Route path="booking" element={<Booking />} />
           <Route path="contact" element={<Contact />} />
