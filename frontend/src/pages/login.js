@@ -17,36 +17,36 @@ const Login = () => {
   return (
     <>
       <Navbar />
-      <div class="tr-register">
-        <div class="tr-regi-form">
+      <div className="tr-register">
+        <div className="tr-regi-form">
           <h4>Sign In</h4>
           <p>Explore Ecuador's most innovative<br />destination experience offer</p>
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s12 ">
-                <input type="text" class="validate full-width" placeholder="User Name" />
+          <form className="col s12">
+            <div className="row">
+              <div className="input-field col s12">
+                <input type="text" className="validate" placeholder="User Name" required />
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input type="password" class="validate full-width" placeholder="Password" />
+            <div className="row">
+              <div className="input-field col s12">
+                <input type="password" className="validate" placeholder="Password" required />
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input type="submit" value="submit" class="waves-effect waves-light btn-large full-btn" /> 
+            <div className="row">
+              <div className="input-field col s12">
+                <input type="submit" value="submit" className="waves-effect waves-light btn-large full-btn" /> 
               </div>
             </div>
           </form>
           <p>
             <Link to="/forgot-password">Forgot Password?</Link> | Are you a new user ? <Link to="/register">Register</Link>
           </p>
-          <div class="soc-login">
+          <div className="soc-login">
             <h4>Sign in using</h4>
             <ul>
-              <li><a href="#"><i class="fab fa-facebook fb1"></i> Facebook</a> </li>
-              <li><a href="#"><i class="fab fa-twitter tw1"></i> Twitter</a> </li>
-              <li><a href="#"><i class="fab fa-google-plus gp1"></i> Google</a> </li>
+              <li><a href="#"><i className="fab fa-facebook fb1"></i> Facebook</a> </li>
+              <li><a href="#"><i className="fab fa-twitter tw1"></i> Twitter</a> </li>
+              <li><a href="#"><i className="fab fa-google-plus gp1"></i> Google</a> </li>
             </ul>
           </div>
         </div>

@@ -4201,8 +4201,8 @@ li {
 } */
 
 .full-btn {
-  height: 45px !important;;
-  line-height: 45px !important;;
+  height: 55px !important;;
+  /* line-height: 45px !important;; */
   background: #f96c71;
   background: linear-gradient(to bottom, #fa6d72, #f45d5d);
   outline: none;
@@ -4380,13 +4380,6 @@ li {
   z-index: -1;
 }
 
-.z-depth-1-half,
-.btn:hover,
-.btn-large:hover,
-.btn-floating:hover {
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
-}
-
 .btn,
 .btn-large,
 .btn-flat {
@@ -4496,12 +4489,20 @@ li {
 .tw1 {
   background: #1da1f2;
 }
+
 .row .col {
   float: left;
   box-sizing: border-box;
-  padding: 0 0.75rem !important;
+  padding: 0 1.75rem !important;
   min-height: 1px;
+  margin: auto;
+  margin-bottom: -15px;
 }
+
+h4 {
+  font-weight: 600 !important;
+}
+
 /* 
 .row:after {
   content: "";
@@ -4664,6 +4665,125 @@ textarea.materialize-textarea.validate + label {
   left: 50%;
 } */
 
-.padd{
-  padding-left: 2px;
+/* 
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+} */
+
+.input-field {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.input-field.inline {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.input-field.inline input,
+.input-field.inline .select-dropdown {
+  margin-bottom: 1rem;
+}
+
+.input-field.col .prefix ~ label,
+.input-field.col .prefix ~ .validate ~ label {
+  width: calc(100% - 3rem - 1.5rem);
+}
+
+.input-field label {
+  color: #5f5f5f;
+  font-weight: 500;
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  font-size: 1rem;
+  cursor: text;
+  transition: .2s ease-out;
+  text-align: initial;
+  font-size: 14px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.input-field label:not(.label-icon).active {
+  font-size: 0.8rem;
+  -webkit-transform: translateY(-140%);
+  transform: translateY(-140%);
+  opacity: 0;
+}
+
+.input-field .prefix {
+  position: absolute;
+  width: 3rem;
+  font-size: 2rem;
+  transition: color .2s;
+}
+
+.input-field .prefix.active {
+  color: #26a69a;
+}
+
+.input-field .prefix ~ input,
+.input-field .prefix ~ textarea,
+.input-field .prefix ~ label,
+.input-field .prefix ~ .validate ~ label,
+.input-field .prefix ~ .autocomplete-content {
+  margin-left: 0rem;
+  width: 92%;
+  width: calc(100% - 3rem);
+}
+
+.input-field .prefix ~ label {
+  margin-left: 3rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .input-field .prefix ~ input {
+      width: 86%;
+      width: calc(100% - 3rem);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .input-field .prefix ~ input {
+      width: 80%;
+      width: calc(100% - 3rem);
+  }
+}
+
+.input-field.col .dropdown-content [type="checkbox"] + label {
+  top: 7px;
+  left: 0;
+  height: 18px;
+}
+
+input:not([type]).validate + label,
+input[type=text].validate + label,
+input[type=password].validate + label,
+input[type=email].validate + label,
+input[type=url].validate + label,
+input[type=time].validate + label,
+input[type=date].validate + label,
+input[type=datetime].validate + label,
+input[type=datetime-local].validate + label,
+input[type=tel].validate + label,
+input[type=number].validate + label,
+input[type=search].validate + label,
+textarea.materialize-textarea.validate + label {
+    width: 100%;
+    pointer-events: none;
+}
+
+/* Reset autofill background color */
+.input-field input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset !important; /* Set the background color you want */
+}
+
+/* .input-field input:focus(:placeholder-shown),
+.input-field input:valid {
+  box-shadow: 0 1px 0 0 #26a69a !important;
+} */
+
+.input-field input::placeholder {
+  color: #7a7878;
 }

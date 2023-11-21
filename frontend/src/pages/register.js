@@ -13,71 +13,62 @@ const Register = () => {
   return (
     <>
       <Navbar />
-      <div class="tr-register">
-        <div class="tr-regi-form">
+      <div className="tr-register">
+        <div className="tr-regi-form">
           <h4>Create an Account</h4>
           <p>It's free and always will be.</p>
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col m6 s12 padd">
-                <input type="text" class="validate full-width" placeholder="First Name" />
+          <form className="col s12">
+            <div className="row">
+              <div className="input-field col m6 s12">
+                <input type="text" className="validate" placeholder="First Name" required />
               </div>
-              <div class="input-field col m6 s12">
-                <input type="text" class="validate full-width" placeholder="Last Name" />
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input type="number" class="validate" placeholder="Nationality" />
+              <div className="input-field col m6 s12">
+                <input type="text" className="validate" placeholder="Last Name" required />
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s6">
-              <select id="idType" required>
-                <option value="" disabled selected>
-                  Type of ID
-                </option>
-                <option value="Passport">Passport</option>
-                <option value="Driver's License">Driver's License</option>
-                <option value="Other Government Issued ID">
-                  Other Government Issued ID
-                </option>
-              </select>
-
-                {/* <select>
-                <option value="" disabled selected>
-                  Type of ID
-                </option>
+            <div className="row">
+              <div className="input-field col s12">
+                <input type="number" className="validate" placeholder="Nationality" required />
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field col s6">
+                <select required>
+                  <option value="" disabled selected>
+                    Type of ID
+                  </option>
                   <option value="Passport">Passport</option>
                   <option value="Driver's License">Driver's License</option>
-                  <option value="Other Government Issued ID">Other Government Issued ID</option>
-                </select> */}
-              </div>
-              <div class="input-field col s6">
-                <input type="number"  class="validate" name="id" placeholder="Enter your ID number" required />
-              </div>
-            </div>
-                      <div class="row">
-              <div class="input-field col s12">
-                <input type="number" class="validate" placeholder="Enter your phone" />
+                  <option value="Other Government Issued ID">
+                    Other Government Issued ID
+                  </option>
+                </select>
+                </div>
+              <div className="input-field col s6">
+                <input type="number"  className="validate" name="id" placeholder="Enter your ID number" required />
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input type="email" class="validate" placeholder="Enter your email" />
+            <div className="row">
+              <div className="input-field col s12">
+                <input type="number" className="validate" placeholder="Enter your phone" />
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col m6 s12">
-                <input type="password" class="validate" placeholder="Password" />
-              </div>
-                          <div class="input-field col m6 s12">
-                <input type="password" class="validate" placeholder="Confirm Password" />
+            <div className="row">
+              <div className="input-field col s12">
+                <input type="email" className="validate" placeholder="Enter your email" required />
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input type="submit" value="Register" class="waves-effect waves-light btn-large full-btn" />
+            <div className="row">
+              <div className="input-field col m6 s12">
+                <input type="password" className="validate" placeholder="Password" required />
+              </div>
+                          <div className="input-field col m6 s12">
+                <input type="password" className="validate" placeholder="Confirm Password" required />
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field col s12">
+                <input type="submit" value="Register" className="waves-effect waves-light btn-large full-btn" />
               </div>
             </div>
           </form>          
