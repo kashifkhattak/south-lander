@@ -43,9 +43,21 @@ const Register = () => {
                     Other Government Issued ID
                   </option>
                 </select>
+
+
+                <div class="custom-select-wrapper">
+                  <input type="text" class="custom-select-input" value="Type of ID" />
+                  <ul class="custom-dropdown-content" style={{"width": "406.25px", "position": "absolute", "top": "0px", "left": "0px", "opacity": 1}}>
+                    <li class="disabled"><span>Type of ID</span></li>
+                    <li class=""><span>Passport</span></li>
+                    <li class="active selected"><span>Driver's License</span></li>
+                    <li class=""><span>Other Government Issued ID</span></li>
+                  </ul>
                 </div>
+
+              </div>
               <div className="input-field col s6">
-                <input type="number"  className="validate" name="id" placeholder="Enter your ID number" required />
+                <input type="number" className="validate" name="id" placeholder="Enter your ID number" required />
               </div>
             </div>
             <div className="row">
@@ -62,7 +74,7 @@ const Register = () => {
               <div className="input-field col m6 s12">
                 <input type="password" className="validate" placeholder="Password" required />
               </div>
-                          <div className="input-field col m6 s12">
+              <div className="input-field col m6 s12">
                 <input type="password" className="validate" placeholder="Confirm Password" required />
               </div>
             </div>
