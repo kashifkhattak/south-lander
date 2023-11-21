@@ -2885,16 +2885,18 @@ li {
 .bf-row-single select {
   width: 100%;
   background: #fff;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: 10px;
+  padding-right: 10px; */
   border: 0px;
-  height: 45px;
+  height: 48px;
   border-radius: 2px;
+  /* color: #7a7878; */
+
   /* margin-right: 1%; */
   /* margin-right: 2%; */
   box-sizing: border-box;
-  font-size: 14px;
-  border: 1px solid #efefef;
+  font-size: 16px;
+  border: 1px solid #cdcdcd;
 }
 
 .bf-row input {
@@ -2908,6 +2910,17 @@ li {
   box-sizing: border-box;
   font-size: 14px;
   border: 1px solid #efefef;
+}
+
+option {
+  font-weight: 500;
+  
+}
+
+option:hover {
+  background: #f0f0f0;
+  color: #555;
+  outline: none;
 }
 
 .bf-row-date {
