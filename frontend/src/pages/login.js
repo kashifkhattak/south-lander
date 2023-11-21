@@ -1,58 +1,37 @@
+import React from "react";
+import toast from "react-hot-toast";
 import Tips from "../components/tips";
 import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import React, { useEffect, useState } from "react";
-
-import packageService from "../services/package-service";
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import userService from "../services/user-service";
 
 const Login = () => {
 
-  const [user, setUser] = useState({
-    username: null,
-    password: null
-  });
+  const {
+    register,
+    handleSubmit
+  } = useForm({ mode: 'all' })
+  const navigate = useNavigate();
 
-  useEffect(() => {
+  const onFormSubmit = (data) => {
 
-  }, []);
+    const payload = {
+      ...data
+    }
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    loginUser();
+    userService.login(payload).then(response => {
+      if (response?.error)
+        toast.error(response.error);
+      else {
+        toast.success("Login successful");
+        navigate('/home');
+      }
+    });
+
   };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUser((prevUser) => ({
-      ...prevUser,
-      [name]: value
-    }));
-  };
-
-  const loginUser = async () => {
-    console.log(user)
-    //user service
-    // try {
-    //   const response = await fetch('YOUR_API_ENDPOINT', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(user),
-    //   });
-
-    //   if (response.ok) {
-    //     const data = await response.json();
-    //     console.log('Login successful:', data);
-    //   } else {
-    //     console.error('Login failed:', response.statusText);
-    //   }
-    // } catch (error) {
-    //   console.error('An error occurred during login:', error.message);
-    // }
-  };
-
   
   return (
     <>
@@ -61,15 +40,15 @@ const Login = () => {
         <div className="tr-regi-form">
           <h4>Sign In</h4>
           <p>Explore Ecuador's most innovative<br />destination experience offer</p>
-          <form className="col s12" onSubmit={handleFormSubmit}>
+          <form className="col s12" onSubmit={handleSubmit(onFormSubmit)}>
             <div className="row">
               <div className="input-field col s12">
-                <input type="text" className="validate" value={user.username} name="username" onChange={handleInputChange} placeholder="User Name" required />
+                <input type="text" className="validate" placeholder="Email" {...register("email")} required />
               </div>
             </div>
             <div className="row">
               <div className="input-field col s12">
-                <input type="password" className="validate" value={user.password} name="password" onChange={handleInputChange} placeholder="Password" required />
+                <input type="password" className="validate" placeholder="Password" {...register("password")} required />
               </div>
             </div>
             <div className="row">
