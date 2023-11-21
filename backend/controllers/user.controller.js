@@ -31,10 +31,10 @@ const userController = {
     await user.save();
 
     const sanitizedBody = { ...req.body };
-    (sanitizedBody.isAdmin = user.isAdmin),
-      (sanitizedBody.isActive = user.isActive),
-      (sanitizedBody.createdTimestamp = user.createdTimestamp),
-      (sanitizedBody.modifiedTimestamp = user.modifiedTimestamp);
+    sanitizedBody.isAdmin = user.isAdmin;
+    sanitizedBody.isActive = user.isActive;
+    sanitizedBody.createdTimestamp = user.createdTimestamp;
+    sanitizedBody.modifiedTimestamp = user.modifiedTimestamp;
     delete sanitizedBody.password;
 
     const token = user.generateAuthToken();
@@ -74,10 +74,10 @@ const userController = {
     await user.save();
 
     const sanitizedBody = { ...req.body };
-    (sanitizedBody.isAdmin = user.isAdmin),
-      (sanitizedBody.isActive = user.isActive),
-      (sanitizedBody.createdTimestamp = user.createdTimestamp),
-      (sanitizedBody.modifiedTimestamp = user.modifiedTimestamp);
+    sanitizedBody.isAdmin = user.isAdmin;
+    sanitizedBody.isActive = user.isActive;
+    sanitizedBody.createdTimestamp = user.createdTimestamp;
+    sanitizedBody.modifiedTimestamp = user.modifiedTimestamp;
     delete sanitizedBody.password;
 
     const token = user.generateAuthToken();
