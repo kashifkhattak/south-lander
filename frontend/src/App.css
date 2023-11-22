@@ -233,6 +233,7 @@ li {
   /* text-transform: uppercase; */
   position: relative;
   font-family: 'Quicksand', sans-serif;
+  background: none !important;
 }
 
 .navbar-routes ul li a:hover {
@@ -4804,6 +4805,7 @@ textarea.materialize-textarea.validate + label {
 select.browser-default {
   display: block;
 }
+
 select {
   display: block;
   background-color: rgba(255, 255, 255, 0.9);
@@ -4812,52 +4814,4 @@ select {
   border: 1px solid #cdcdcd;
   border-radius: 2px;
   height: 5rem;
-}
-
-.custom-select-wrapper {
-  position: relative;
-  display: inline-block; /* or block, depending on your layout */
-}
-
-.custom-select-input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  outline: none;
-  cursor: pointer;
-}
-
-.custom-select-input:focus {
-  border-color: #26a69a;
-  box-shadow: 0 1px 0 0 #26a69a;
-}
-
-.custom-dropdown-content {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-top: none;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: none;
-}
-
-.custom-dropdown-content li {
-  padding: 8px;
-  cursor: pointer;
-}
-
-.custom-dropdown-content li:hover {
-  background-color: #f0f0f0;
-}
-
-/* Show the dropdown when the input is focused */
-.custom-select-input:focus + .custom-dropdown-content {
-  display: block;
 }

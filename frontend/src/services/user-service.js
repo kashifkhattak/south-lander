@@ -7,7 +7,6 @@ const login = (data) => {
 }
 const registerUser = (data) => {
 	return axios.post('/user', data).then(response => {
-		console.log(response)
 		return response?.response?.data ? response.response.data : "";
 	})
 }

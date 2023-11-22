@@ -69,18 +69,6 @@ const Register = () => {
                     Other Government Issued ID
                   </option>
                 </select>
-
-               
-                {/* <div class="custom-select-wrapper">
-                  <input type="text" class="custom-select-input" value="Type of ID" />
-                  <ul class="custom-dropdown-content" style={{"width": "406.25px", "top": "0px", "left": "0px", "opacity": 1}}>
-                    <li class="disabled"><span>Type of ID</span></li>
-                    <li class=""><span>Passport</span></li>
-                    <li class="active selected"><span>Driver's License</span></li>
-                    <li class=""><span>Other Government Issued ID</span></li>
-                  </ul>
-                </div> */}
-
               </div>
               <div className="input-field col s6">
                 <input type="number" className="validate" {...register("idNumber")} placeholder="Enter your ID number" required />
