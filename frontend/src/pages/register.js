@@ -54,7 +54,7 @@ const Register = () => {
             </div>
             <div className="row">
               <div className="input-field col s12">
-                <input type="number" className="validate"  {...register("nationality")} placeholder="Nationality" required />
+                <input type="text" className="validate"  {...register("nationality")} placeholder="Nationality" required />
               </div>
             </div>
             <div className="row">
