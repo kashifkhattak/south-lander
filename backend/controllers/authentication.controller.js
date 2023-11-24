@@ -5,7 +5,7 @@ const Authentication = require('../models/authentication.model');
 
 const authenticationController = {
   login: async (req, res) => {
-    const { credentials, password } = req.body;
+    const { email, password } = req.body;
     const { error } = Authentication.validateAuthentication(req.body);
 
     if (error) {
@@ -16,9 +16,7 @@ const authenticationController = {
         .json({ error: `Invalid data format: ${error}` });
     }
 
-    const user = await User.findOne({
-      $or: [{ email: credentials }, { username: credentials }],
-    });
+    const user = await User.findOne({ email: email });
 
     if (!user) {
       console.log('Invalid email or password.');
