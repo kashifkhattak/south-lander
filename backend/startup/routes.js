@@ -1,5 +1,6 @@
 const express = require('express');
 require('express-async-errors');
+const cors = require('cors');
 const user = require('../routes/user.route');
 const authentication = require('../routes/authentication.route');
 const package = require('../routes/package.route');
@@ -20,6 +21,9 @@ const inquiry = require('../routes/inquiry.route');
 const error = require('../middlewares/error');
 
 module.exports = (app) => {
+  app.use(cors({
+    exposedHeaders: ['x-auth-token'],
+  }));
   app.use(express.json());
   app.use('/api/user', user);
   app.use('/api/auth', authentication);
