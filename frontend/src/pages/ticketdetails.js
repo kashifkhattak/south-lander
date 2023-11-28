@@ -15,6 +15,7 @@ import Map from "../components/map";
 import AdBar from "../components/adbar";
 import InfoBannerSmall from "../components/infobannersmall";
 import ticketService from "../services/ticket-service";
+import withAuth from "../hoc/withAuth";
 
 const TicketDetails = () => {
   const {id} = useParams()
@@ -72,4 +73,4 @@ const TicketDetails = () => {
   );
 };
 
-export default TicketDetails;
+export default withAuth(TicketDetails);

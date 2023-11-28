@@ -13,6 +13,7 @@ import Map from "../components/map";
 import InfoBannerSmall from "../components/infobannersmall";
 import AboutPackage from "../components/aboutpackage";
 import tourService from "../services/tour-service";
+import withAuth from "../hoc/withAuth";
 
 const TourDetails = () => {
   const {id} = useParams()
@@ -69,4 +70,4 @@ const TourDetails = () => {
   );
 };
 
-export default TourDetails;
+export default withAuth(TourDetails);

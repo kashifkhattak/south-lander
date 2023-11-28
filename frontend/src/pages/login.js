@@ -27,7 +27,7 @@ const Login = () => {
         toast.error(response.error);
       else {
         toast.success("Login successful");
-        // sessionStorage.setItem("token", )
+        sessionStorage.setItem("token", response.token);
         navigate('/home');
       }
     });

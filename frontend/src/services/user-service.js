@@ -4,7 +4,6 @@ const login = (data) => {
 	return axios.post('/auth', data).then(response => {
 		if (response.status === 200) {
 		  const authToken = response.headers['x-auth-token'];
-  		  console.log(authToken);
   		  return { token: authToken };
 		} else {
 		  return response.response.data;
