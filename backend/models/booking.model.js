@@ -55,16 +55,16 @@ const Booking = mongoose.model(
     //Booking Type: Event Planning
     eventType: String,
     eventDescription: String,
+    requireTicketSaleManagement: Boolean,
     //Booking Type: Rentals
     rental: String,
     //Booking Type: Tours
     tour: String,
     pickUpLocation: String,
     carType: String,
-    passengersCount: Number,
     //Booking Type: Event Tickets
     event: String,
-    location: String,
+    seatLocation: String,
     ticketsCount: Number,
     //Booking Type: Transfers
     origin: String,
@@ -80,14 +80,16 @@ const Booking = mongoose.model(
     transportDescription: String,
     adultsCount: String,
     childrenCount: String,
+    infantCount: String,
     checkIn: Date,
     checkOut: Date,
     date: Date,
     time: String,
+    price: Number,
     status: {
       type: String,
-      enum: ['Pending Approval', 'Accepted', 'Rejected', 'Active', 'Complete'],
-      default: 'Pending Approval',
+      enum: ['Pending Payment', 'Pending Approval', 'Accepted', 'Rejected', 'Active', 'Complete'],
+      default: 'Pending Payment',
     },
   })
 );
@@ -105,14 +107,13 @@ function validateBooking(booking) {
         'Transfers'
       )
       .required(),
-    userId: Joi.objectId().required(),
     name: Joi.string().required(),
     nationality: Joi.string().required(),
     idType: Joi.string().required(),
     idNumber: Joi.string().required(),
     phone: Joi.string().required(),
     email: Joi.string().email().required(),
-    package: Joi.string().when('type', {
+    package: Joi.objectId().when('type', {
       is: 'Packages',
       then: Joi.required(),
     }),
@@ -136,21 +137,22 @@ function validateBooking(booking) {
       is: 'Event Planning',
       then: Joi.required(),
     }),
-    rental: Joi.string().when('type', { is: 'Rentals', then: Joi.required() }),
-    tour: Joi.string().when('type', { is: 'Tours', then: Joi.required() }),
+    requireTicketSaleManagement: Joi.boolean().when('type', {
+      is: 'Event Planning',
+      then: Joi.required(),
+    }),
+    rental: Joi.objectId().when('type', { is: 'Rentals', then: Joi.required() }),
+    tour: Joi.objectId().when('type', { is: 'Tours', then: Joi.required() }),
     pickUpLocation: Joi.string().when('type', {
       is: 'Tours',
       then: Joi.required(),
     }),
     carType: Joi.string().when('type', { is: 'Tours', then: Joi.required() }),
-    passengersCount: Joi.number()
-      .integer()
-      .when('type', { is: 'Tours', then: Joi.required() }),
-    event: Joi.string().when('type', {
+    event: Joi.objectId().when('type', {
       is: 'Event Tickets',
       then: Joi.required(),
     }),
-    location: Joi.string().when('type', {
+    seatLocation: Joi.string().when('type', {
       is: 'Event Tickets',
       then: Joi.required(),
     }),
@@ -191,6 +193,20 @@ function validateBooking(booking) {
       },
     ]),
     childrenCount: Joi.string().when('type', [
+      { is: 'Event Tickets', then: Joi.optional() },
+      {
+        is: Joi.string().valid(
+          'Packages',
+          'Accommodation',
+          'Event Planning',
+          'Rentals',
+          'Tours',
+          'Transfers'
+        ),
+        then: Joi.required(),
+      },
+    ]),
+    infantCount: Joi.string().when('type', [
       { is: 'Event Tickets', then: Joi.optional() },
       {
         is: Joi.string().valid(

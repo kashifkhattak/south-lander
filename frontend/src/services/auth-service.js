@@ -1,5 +1,4 @@
 import axios from 'axios'
-import localForage from 'localforage'
 import { apiHost } from './host'
 
 const login = (credentials, password) => {
@@ -13,7 +12,7 @@ const login = (credentials, password) => {
 }
 
 const logout = (callback = () => console.log('store clear')) => {
-	localForage.clear(callback)
+	sessionStorage.clear()
 }
 
 const authService = {

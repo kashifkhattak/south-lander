@@ -4137,6 +4137,12 @@ option:hover {
   margin: 25px auto 25px auto;
 }
 
+.sales{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px auto 25px auto;
+}
+
 /* Register And Login ----------------------------------------------------------------------------------------------- */
 
 .tr-register {
@@ -4825,4 +4831,17 @@ select {
   border: 1px solid #cdcdcd;
   border-radius: 2px;
   height: 5rem;
+}
+
+.checkbox-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.checkbox-label input[type='checkbox'] {
+  margin-right: 5px;
+}
+
+.checkbox-text {
+  vertical-align: middle;
 }
