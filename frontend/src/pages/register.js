@@ -39,68 +39,116 @@ const Register = () => {
   return (
     <>
       <Navbar />
-      <div className="tr-register">
-        <div className="tr-regi-form">
-          <h4>Create an Account</h4>
-          <p>It's free and always will be.</p>
-          <form className="col s12" onSubmit={handleSubmit(onFormSubmit)}>
-            <div className="row">
-              <div className="input-field col m6 s12">
-                <input type="text" className="validate" {...register("firstName")} placeholder="First Name" required />
-              </div>
-              <div className="input-field col m6 s12">
-                <input type="text" className="validate" {...register("lastName")} placeholder="Last Name" required />
+
+      <div className={`hero-main login-main`}>
+        <div className="hero-content">
+          <div className="hero-forms" style={{margin: "-180px"}}>
+            <div className="bookingforms-main">  
+              <div className="bf-card">
+                <h4 style={{"font-size": "xxx-large", "padding-top": "10px"}}>Create an Account</h4>
+                <p>It's free and always will be.</p>
+                <form onSubmit={handleSubmit(onFormSubmit)} className="bf-form">
+                  <div className="bf-row-single">
+                    <input
+                      type="text"
+                      id="firstName"
+                      placeholder="Enter your First Name"
+                      required
+                      {...register("firstName")}
+                    />
+                  </div>
+                  <div className="bf-row-single">
+                    <input
+                      type="text"
+                      id="lastName"
+                      placeholder="Enter your Last Name"
+                      required
+                      {...register("lastName")}
+                    />
+                  </div>
+                  <div className="bf-row-single">
+                    <input
+                      type="text"
+                      id="nationality"
+                      placeholder="Enter your Nationality"
+                      required
+                      {...register("nationality")}
+                    />
+                  </div>
+                  <div className="bf-row">
+                    <select id="idType" required {...register("idType")}>
+                      <option value="" disabled selected>
+                        Type of ID
+                      </option>
+                      <option value="Passport">Passport</option>
+                      <option value="Driver's License">Driver's License</option>
+                      <option value="Other Government Issued ID">
+                        Other Government Issued ID
+                      </option>
+                    </select>
+                    <input
+                      type="text"
+                      name="idNumber"
+                      id="idNumber"
+                      placeholder="Enter your ID number"
+                      required
+                      {...register("idNumber")}
+                    />
+                  </div>
+                  <div className="bf-row-single">
+                    <input
+                      type="number"
+                      id="phone"
+                      placeholder="Enter your phone"
+                      required
+                      {...register("phone")}
+                    />
+                  </div>
+                  <div className="bf-row-single">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your email"
+                      required
+                      {...register("email")}
+                    />
+                  </div>
+
+                  <div className="bf-row">
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="Enter your Password"
+                      required
+                      {...register("password")}
+                    />
+                      <input
+                      type="password"
+                      id="confirmPassword"
+                      placeholder="Confirm your password"
+                      required
+                      {...register("confirmPassword")}
+                    />
+                  </div>
+                  
+                  <div className="bf-row-single">
+                    <input 
+                      type="submit" 
+                      value="register" 
+                      className="waves-effect waves-light btn-large full-btn" 
+                    />
+                  </div>
+                        
+                  <div className="bf-row-single">
+                    <p>Are you a already registered ? <Link to="/login">Click to Login</Link></p>
+                  </div>
+                </form>
               </div>
             </div>
-            <div className="row">
-              <div className="input-field col s12">
-                <input type="text" className="validate"  {...register("nationality")} placeholder="Nationality" required />
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col s6 bf-row-single">
-                <select required  {...register("idType")}>
-                  <option value="" disabled selected>
-                    Type of ID
-                  </option>
-                  <option value="Passport">Passport</option>
-                  <option value="Driver's License">Driver's License</option>
-                  <option value="Other Government Issued ID">
-                    Other Government Issued ID
-                  </option>
-                </select>
-              </div>
-              <div className="input-field col s6">
-                <input type="number" className="validate" {...register("idNumber")} placeholder="Enter your ID number" required />
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col s12">
-                <input type="number" className="validate"  {...register("phone")} placeholder="Enter your phone" />
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col s12">
-                <input type="email" className="validate"  {...register("email")} placeholder="Enter your email" required />
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col m6 s12">
-                <input type="password" className="validate"  {...register("password")} placeholder="Password" required />
-              </div>
-              <div className="input-field col m6 s12">
-                <input type="password" className="validate"  {...register("confirmPassword")} placeholder="Confirm Password" required />
-              </div>
-            </div>
-            <div className="row">
-              <div className="input-field col s12">
-                <input type="submit" value="Register" className="waves-effect waves-light btn-large full-btn" />
-              </div>
-            </div>
-          </form>          
-          <p>Are you a already registered ? <Link to="/login">Click to Login</Link></p>
+          </div>
         </div>
-		  </div>
+      </div>
       <Tips />
       <Footer />
     </>

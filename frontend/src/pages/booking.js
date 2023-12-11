@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import Hero from "../components/hero";
 import Tips from "../components/tips";
 import BookingForms from "../components/bookingforms";
+import withAuth from "../hoc/withAuth";
 
 const Booking = () => {
   const [tabs, setTabs] = useState()
@@ -24,4 +25,4 @@ const Booking = () => {
   );
 };
 
-export default Booking;
+export default withAuth(Booking);

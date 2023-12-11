@@ -13,6 +13,7 @@ import Description from "../components/description";
 import Map from "../components/map";
 import InfoBannerSmall from "../components/infobannersmall";
 import rentalService from "../services/rental-service";
+import withAuth from "../hoc/withAuth";
 
 const RentalDetails = () => {
   const {id} = useParams()
@@ -66,4 +67,4 @@ const RentalDetails = () => {
   );
 };
 
-export default RentalDetails;
+export default withAuth(RentalDetails);

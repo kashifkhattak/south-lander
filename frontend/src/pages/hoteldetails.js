@@ -13,6 +13,7 @@ import Map from "../components/map";
 import AdBar from "../components/adbar";
 import { useParams } from "react-router-dom";
 import accomodationService from "../services/accomodation-service";
+import withAuth from "../hoc/withAuth";
 
 const HotelDetails = () => {
   const { id } = useParams();
@@ -68,4 +69,4 @@ const HotelDetails = () => {
   );
 };
 
-export default HotelDetails;
+export default withAuth(HotelDetails);

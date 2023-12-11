@@ -24,7 +24,7 @@ const Apartments = ({data}) => {
         <div className="apart-three">
           <h5>Price Per Night</h5>
           <span>${data.pricePerNight}</span>
-          <Link>Book Now</Link>
+          <Link to="/booking">Book Now</Link>
         </div>
       </div>
     </>

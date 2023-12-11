@@ -455,6 +455,18 @@ li {
   background-attachment: fixed;
 }
 
+.login-main {
+  /* width: 100%;
+  background-repeat: no-repeat;
+  background: url(./assets/images/face.jpg) #e6e6e6; */
+  /* margin: -180px; */
+  background: url(./assets/images/face.jpg) #e6e6e6;
+  
+  /* background-position: center;
+  background-size: cover;
+  background-attachment: fixed; */
+}
+
 .hero-main .background-position-1 {
   background-position: 10px
 }
@@ -516,7 +528,7 @@ li {
 }
 
 .hero-content p {
-  color: #ffffff;
+  /* color: #ffffff; */
   font-size: 20px;
 }
 
@@ -2784,7 +2796,7 @@ li {
   width: 100%;
   height: auto;
   background: #ffffff;
-  padding: 50px;
+  padding: 50px 25px;
   border-radius: 5px;
   border-bottom: 2px solid #cccccc;
   box-shadow: 0px 11px 26px 0px rgba(0, 0, 0, 0.29);
@@ -2871,7 +2883,7 @@ li {
 
 .bf-row-single input {
   width: 100%;
-  background: #fff;
+  /* background: #fff; */
   padding-left: 10px;
   border: 0px;
   height: 45px;
@@ -2879,8 +2891,8 @@ li {
   /* margin-left: 2%;
   margin-right: 2%; */
   box-sizing: border-box;
-  font-size: 14px;
-  border: 1px solid #efefef;
+  font-size: 17px;
+  /* border: 1px solid #efefef; */
 }
 
 .bf-row-single select {
@@ -4125,6 +4137,12 @@ option:hover {
   margin: 25px auto 25px auto;
 }
 
+.sales{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px auto 25px auto;
+}
+
 /* Register And Login ----------------------------------------------------------------------------------------------- */
 
 .tr-register {
@@ -4148,16 +4166,16 @@ option:hover {
 }
 
 .tr-regi-form {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   width: 50%;
   background: #fff;
-  padding: 45px 50px 50px 50px;
-  margin-top: 70px;
-  margin-bottom: 70px;
+  /* padding: 45px 50px 50px 50px; */
+  /* margin-top: 70px; */
+  /* margin-bottom: 70px; */
   border-radius: 5px;
   text-align: center;
   position: relative;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+  /* box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8); */
 }
 
 .tr-regi-form input {
@@ -4234,7 +4252,6 @@ option:hover {
   overflow: hidden;
   border-top: 1px solid #dcdcdc;
   margin-top: 15px;
-  padding-top: 15px;
 }
 
 .soc-login h4 {
@@ -4814,4 +4831,17 @@ select {
   border: 1px solid #cdcdcd;
   border-radius: 2px;
   height: 5rem;
+}
+
+.checkbox-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.checkbox-label input[type='checkbox'] {
+  margin-right: 5px;
+}
+
+.checkbox-text {
+  vertical-align: middle;
 }

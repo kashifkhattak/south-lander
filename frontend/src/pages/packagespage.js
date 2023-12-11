@@ -7,6 +7,7 @@ import SectionHeader from "../components/sectionheader";
 import SinglePackage from "../components/singlepackage";
 import variantService from "../services/variant-service";
 import { useParams } from "react-router-dom";
+import withAuth from "../hoc/withAuth";
 
 
 const PackagesPage = () => {
@@ -39,4 +40,4 @@ const PackagesPage = () => {
   );
 };
 
-export default PackagesPage;
+export default withAuth(PackagesPage);

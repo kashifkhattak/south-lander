@@ -15,6 +15,7 @@ import Map from "../components/map";
 import AdBar from "../components/adbar";
 import InfoBannerSmall from "../components/infobannersmall";
 import variantService from "../services/variant-service";
+import withAuth from "../hoc/withAuth";
 
 const PackagesDetails = () => {
   const {id} = useParams()
@@ -72,4 +73,4 @@ const PackagesDetails = () => {
   );
 };
 
-export default PackagesDetails;
+export default withAuth(PackagesDetails);

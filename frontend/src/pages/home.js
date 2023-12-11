@@ -17,6 +17,7 @@ import eventService from "../services/event-service";
 import rentalService from "../services/rental-service";
 import tourService from "../services/tour-service";
 import ticketService from "../services/ticket-service";
+import withAuth from "../hoc/withAuth";
 
 const Home = () => {
 
@@ -107,4 +108,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withAuth(Home);
