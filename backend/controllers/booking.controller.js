@@ -1,6 +1,5 @@
 const httpStatus = require('http-status-codes').StatusCodes;
 const paymentData = require('../helpers/paymentData');
-const priceCalculator = require('../helpers/priceCalculator');
 const { Booking, validateBooking } = require('../models/booking.model');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 

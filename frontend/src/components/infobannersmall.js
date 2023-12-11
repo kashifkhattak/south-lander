@@ -12,11 +12,11 @@ const InfoBannerSmall = ({ data }) => {
             whiteSpace: "nowrap",
           }}
         >
-          {data?.title}
+          {data?.eventPlanningId ? "PAX/Per Person Rates" : data?.title}
         </h3>
-        <h3>${data?.price || data?.pricePerNight || data?.airPackagePrice}</h3>
-        <h3>{data?.capacity || data?.duration}</h3>
-        <Link>Book Now</Link>
+        <h3>{data?.eventPlanningId ? "Customized Experience" : "$" + (data?.price || data?.pricePerNight || data?.airPackagePric)}</h3>
+        {data?.eventPlanningId ? null : <h3>{(data?.capacity || data?.duration)}</h3>}
+        <Link to="/booking">Book Now</Link>
       </div>
     </>
   );
