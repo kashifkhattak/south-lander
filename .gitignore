@@ -1,6 +1,6 @@
 # Logs
+.DS_Store
 node_modules
-backend/.env
 .env
-env
 .idea
+backend/.env
