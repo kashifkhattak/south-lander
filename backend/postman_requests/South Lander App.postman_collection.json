@@ -1,0 +1,1643 @@
+{
+	"info": {
+		"_postman_id": "08bb2435-59d2-441d-8b97-a4a2f170bd1a",
+		"name": "South Lander App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12342439"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Huzaifah\",\n    \"lastName\": \"Tariq\",\n    \"nationality\": \"Pakistani\",\n    \"idType\": \"Passport\",\n    \"idNumber\": \"1234567890\",\n    \"phone\": \"090078601\",\n    \"email\": \"huzaifahtariq08@gmail.com\",\n    \"password\": \"281199\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/user"
+					},
+					"response": []
+				},
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVjODQ4MDc2YThmODQ3YTNlMDA5ZjciLCJmaXJzdE5hbWUiOiJIdXphaWZhaCIsImxhc3ROYW1lIjoiVGFyaXEiLCJuYXRpb25hbGl0eSI6IlBha2lzdGFuaSIsImlkVHlwZSI6IlBhc3Nwb3J0IiwiaWROdW1iZXIiOiIxMjM0NTY3ODkwIiwicGhvbmUiOiIwOTAwNzg2MDEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNzAwNTYyMDY3fQ.jkMwqaJ9cIL1f2Lu0yUGJoDSe2HmZbtJ6Irkqs_3p1s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Kashif\",\n    \"lastName\": \"Khan\",\n    \"nationality\": \"Pakistani\",\n    \"idType\": \"Passport\",\n    \"idNumber\": \"1234567890\",\n    \"phone\": \"090078601\",\n    \"email\": \"kashif@gmail.com\",\n    \"password\": \"281199\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/user/admin"
+					},
+					"response": []
+				},
+				{
+					"name": "Get My User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVjODQ4MDc2YThmODQ3YTNlMDA5ZjciLCJmaXJzdE5hbWUiOiJIdXphaWZhaCIsImxhc3ROYW1lIjoiVGFyaXEiLCJuYXRpb25hbGl0eSI6IlBha2lzdGFuaSIsImlkVHlwZSI6IlBhc3Nwb3J0IiwiaWROdW1iZXIiOiIxMjM0NTY3ODkwIiwicGhvbmUiOiIwOTAwNzg2MDEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNzAwNTY3MzY1fQ.DbI6bC--88vuNheLhQ4vY_8etghRWyR0tL4zZJQpz7I",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/user/me"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTVjODQ4MDc2YThmODQ3YTNlMDA5ZjciLCJmaXJzdE5hbWUiOiJIdXphaWZhaCIsImxhc3ROYW1lIjoiVGFyaXEiLCJuYXRpb25hbGl0eSI6IlBha2lzdGFuaSIsImlkVHlwZSI6IlBhc3Nwb3J0IiwiaWROdW1iZXIiOiIxMjM0NTY3ODkwIiwicGhvbmUiOiIwOTAwNzg2MDEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNzAwNTY3MzY1fQ.DbI6bC--88vuNheLhQ4vY_8etghRWyR0tL4zZJQpz7I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Huzaifah",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "username, isActive",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update My User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjNTIwNDYwMzE1NzE0ODNmZjIwZWYiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjU3OTU2fQ.XEG41i2C58FEEM2Uwp1rVeMXtlyCKzoUIbTGoLb7N74",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Huzaifah\",\n    \"lastName\": \"Tariq\",\n    \"username\": \"huzaifahtariq\",\n    \"email\": \"huzaifahtariq@gmail.com\",\n    \"password\": \"281199\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/user/me"
+					},
+					"response": []
+				},
+				{
+					"name": "Disable User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjNTIwNDYwMzE1NzE0ODNmZjIwZWYiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXFAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTY5NDI1ODM2NX0.a9qYyFjL86VujIMaz6asMx9LLBZk1nUQmz12_TByisA",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/user/disable/64fc53c8ca94612629eb3c5f"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjNTIwNDYwMzE1NzE0ODNmZjIwZWYiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXFAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaXNBY3RpdmUiOnRydWUsImlhdCI6MTY5NDI1ODM2NX0.a9qYyFjL86VujIMaz6asMx9LLBZk1nUQmz12_TByisA",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/user/64fc53c8ca94612629eb3c5f"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"huzaifahtariq08@gmail.com\",\n    \"password\": \"281199\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/auth"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Packages",
+			"item": [
+				{
+					"name": "Create Package",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZkYzJkYWFhNTAyZjViMGZlOGMyZTUiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0OTUzMzE2fQ.58QU5wE48iwZvrpDVzO62wCLZnAnrNrQXzQ785BEaPU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"4 WORLDS\",\n    \"tagLine\": \"Total EC\",\n    \"discountPercentage\": 0,\n    \"imagePath\": \"https://southlander.travel/images/t9.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/package"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Packages",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/package"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Package",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"COAST\",\n    \"tagLine\": \"Beach Hopping\",\n    \"discountPercentage\": 20,\n    \"imagePath\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/package/64fc84084b2847e9a294df2c"
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Package",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/package/disable/64fc84084b2847e9a294df2c"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Package",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/package/64fc84084b2847e9a294df2c"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Package Variants",
+			"item": [
+				{
+					"name": "Create Package Variant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"packageId\": \"6506f0bd4e8ea20100b5e2fe\",\n    \"title\": \"4 Worlds Ecuador 14 Days / 13 Nights\",\n    \"description\": \"Ecuador is a relatively small territory characterized by 4 distinct regions and hundreds of distinct ecosystems where culture and bio-diversity alike have flourished pristine and unique, minutes away from each other ... enjoy Ecuador.\",\n    \"discountPercentage\": 30,\n    \"availableTickets\": 40,\n    \"price\": 100,\n    \"availableDates\": \"Year-Round\",\n    \"tag\": \"Leisure, Culture and Adventure\",\n    \"landmarks\": [\n        \"Coast\",\n        \"Andes\",\n        \"Amazonia\",\n        \"Galapagos\"\n    ],\n    \"imagePath\": \"https://southlander.travel/images/iplace-2.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/packageVariant"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Package Variants",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/packageVariant?packageId=6506f0bd4e8ea20100b5e2fe",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"packageVariant"
+							],
+							"query": [
+								{
+									"key": "packageId",
+									"value": "6506f0bd4e8ea20100b5e2fe"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Package Variant",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"packageId\": \"64fc83e3ed8aa0f669c852a2\",\n    \"title\": \"Classic Galapagos Experience 5 Days / 4 Nights\",\n    \"description\": \"A best-selling combination of tours and free time to explore and enjoy the two main islands; this 5-day package includes a round-trip flight Quito-Baltra-Isabela.\",\n    \"discountPercentage\": 30,\n    \"availableTickets\": 40,\n    \"price\": 100,\n    \"availableDates\": \"Year-Round\",\n    \"tag\": \"Land and Water Exploration\",\n    \"landmarks\": [\"Baltra\", \"Santa Cruz\", \"Isabela\"],\n    \"imagePath\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/packageVariant/64fc888dde3bd7172ce2b891"
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Package Variant",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/packageVariant/disable/64fc888dde3bd7172ce2b891"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Package Variant",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/packageVariant/64fc888dde3bd7172ce2b891"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Variant Details",
+			"item": [
+				{
+					"name": "Create Variant Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"variantId\": \"650860ff437a58e56e56a92c\",\n    \"title\": \"4 Worlds Ecuador\",\n    \"description\": \"Ecuador is a relatively small territory characterized by 4 distinct natural regions where culture and bio-diversity alike have flourished pristine and unique; modern infraestructure, various UNESCO Heritage Sites, cultural splendor, wildlife watching, sublime scenery, snow-capped highlands and volcanoes, waves splashing white-sand beaches and more! wrapped-up in an easy-access compact territory the size of Nevada; through this all-inclusive package, enjoy the 4 natural regions of Ecuador to its fullest. The COAST region, the fertile and ever labored lands stretching to the west of the Andean range, splashed by the ever-giving Pacific Ocean. The ANDES region, consisting of the Andean and inter-andean highlands, containing volcanoes, snow-capped peaks and culturally rich cities. The AMAZONIA basin and Amazon jungle rainforest, graced by huge national parks and Amerindian untouchable zones, where free men still roam and live traditionally. The GALAPAGOS archipelago region comprising the Galápagos Islands, some 1,000 kilometers (620 mi) west of the mainland in the Pacific Ocean; in itself a National Park, UNESCO World Heritage Site and jealously guarded Marine Reserve comprising 133,000 kilometers (51,352 square mi).\",\n    \"airPackagePrice\": 1200.0,\n    \"duration\": \"15 Days/14 Nights\",\n    \"rating\": 5,\n    \"packageHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Rio, Brazil\"\n        },\n        {\n            \"key\": \"Arrival Date\",\n            \"value\": \"Nov 12, 2017\"\n        },\n        {\n            \"key\": \"Departure Date\",\n            \"value\": \"Nov 21, 2017\"\n        },\n        {\n            \"key\": \"Additional Perks\",\n            \"value\": \"Free Sightseeing & Hotel\"\n        }\n    ],\n    \"photoGallery\": [\n        \"https://southlander.travel/images/gallery/t1.jpg\",\n        \"https://southlander.travel/images/gallery/t2.jpg\",\n        \"https://southlander.travel/images/gallery/t3.jpg\",\n        \"https://southlander.travel/images/gallery/t4.jpg\",\n        \"https://southlander.travel/images/gallery/t5.jpg\",\n        \"https://southlander.travel/images/gallery/s6.jpg\",\n        \"https://southlander.travel/images/gallery/s7.jpg\",\n        \"https://southlander.travel/images/gallery/s8.jpg\",\n        \"https://southlander.travel/images/gallery/s9.jpg\"\n    ],\n    \"location\": \"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16337809.868269963!2d-92.94450672683443!3d-1.3425154842615954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902387dda89a4bd5%3A0x9d76af04119c3702!2sEcuador!5e0!3m2!1sen!2sus!4v1633398337958!5m2!1sen!2sus\",\n    \"about\": [\n        {\n            \"placesCovered\": \"Plaza de San Francisco\",\n            \"description\": \"Colonial Square\",\n            \"activities\": \"History/Walk/Architecture\",\n            \"island\": \"Casco Colonial\"\n        },\n        {\n            \"placesCovered\": \"Plaza de Santo Domingo\",\n            \"description\": \"Colonial Square\",\n            \"activities\": \"History/Walk/Architecture\",\n            \"island\": \"Casco Colonial\"\n        },\n        {\n            \"placesCovered\": \"El Ejido Park\",\n            \"description\": \"City Park\",\n            \"activities\": \"History/Walk/Arts\",\n            \"island\": \"Downtown Quito\"\n        },\n        {\n            \"placesCovered\": \"Calle de las 7 Cruces\",\n            \"description\": \"Casco Colonial\",\n            \"activities\": \"History/Walk/Architecture\",\n            \"island\": \"Casco Colonial\"\n        },\n        {\n            \"placesCovered\": \"Calle La Ronda\",\n            \"description\": \"Casco Colonial\",\n            \"activities\": \"History/Walk/Food\",\n            \"island\": \"Casco Colonial\"\n        },\n        {\n            \"placesCovered\": \"Pululahua Geobotanical Reserve\",\n            \"description\": \"Volcano Crater\",\n            \"activities\": \"Guided Hike\",\n            \"island\": \"Mitad del Mundo\"\n        },\n        {\n            \"placesCovered\": \"Ciudad Mitad del Mundo\",\n            \"description\": \"Outdoors Science Museum\",\n            \"activities\": \"Guided Walk\",\n            \"island\": \"Mitad del Mundo\"\n        },\n        {\n            \"placesCovered\": \"La Gavía\",\n            \"description\": \"Resort Condominium\",\n            \"activities\": \"Beachlife/Leisure/Motorsports\",\n            \"island\": \"Same Casablanca\"\n        },\n        {\n            \"placesCovered\": \"Playa de Same Casablanca\",\n            \"description\": \"Whitesand beach\",\n            \"activities\": \"Beachlife/Leisure/Motorsports\",\n            \"island\": \"Same Casablanca\"\n        },\n        {\n            \"placesCovered\": \"Sua and Peñon del Suicida\",\n            \"description\": \"Boardwalk and lookout\",\n            \"activities\": \"Walk and scenery\",\n            \"island\": \"Sua\"\n        },\n        {\n            \"placesCovered\": \"Playa de Tonsupa\",\n            \"description\": \"Beach and boardwalk\",\n            \"activities\": \"Beachlife/Leisure/Motorsports\",\n            \"island\": \"Tonsupa\"\n        },\n        {\n            \"placesCovered\": \"Playa Las Palmas\",\n            \"description\": \"Beach and boardwalk\",\n            \"activities\": \"Beachlife/Food/Leisure\",\n            \"island\": \"Esmeraldas\"\n        },\n        {\n            \"placesCovered\": \"Otavalo Poncho Market\",\n            \"description\": \"Market Square\",\n            \"activities\": \"Culture/Arts/Crafts\",\n            \"island\": \"Otavalo\"\n        },\n        {\n            \"placesCovered\": \"San Pablo Lake\",\n            \"description\": \"Lake\",\n            \"activities\": \"Viewpoint/Hike/Kayak\",\n            \"island\": \"Otavalo\"\n        },\n        {\n            \"placesCovered\": \"Condor Park\",\n            \"description\": \"Aviary and Viewpoint\",\n            \"activities\": \"Falconry Exhibition\",\n            \"island\": \"Otavalo\"\n        },\n        {\n            \"placesCovered\": \"Cotacachi\",\n            \"description\": \"Fine Leather Artisan Town\",\n            \"activities\": \"Culture/Arts/Crafts\",\n            \"island\": \"Cotacachi\"\n        },\n        {\n            \"placesCovered\": \"Hacienda Zuleta\",\n            \"description\": \"Restored Hacienda House\",\n            \"activities\": \"Culture/Arts/Crafts\",\n            \"island\": \"Zuleta\"\n        },\n        {\n            \"placesCovered\": \"Cotopaxi National Park\",\n            \"description\": \"Volcanos and Lakes\",\n            \"activities\": \"Viewpoint/Hike\",\n            \"island\": \"Cotopaxi\"\n        },\n        {\n            \"placesCovered\": \"Quilotoa Lake\",\n            \"description\": \"Lagoon and Viewpoint\",\n            \"activities\": \"Viewpoint/Hike/Kayak\",\n            \"island\": \"Cotopaxi\"\n        },\n        {\n            \"placesCovered\": \"Baños City\",\n            \"description\": \"Small City\",\n            \"activities\": \"City tour\",\n            \"island\": \"Baños\"\n        },\n        {\n            \"placesCovered\": \"Pailón del Diablo\",\n            \"description\": \"Big Waterfall\",\n            \"activities\": \"Hike/Sightseeing\",\n            \"island\": \"Baños\"\n        },\n        {\n            \"placesCovered\": \"Columpio de Bellavista\",\n            \"description\": \"Viewpoint\",\n            \"activities\": \"Hike/Sightseeing\",\n            \"island\": \"Baños\"\n        },\n        {\n            \"placesCovered\": \"Cascada Las Lajas\",\n            \"description\": \"Waterfalls\",\n            \"activities\": \"Hike/Sightseeing\",\n            \"island\": \"Puyo\"\n        },\n        {\n            \"placesCovered\": \"Kichwa de Cotococha Community\",\n            \"description\": \"Community\",\n            \"activities\": \"Culture\",\n            \"island\": \"Puyo\"\n        },\n        {\n            \"placesCovered\": \"Boayacu Boardwalk\",\n            \"description\": \"Waterfalls\",\n            \"activities\": \"Sightseeing/Arts/Crafts\",\n            \"island\": \"Puyo\"\n        },\n        {\n            \"placesCovered\": \"Shuar Arutam Community\",\n            \"description\": \"Community\",\n            \"activities\": \"Culture\",\n            \"island\": \"Sucúa\"\n        },\n        {\n            \"placesCovered\": \"Cuenca\",\n            \"description\": \"City\",\n            \"activities\": \"City Tour\",\n            \"island\": \"Cuenca\"\n        },\n        {\n            \"placesCovered\": \"Colonial Downtown\",\n            \"description\": \"Colonial Architecture\",\n            \"activities\": \"Guided Walk\",\n            \"island\": \"Cuenca\"\n        },\n        {\n            \"placesCovered\": \"Museo de Gastronomía\",\n            \"description\": \"Museum\",\n            \"activities\": \"Food Tasting\",\n            \"island\": \"Cuenca\"\n        },\n        {\n            \"placesCovered\": \"El Cajas National Park\",\n            \"description\": \"National Park\",\n            \"activities\": \"Hike/Wildlife\",\n            \"island\": \"Cuenca\"\n        },\n        {\n            \"placesCovered\": \"Hosteria Dos Chorreras\",\n            \"description\": \"Lodge\",\n            \"activities\": \"Food/Sightseeing\",\n            \"island\": \"Cuenca\"\n        },\n        {\n            \"placesCovered\": \"El Cajas Virgin Sanctuary\",\n            \"description\": \"Church\",\n            \"activities\": \"Guided Walk\",\n            \"island\": \"Cuenca\"\n        },\n        {\n            \"placesCovered\": \"Mirador del Turi\",\n            \"description\": \"Viewpoint\",\n            \"activities\": \"City View\",\n            \"island\": \"Cuenca\"\n        },\n        {\n            \"placesCovered\": \"Puerto Baquerizo Moreno\",\n            \"description\": \"Small Town and Port\",\n            \"activities\": \"Food, Arts and Crafts\",\n            \"island\": \"San Cristobal\"\n        },\n        {\n            \"placesCovered\": \"Mann Beach\",\n            \"description\": \"Beach\",\n            \"activities\": \"Leisure/Wildlife\",\n            \"island\": \"San Cristobal\"\n        },\n        {\n            \"placesCovered\": \"Lobería\",\n            \"description\": \"Beach\",\n            \"activities\": \"Leisure/Wildlife\",\n            \"island\": \"San Cristobal\"\n        },\n        {\n            \"placesCovered\": \"Cerro Tijeretas\",\n            \"description\": \"Viewpoint\",\n            \"activities\": \"Hike/Viewpoint\",\n            \"island\": \"San Cristobal\"\n        },\n        {\n            \"placesCovered\": \"Puerto Ayora\",\n            \"description\": \"Small Town and Port\",\n            \"activities\": \"Food, Arts and Crafts\",\n            \"island\": \"Santa Cruz\"\n        },\n        {\n            \"placesCovered\": \"Tortuga Bay\",\n            \"description\": \"White sand beach\",\n            \"activities\": \"Marine Iguanas and Leisure\",\n            \"island\": \"Santa Cruz\"\n        },\n        {\n            \"placesCovered\": \"Charles Darwin Research Station\",\n            \"description\": \"Wildlife research station\",\n            \"activities\": \"Darwin's footsteps\",\n            \"island\": \"Santa Cruz\"\n        },\n        {\n            \"placesCovered\": \"Itabaca Channel\",\n            \"description\": \"Narrow water crossing\",\n            \"activities\": \"Cross the channel by boat\",\n            \"island\": \"Baltra\"\n        }\n    ],\n    \"inclusions\": [\n        \"All land transportation and transfers\",\n        \"All meals detailed in the itinerary\",\n        \"Softdrinks mentioned in the itinerary\",\n        \"Accomodation facilities, if described in the itinerary\",\n        \"Certified Guidance - English/Spanish\",\n        \"All activities described in the itinerary\"\n    ],\n    \"exclusions\": [\n        \"Alcoholic beverages and other personal expenses\",\n        \"Specific foods and beverages not mentioned in the itinerary\",\n        \"Personal travel and health insurance\"\n    ],\n    \"itinerary\": [\n        {\n            \"dayTitle\": \"Day : 1 Casco Colonial, Calle de las 7 Cruces and Visit to 'La Ronda' Street\",\n            \"activities\": \"After breakfast you will have a tour of Quito's casco colonial where you will discover unique attractions such as the Plaza de San Francisco, Santo Domingo, El Ejido, the artisan market, among others. You will have a typical lunch to later walk the famous street of the 7 crosses that takes us through the most representative churches of Quito in neoclassical, gothic and quitenian school baroque styles. You will then return to your hotel for some rest before an evening visit to 'La Ronda', one of the most cheerful and well-known colonial neighborhoods of Quito.\"\n        },\n        {\n            \"dayTitle\": \"Day : 2 Mitad del Mundo and Pululahua Geobotanical Reserve\",\n            \"activities\": \"Prepare for a fantastic day through the Pululahua Geobotanical Reserve, a protected area with a great diversity of flora and fauna, inside a supervolcano crater. Here you can go hiking and visit the various recreational areas the park offers, while enjoying a spectacular view of the Pululahua crater and caldera, a perfect place to get away from the noise, hustle and bustle of everyday life. Later you will visit 'Ciudad Mitad del Mundo', a known city attraction, where you will have the opportunity to photograph yourself with one foot on the Northern hemisphere and one in the Southern hemisphere at the same time. After lunch, we will return to the hotel and have a rest, before heading out for a city night-out.\"\n        },\n        {\n            \"dayTitle\": \"Day : 3 Arrival to La Gavía and Playa de Same Casablanca\",\n            \"activities\": \"✈️ Air Package Day starts with a transfer to Quito Intl. Airport (UIO) for a 40 minute flight into Esmeraldas Intl. Airport (ESM), we'll then head to the south-bound Playa de Same, Casablanca. Check-in at La Gavía Resort Condominium, and settle-in and relax and enjoy the rest of the morning freely before lunch. In the afternoon/night, enjoy the beautiful Same beach, its boardwalk and marina, return to the resort-condominium for a delicious dinner. 🚍 Land Package Day starts early in the morning for a 7 hour road-trip to Playa de Same, Casablanca. The first stop will be at the \\\"Río Blanco\\\" farm in San Miguel de los Bancos town for breakfast, we then return to the road and enjoy the unique landscapes of the Chocó Andino, located in the Northwest of the Andes, it has 285,000 hectares of unspoiled cloud forests. Later, snacks will be provided on the bus before reaching our destination. Check-in at La Gavía Resort Condominium, settle-in and relax. At night, enjoy the beautiful Same beach, its boardwalk and marina, return to the resort-condominium for a delicious dinner.\"\n        },\n        {\n            \"dayTitle\": \"Day : 4 Playa de Same Casablanca and Northern Beaches\",\n            \"activities\": \"On our second day on Playa de Same Casablanca, we will have a light tour and leisure time of Playa de Same Casablanca, with sports and recreational activities. Then, head for a walk to 'Peñon del Suicida' viewpoint in the beach town of Sua. Return to La Gavia Resort Condominium to have lunch by the pool. In the afternoon, visit the touristy beaches and boardwalks of Tonsupa and Las Palmas. Then have a walk through the nightlife of Tonsupa and the boulevard de las Palmas with dance huts and local cultural shows. Return to La Gavia Resort Condominium for dinner and leisure.\"\n        },\n        {\n            \"dayTitle\": \"Day : 5 La Gavía morning and Departure\",\n            \"activities\": \"✈️ Air Package On the last day, have an early breakfast and enjoy time in the pool until noon. We'll transfer to the Esmeraldas Intl. Airport (ESM) for a domestic flight to Quito Intl. Airport (UIO) and final transfer to Quito city. 🚍 Land Package On the last day, have an early breakfast and enjoy time in the pool, before a light noon snack or ceviche, the tour bus will be waiting for us to a safe return to the city of Quito, which will last an approximate time of 7 hours depending on the weather.\"\n        },\n        {\n            \"dayTitle\": \"Day : 6 Otavalo, San Pablo Lake, Condor Park, Cotacachi and Hacienda Zuleta\",\n            \"activities\": \"After breakfast you will have a city tour of Otavalo, as the first stop at Lake San Pablo where you can take a walk around the trails that will take you to natural viewpoints such as El Lechero and Mira Lago in addition to having a large variety of flora and fauna. Also, you will have a boat ride to relax. Then you will go to the Condor Park which contributes to the conservation of the Andean condor, birds of prey and promotes scientific research. You will have a bird show and you can have one of them in your hand with the help of the guides. You will also have a brief visit to the plaza de ponchos in Otavalo, a scene of the largest artisan fair destined to commercialize artisan articles, after a traditional lunch you will know the city of Cotacachi known for making leather garments and having natural attractions such as an ecological reserve, among others. After this visit you will go to lunch in Inty Huasi and later you will go to Hacienda Zuleta where you will stay and have the opportunity to watch condors, ride a horse, visit the local community, ride a mountain bike or simply enjoy a good wine and homemade cheese.\"\n        },\n        {\n            \"dayTitle\": \"Day : 7 Cotopaxi National Park, Limpiopungo Lagoon and Laguna del Quilotoa\",\n            \"activities\": \"After breakfast at Hacienda Zuleta, you will go to to one of the most attractive destinations in Ecuador, the imposing Cotopaxi Volcano, and the Cotopaxi National Park views and sights including the beautiful Limpiopungo lagoon; you will have the opportunity to explore all its surroundings. Around noon we'll head towards the magnificent Quilotoa Lake Viewpoint high up in the andes, and have lunch overlooking the magnificent lake. After lunch we'll explore the area before heading to the Samay Kirutoa Lodge for a nice dinner and day's break.\"\n        },\n        {\n            \"dayTitle\": \"Day : 8 Baños City Tour, Columpio de Bellavista and Pailón del Diablo\",\n            \"activities\": \"After having breakfast, you will head straight to your destination, the city of Baños de Agua Santa; here you will first get acquainted with the location, by visiting two of its viewpoints, Mano de Dios and Columpio de Bellavista. Soon after, you'll accomodate at the hotel and have a traditional 3 course lunch. After it, you'll visit Pailón del Diablo, the largest waterfall in the Pastaza River, a direct tributary of the Amazon River itself; the waterfall name translates to \\\"The Devil's Cauldron\\\" for its dramatic topography and presence. After visiting this superb location you will return to the hotel to rest, have dinner and prepare for the Baños nightlife.\"\n        },\n        {\n            \"dayTitle\": \"Day : 9 Transfer to Puyo, Kotokocha native American Kichwa community and Viewpoint\",\n            \"activities\": \"A seamless transfer and cultural activity awaits for you today, as you head towards the indigenous Kichwa community of Kotokocha, here you'll learn how \\\"mukawas\\\" are made, traditional ceramic dishes used to serve yucca chicha; soon after you'll have an interactice activity with indigenous people´s hunting weapons. Later you will have a guided walk through the jungle, an explanation of medicinal plants and wildlife along the trail. Then you'll visit a \\\"mud spa\\\", traditional medicinal clays will be applied all over your body, and you'll enjoy a waterfall wash in an all natural environment. Upon return to the community you will have a traditional lunch, on this trail back, it is possible to observe several bird species and hopefully river otters, and you will have a short walk to the \\\"Indi Sacha\\\" viewpoint from where you will have an impressive view of the jungle; if the right atmospheric conditions are met, you will be able to appreciate volcanoes such as Sangay and Tungurahua. The day will end with you accomodating at the hotel in Puyo, for a good night's rest.\"\n        },\n        {\n            \"dayTitle\": \"Day : 10 Las Lajas Waterfall, Boayacu Viewpoint and transfer to Cuenca\",\n            \"activities\": \"On your last day in Puyo, after breakfast, you will have a short journey to the Las Lajas waterfall where you will have to walk along a 250-step path until you reach the viewpoint of these beautiful waterfalls, there are 2 waterfalls on which you could have a refreshing bath. Then, upon return, you will have a visit to the \\\"Malecón Boayaku\\\" of El Puyo city where you can see a monument to the women of the seven nationalities of the site. You will ascend to the viewpoint and have a panoramic view of the city, and impressive greenery of the Amazon rain forest. You'll be able to observe the Sangay volcano and Altar, right after it you'll return to the hotel to grab your luggage and transfer to the city of Cuenca on a 6hr panoramic bus ride through the Amazon basin. Along the way, you will stop at the town of Sucúa, where you will share the table with the people of the Shuar Arutam tribe in the Tuntiak Nunkee Ecological Reserve. Soon after, we'll be leaving for our final destination, for a quick night tour on the beautiful city of Cuenca, and check-in at the hotel for a good night's sleep.\"\n        },\n        {\n            \"dayTitle\": \"Day : 11 Cuenca City, Cuenca's colonial downtown and Museo de la Gastronomia Cuencana\",\n            \"activities\": \"Just after breakfast at the hotel, you'll have a walk through Cuenca's Casco Colonial, that has an extensive list of heritage assets such as its churches, historical monuments, squares, parks and its traditional houses. Later on, you will have lunch at the Cuenca Gastronomy Museum where you can learn about the city's living gastronomic heritages. Then you will have a relaxing afternoon in Cuenca's hot springs, waters filled with medicinal benefits in an exclusive spa, you'll have a light dinner in the Spa complex and soon after, return to the hotel.\"\n        },\n        {\n            \"dayTitle\": \"Day : 12 El Cajas Natural Reserve, Hacienda Dos Chorreras and Virgen de El Cajas church\",\n            \"activities\": \"After having breakfast at the hotel, you will have a full day tour to the \\\"El Cajas\\\", a high-altitude natural reserve 40 minutes away from Cuenca, with several lakes popular for hiking, camping & wildlife viewing; including Andean condors, giant hummingbirds and raccoon-like coatis. The park houses a permanent lake system of more than 2000 lake bodies of glacial origin and various elevations; the national park also portects the ancient route of the \\\"Qhapaq Ñan\\\" or “Inca trail”, a network of roads that cross the territories that were part of the Incan empire.You will later visit the \\\"Dos Chorreras\\\" Inn and Hacienda, for a traditional local cuisine three-course lunch, hacienda tour and engage in farm daily activities, finally you will go to the Sanctuary of the Virgin of Cajas before returning to the city of Cuenca.\"\n        },\n        {\n            \"dayTitle\": \"Day : 13 Transfer to Guayaquil Intl. Airport and flight into Galapagos National Park\",\n            \"activities\": \"✈️ Air PackageYou'll be leaving the city of Cuenca at dawn, and head towards the José Joaquín de Olmedo International Airport (GYE) in Guayaquil, here you'll have a quick breakfast snack; our trip will begin upon arrival at the San Cristóbal airport, you'll be transfered to your hotel and later we'll have a tour of Playa Mann, a white sand beach formed by the fragmentation of shells, the clarity of its waters favors the practice of snorkeling. Due to its proximity to a populated center, this beach is one of thr few reserved for recreational use; sunbathing, swiming and the beautiful landscapes of the area are the main attractions. Then you will have the afternoon free to explore San Cristóbal on your own or with a guide depending on your preference.\"\n        },\n        {\n            \"dayTitle\": \"Day : 14 San Cristobal island all-day adventure and leisure\",\n            \"activities\": \"On our second day, after a delicious breakfast, we will visit La Lobería, a place known for local enojyment and its main attraction, sea lions all over the beach, sea tutrtles are also observed along the shores, and large numbers marine iguanas lay on the rocky reefs of the bay. Later we will go to Cerro Tijeretas from which you can see the frigate birds and the beautiful Wreck Bay, as well as Puerto Baquerizo Moreno in all its splendor. It is an ideal place to diving, swiming and snorkeling, but a perfect place to enjoy the immense marine fauna the island has. It is a fantastic place to observe the view of the white sand beaches on one side and the Baquerizo port on the other. After lunch, we will go to the Interpretation Center, an official Galapagos National Park stop; it has a variety of community activities and institutional workshops; in it, the natural and human history of the islands is showcased through an interpretive tour.\"\n        },\n        {\n            \"dayTitle\": \"Day : 15 Scenic navigable tour transfer to Santa Cruz Island and Tortuga Bay\",\n            \"activities\": \"On our third day in the Galapagos Islands, after breakfast we will have a navigable tour to Santa Cruz Island, in chich we will visit the Charles Darwin Research Station, an opportunity to learn about the conservation of the Galapagos Islands in action; more than 200 scientists and volunteers participate in research and conservation efforts here, their reasearch and measuring of the arhipelago's health is vitally important to protect the pristine habitat of the Galapagos National Park. Currently, the main attraction for visitors are the baby turtles raised in captivity and some permanent exhibits. Upon our return to Santa Cruz, we'll hike to the beach of \\\"Tortuga Bay\\\" which bears that name because it is a nesting site for the black turtle; it takes approximately an hour to reach the beach on foot. Admission is free, but you must fill in your information with the park ranger. The day will end with a night tour along the Santa Cruz handicraft market.\"\n        },\n        {\n            \"dayTitle\": \"Day : 16 Santa Cruz-Baltra transfer and Baltra-Quito departure\",\n            \"activities\": \"✈️ Air Package On the last day after breakfast and relaxation time in the hotel pool, get ready for a checking out and leave for Puerto Ayora. You will take a ferry to Baltra airport to catch your flight to Guayaquil or Quito. We await your return to Galapagos where we will wait for you with open arms to provide you with the best service.\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/variantDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Variant Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/variantDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Variant Details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"variantId\": \"64fc899bdde7aa0e9a94878c\",\n  \"title\": \"Classic Galapagos Experience\",\n  \"description\": \"A best-selling combination of tours and free time to explore and enjoy the two main islands; this 5-day package, just like any other Galapagos all-inclusive package, includes a round-trip flight Quito-Baltra-Isabela. Within this 5-day tour to the Galapagos National Park, you'll get to explore the islands of Baltra, Santa Cruz and Isabela with an English speaking certified guide, just as described in our itinerary. This tour is designed to mix island hikes, water activities and navigable tours to reef an island destinations such as: Fernandina, North Seymour, South Seymour, Plazas, Española, among others.\",\n  \"airPackagePrice\": 1000.0,\n  \"duration\": \"5 Days/4 Nights\",\n  \"rating\": 5,\n  \"packageHighlights\": [\n    {\n        \"key\": \"Location\",\n        \"value\": \"Rio, Brazil\"\n    },\n    {\n        \"key\": \"Arrival Date\",\n        \"value\": \"Nov 12, 2017\"\n    },\n    {\n        \"key\": \"Departure Date\",\n        \"value\": \"Nov 21, 2017\"\n    },\n    {\n        \"key\": \"Perks\",\n        \"value\": \"Free Sightseeing & Hotel\"\n    }\n  ],\n  \"photoGallery\": [\n    \"https://example.com/photo1.jpg\",\n    \"https://example.com/photo2.jpg\"\n  ],\n  \"location\": \"Sample Location\",\n  \"about\": [\n    {\n      \"placesCovered\": \"Itabaca Channel\",\n      \"description\": \"Narrow water crossing\",\n      \"activities\": \"Cross the channel by boat\",\n      \"island\": \"Baltra\"\n    },\n    {\n      \"placesCovered\": \"Rancho Primicias\",\n      \"description\": \"Giant tortoise ranch\",\n      \"activities\": \"Hike along giant tortoises\",\n      \"island\": \"Santa Cruz\"\n    }\n  ],\n  \"inclusions\": [\"Roundtrip plane tickets Quito-Baltra-Isabela\", \"Roundtrip transfer to Baltra airport at the time of arrival and departure\"],\n  \"exclusions\": [\"Alcoholic beverages\", \"Specific foods and beverages not mentioned in the itinerary.\"],\n  \"itinerary\": [\n    {\n      \"dayTitle\": \"Day : 1 Quito-Baltra flight, first sights and arrival at Santa Cruz island\",\n      \"activities\": \"✈️ Air Package on this first day on the Galapagos Islands, we will go from Mariscal Sucre Airport to Baltra Airport which will take approximately 2 hours. When you arrive at the airport and leave it, you will have a transfer to the Itabaca Channel to go to your first destination, which is Santa Cruz, but first you will have a brief visit to the lava tunnels, the twins and the primicias ranch; a place where you can meet the giant Galapagos tortoises in their natural habitat. Later you will go to the hotel in Santa Cruz to leave your belongings and in the afternoon walk the streets of the island and its main street and boardwalk boulevard.\"\n    },\n    {\n      \"dayTitle\": \"Day : 2 Day-at-sea adventure and Charles Darwin Research Station\",\n      \"activities\": \"On our second day in the Galapagos islands, we will go directly from the hotel to the port for the navigable tour from the morning until 2:00 p.m. or 3:00 p.m. depending on the daily destination, subject to weather conditions. It'll be possible to observe different animal species within each island or attraction. The available destinations are: Cerro Dragon, Guy Fawkes, North Seymour, Bachas Beach, Chinese Hat, Sullivan Bay, among others. You will have hiking and snorkeling activities; you will then have lunch on board. Finally, we'll return to the hotel and have the afternoon to further explore Santa Cruz island, with a guided visit to Charles Darwin Research Station, the distinct scientific heritage of the Galapagos archipelago.\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/variantDetail/64fc8beb652c8e61c1879fbd"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Variant Details",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/variantDetail/64fc8beb652c8e61c1879fbd"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accommodations",
+			"item": [
+				{
+					"name": "Create Accommodation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Izhcayluma\",\n    \"landmarks\": [\"Loja\", \"Vilcabamba\", \"More!\"],\n    \"imagePath\": \"https://southlander.travel/images/listing/home8.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/accommodation"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Accommodations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/accommodation"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Accommodation",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"La Gavia\",\n    \"landmarks\": [\"Same\", \"Beach Hopping\", \"Golf\", \"Whale Watching\", \"Fishing\", \"More!\"],\n    \"imagePath\": \"test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/accommodation/64fc8f32e58c793c291245bd"
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Accommodation",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/accommodation/disable/64fc8f32e58c793c291245bd"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Accommodation",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/accommodation/64fc8f32e58c793c291245bd"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accommodation Details",
+			"item": [
+				{
+					"name": "Create Accommodation Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accommodationId\": \"6506f4c74e8ea20100b5e312\",\n    \"title\": \"Hostería Izhcayluma\",\n    \"description\": \"An ideal place in the \\\"Valley of Longevity¨, Vilcabamba valley in Loja. Relax a few days and enjoy the varied activities that the valley offers; the hotel offers rooms with private bathroom to private and quiet cabins, with a privileged view of this \\\"sacred\\\" valley of Vilcabamba, it also has a swimming pool and gardens full of flowers, hammocks in the shade and the beauty of the landscape; enjoy panoramic views, which offer a wide variety of both Ecuadorian and international cuisine.\",\n    \"rating\": 3,\n    \"hotelHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Rio, Brazil\"\n        },\n        {\n            \"key\": \"Arrival Date\",\n            \"value\": \"Nov 12, 2017\"\n        },\n        {\n            \"key\": \"Departure Date\",\n            \"value\": \"Nov 21, 2017\"\n        },\n        {\n            \"key\": \"Additional Perks\",\n            \"value\": \"Free Sightseeing & Hotel\"\n        }\n    ],\n    \"photoGallery\": [\n        \"https://southlander.travel/images/gallery/s1.jpg\",\n        \"https://southlander.travel/images/gallery/s2.jpg\",\n        \"https://southlander.travel/images/gallery/s3.jpg\",\n        \"https://southlander.travel/images/gallery/s4.jpg\",\n        \"https://southlander.travel/images/gallery/s5.jpg\",\n        \"https://southlander.travel/images/gallery/s6.jpg\",\n        \"https://southlander.travel/images/gallery/s7.jpg\",\n        \"https://southlander.travel/images/gallery/s8.jpg\",\n        \"https://southlander.travel/images/gallery/s9.jpg\"\n    ],\n    \"appartments\": [\n        {\n            \"title\": \"INDIVIDUAL CABIN\",\n            \"amenities\": \"individual cabin for one with private bathroom and balcony.\",\n            \"facilities\": \"Breakfast\",\n            \"maxOccupancy\": \"1 people\",\n            \"pricePerNight\": 49,\n            \"imagePath\": \"https://southlander.travel/images/rooms/01.jpg\"\n        },\n        {\n            \"title\": \"DOUBLE CABIN\",\n            \"amenities\": \"double cabin for two with private bathroom and balcony.\",\n            \"facilities\": \"Breakfast\",\n            \"maxOccupancy\": \"2 people\",\n            \"pricePerNight\": 49,\n            \"imagePath\": \"https://southlander.travel/images/rooms/01.jpg\"\n        },\n        {\n            \"title\": \"DOUBLE LARGE CABIN\",\n            \"amenities\": \"large cabin for two with queen size beds, private bathroom and balcony.\",\n            \"facilities\": \"Breakfast\",\n            \"maxOccupancy\": \"2 people\",\n            \"pricePerNight\": 69,\n            \"imagePath\": \"https://southlander.travel/images/rooms/01.jpg\"\n        },\n        {\n            \"title\": \"TRIPLE LARGE CABIN\",\n            \"amenities\": \"large cabin for three with queen size beds, private bathroom and balcony.\",\n            \"facilities\": \"Breakfast\",\n            \"maxOccupancy\": \"3 people\",\n            \"pricePerNight\": 69,\n            \"imagePath\": \"https://southlander.travel/images/rooms/01.jpg\"\n        },\n        {\n            \"title\": \"QUADRUPLE LARGE CABIN\",\n            \"amenities\": \"large cabin for four with queen size beds, private bathroom and balcony.\",\n            \"facilities\": \"Breakfast\",\n            \"maxOccupancy\": \"4 people\",\n            \"pricePerNight\": 79,\n            \"imagePath\": \"https://southlander.travel/images/rooms/01.jpg\"\n        }\n    ],\n    \"amenities\": [\n        \"Pool\",\n        \"Bar\",\n        \"Scenic Restaurant\",\n        \"Laundry service\",\n        \"Yoga Instructor\",\n        \"Masseuse\",\n        \"Tours\",\n        \"Bike Rentals\",\n        \"Birdwatching\"\n    ],\n    \"location\": \"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.7029161929236!2d-79.22655308523922!3d-4.277840396890425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cb289529cb5729%3A0x3949c8d58907a089!2sHostal%20Izhcayluma!5e0!3m2!1sen!2sus!4v1631887731899!5m2!1sen!2sus\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/accommodationDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Accommodation Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/accommodationDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Accommodation Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accommodationId\": \"64fc8f30e58c793c291245bb\",\n    \"title\": \"La Gavía Condominium Resort\",\n    \"description\": \"Located in one of the most beautiful and exclusive beaches in the Ecuadorian province of Esmeraldas. This elegant condominium resort, located in the hills within the Playa de Same Casablanca, is undoubtedly the most attractive and exclusive offer to enjoy your vacations. It has luxury apartments ready to receive our guests. Divided into two blocks alienated with the movement of the sun, the breeze and the best view of the mountains and 360 degree view to the bay of Same.\",\n    \"rating\": 5,\n    \"hotelHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Rio, Brazil\"\n        },\n        {\n            \"key\": \"Arrival Date\",\n            \"value\": \"Nov 12, 2017\"\n        },\n        {\n            \"key\": \"Departure Date\",\n            \"value\": \"Nov 21, 2017\"\n        },\n        {\n            \"key\": \"Perks\",\n            \"value\": \"Free Sightseeing & Hotel\"\n        }\n    ],\n    \"photoGallery\": [\n        \"https://example.com/photo1.jpg\",\n        \"https://example.com/photo2.jpg\"\n    ],\n    \"appartments\": [\n        {\n            \"title\": \"A - UPPER FLOOR APARTMENT WITH TERRACE FOR UP TO 7-8 PEOPLE\",\n            \"amenities\": \"satellite tv, wi-fi, cleaning and cooking lady, fully furnished and equiped apartment.\",\n            \"facilities\": \"3 full bathrooms, 1 half-bath, 2 parking spaces, 1 storage area, 3 bedrooms with twin beds, 1 sofa bed in the living room and private terrace.\",\n            \"maxOccupancy\": \"8 people\",\n            \"pricePerNight\": 300,\n            \"imagePath\": \"test\"\n        },\n        {\n            \"title\": \"B - UPPER FLOOR APARTMENT WITH TERRACE FOR UP TO 5-6 PEOPLE\",\n            \"amenities\": \"satellite tv, wi-fi, cleaning and cooking lady, fully furnished and equiped apartment.\",\n            \"facilities\": \"2 full bathrooms, 1 half-bath, 1 storage area, 2 bedrooms with twin beds, 1 sofa bed in the living room and private terrace.\",\n            \"maxOccupancy\": \"6 people\",\n            \"pricePerNight\": 275,\n            \"imagePath\": \"test\"\n        }\n    ],\n    \"amenities\": [\n        \"Infinity Pool\",\n        \"Pool-side bar and restaurant\",\n        \"WiFi\"\n    ],\n    \"location\": \"Sample Location\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/accommodationDetail/64fc918196f41f6aaf05b97b"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Accommodation Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/accommodationDetail/64fc918196f41f6aaf05b97b"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Planning",
+			"item": [
+				{
+					"name": "Create Event Planning",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Spiritual Gatherings and Retreats\",\n    \"startingPrice\": \"5k\",\n    \"rating\": 5,\n    \"imagePath\": \"https://southlander.travel/images/hotels/3.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/eventPlanning"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Plannings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/eventPlanning"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event Plannings",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Wedding and Ceremonies\",\n    \"startingPrice\": \"25k\",\n    \"rating\": 4,\n    \"imagePath\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/eventPlanning/64fc92e68c1f62d512d3f0f0"
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Event Plannings",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/eventPlanning/disable/64fc92e68c1f62d512d3f0f0"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event Plannings",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/eventPlanning/64fc92e68c1f62d512d3f0f0"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Planning Details",
+			"item": [
+				{
+					"name": "Create Event Planning Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"eventPlanningId\": \"6506f6ee4e8ea20100b5e31a\",\n    \"title\": \"Spiritual Gatherings and Retreats Destination Event Planning\",\n    \"description\": \"Discover two of South America's greatest cities, Rio de Janeiro and Buenos Aires, at a leisurely pace. A major highlight on this journey is a visit to Iguassu Falls in between your two city stays. It truly is one of the most spectacular sights on Earth. See the impressive falls from both the Brazilian and Argentine sides. Brazil's view takes you through clouds of mist and the opportunity to see these 275 falls, spanning nearly two miles! Argentina's side allows you to walk along the boardwalk network and embark on a jungle train through the forest for unforgettable views. Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world.\",\n    \"rating\": 5,\n    \"timeshareHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Canoa\"\n        },\n        {\n            \"key\": \"Price\",\n            \"value\": \"$200/Night\"\n        },\n        {\n            \"key\": \"Capacity\",\n            \"value\": \"Sleeps 7\"\n        },\n        {\n            \"key\": \"Additional Perks\",\n            \"value\": \"Beachfront Rustic House\"\n        }\n    ],\n    \"venueOptions\": [\n        {\n            \"location\": \"Highland Moors\",\n            \"description\": \"Hacienda Manor and Estate\",\n            \"rooms\": \"20 Rooms\",\n            \"capacity\": \"50 People Max.\",\n            \"experience\": \"Trails and Andes Mountains\"\n        },\n        {\n            \"location\": \"By The Beach\",\n            \"description\": \"Beachside Villa\",\n            \"rooms\": \"20 Rooms\",\n            \"capacity\": \"50 People Max.\",\n            \"experience\": \"Ocean and Sandy Beaches\"\n        },\n        {\n            \"location\": \"Amazonia\",\n            \"description\": \"Natural Eco-Lodge\",\n            \"rooms\": \"20 Rooms\",\n            \"capacity\": \"50 People Max.\",\n            \"experience\": \"Amazon Jungle and Rivers\"\n        },\n        {\n            \"location\": \"Galapagos\",\n            \"description\": \"Natural Eco-Lodge\",\n            \"rooms\": \"20 Rooms\",\n            \"capacity\": \"50 People Max.\",\n            \"experience\": \"Galapagos Santa Cruz Island\"\n        }\n    ],\n    \"photoGallery\": [\n        \"https://southlander.travel/images/gallery/s1.jpg\",\n        \"https://southlander.travel/images/gallery/s2.jpg\",\n        \"https://southlander.travel/images/gallery/s3.jpg\",\n        \"https://southlander.travel/images/gallery/s4.jpg\",\n        \"https://southlander.travel/images/gallery/s5.jpg\",\n        \"https://southlander.travel/images/gallery/s6.jpg\",\n        \"https://southlander.travel/images/gallery/s7.jpg\",\n        \"https://southlander.travel/images/gallery/s8.jpg\",\n        \"https://southlander.travel/images/gallery/s9.jpg\"\n    ],\n    \"inclusions\": [\n        \"Airport transportation (surcharge)\",\n        \"Number of floors - 9\",\n        \"Coffee shop or café\",\n        \"Dry cleaning/laundry service\",\n        \"Health club\",\n        \"Billiards or pool table\",\n        \"Total number of rooms - 108\",\n        \"Bar/lounge\",\n        \"Air Conditioner\",\n        \"Mini Bar (with liquor)\",\n        \"Separate Bedroom\",\n        \"Living Room Space\"\n    ],\n    \"pricePerPerson\": [\n        {\n            \"title\": \"HIGHLAND MOORS EXPERIENCE\",\n            \"about\": \"all weeks between the first week of June until the last week of August.\",\n            \"rate\": 5643.03,\n            \"imagePath\": \"https://southlander.travel/images/rooms/03.jpg\"\n        },\n        {\n            \"title\": \"BEACHSIDE EXPERIENCE\",\n            \"about\": \"all weeks between the first week of September until the second week of December.\",\n            \"rate\": 4514.42,\n            \"imagePath\": \"https://southlander.travel/images/rooms/03.jpg\"\n        },\n        {\n            \"title\": \"AMAZONIA EXPERIENCE\",\n            \"about\": \"all weeks between the second week of January until the last week of May.\",\n            \"rate\": 3385.82,\n            \"imagePath\": \"https://southlander.travel/images/rooms/03.jpg\"\n        },\n        {\n            \"title\": \"GALAPAGOS EXPERIENCE\",\n            \"about\": \"all weeks between the second week of January until the last week of May.\",\n            \"rate\": 6385.82,\n            \"imagePath\": \"https://southlander.travel/images/rooms/03.jpg\"\n        }\n    ],\n    \"location\": \"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6290415.157581651!2d-93.99661009218904!3d39.661150926343694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880b2d386f6e2619%3A0x7f15825064115956!2sIllinois%2C+USA!5e0!3m2!1sen!2sin!4v1467884030780\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/eventPlanningDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Planning Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/eventPlanningDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event Planning Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"eventPlanningId\": \"64fc92e48c1f62d512d3f0ee\",\n    \"title\": \"Weddings and Ceremonies Destination Event Planning\",\n    \"description\": \"Discover two of South America's greatest cities, Rio de Janeiro and Buenos Aires, at a leisurely pace. A major highlight on this journey is a visit to Iguassu Falls in between your two city stays. It truly is one of the most spectacular sights on Earth. See the impressive falls from both the Brazilian and Argentine sides. Brazil's view takes you through clouds of mist and the opportunity to see these 275 falls, spanning nearly two miles! Argentina's side allows you to walk along the boardwalk network and embark on a jungle train through the forest for unforgettable views. Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world.\",\n    \"rating\": 3,\n    \"timeshareHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Canoa\"\n        },\n        {\n            \"key\": \"Price\",\n            \"value\": \"$200/Night\"\n        }\n    ],\n    \"venueOptions\": [\n        {\n            \"location\": \"HighLand Moors\",\n            \"description\": \"Hacienda Manor and Estate\",\n            \"rooms\": \"20 Rooms\",\n            \"capacity\": \"50 People Max.\",\n            \"experience\": \"Trails and Andes Mountains\"\n        },\n        {\n            \"location\": \"By The Beach\",\n            \"description\": \"Beachside Villa\",\n            \"rooms\": \"20 Rooms\",\n            \"capacity\": \"50 People Max.\",\n            \"experience\": \"Ocean and Sandy Beaches\"\n        }\n    ],\n    \"photoGallery\": [\n        \"photo1.jpg\",\n        \"photo2.jpg\"\n    ],\n    \"inclusions\": [\n        \"Number of floors - 9\",\n        \"Coffee shop or café\"\n    ],\n    \"pricePerPerson\": [\n        {\n            \"title\": \"HIGHLAND MOORS EXPERIENCE\",\n            \"about\": \"all weeks between the first week of June until the last week of August.\",\n            \"rate\": 5643.03,\n            \"imagePath\": \"standard.jpg\"\n        },\n        {\n            \"title\": \"BEACHSIDE EXPERIENCE\",\n            \"about\": \"all weeks between the first week of September until the second week of December.\",\n            \"rate\": 4514.42,\n            \"imagePath\": \"premium.jpg\"\n        }\n    ],\n    \"location\": \"Sample Location\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/eventPlanningDetail/64fca2e73e6d258081c5d0e3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event Planning Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/eventPlanningDetail/64fca2e73e6d258081c5d0e3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rentals",
+			"item": [
+				{
+					"name": "Create Rental",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"COAST & AMAZON Rentals\",\n    \"options\": [\n        {\n            \"title\": \"Secluded Surf House\",\n            \"landmarks\": [\"Montañita\", \"Manabí\"],\n            \"imagePath\": \"https://southlander.travel/images/reviewer/1.jpg\"\n        },\n        {\n            \"title\": \"Condo Resort Apartment\",\n            \"landmarks\": [\"Same\", \"Esmeraldas\"],\n            \"imagePath\": \"https://southlander.travel/images/reviewer/2.jpg\"\n        },\n        {\n            \"title\": \"Organic Ranch House\",\n            \"landmarks\": [\"Coca\", \"Fco. De Orellana\"],\n            \"imagePath\": \"https://southlander.travel/images/reviewer/3.jpg\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/rental"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rentals",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/rental"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rental",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Test Rentals\",\n    \"options\": [\n        {\n            \"title\": \"Casa Bonita\",\n            \"landmarks\": [\"La Floresta\", \"Quito\"],\n            \"imagePath\": \"test\"\n        },\n        {\n            \"title\": \"Pool Condo Apartment\",\n            \"landmarks\": [\"Tumbaco\", \"Quito\"],\n            \"imagePath\": \"test\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/rental/64fc95c8ad52aa56433e9da6"
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Rental",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/rental/disable/64fc95c8ad52aa56433e9da6"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rental",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/rental/64fc95c8ad52aa56433e9da6"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Rental Details",
+			"item": [
+				{
+					"name": "Create Rental Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rentalId\": \"6506f8a24e8ea20100b5e320\",\n    \"title\": \"Casa Bonita, Canoa\",\n    \"description\": \"Discover two of South America’s greatest cities, Rio de Janeiro and Buenos Aires, at a leisurely pace. A major highlight on this journey is a visit to Iguassu Falls in between your two city stays. It truly is one of the most spectacular sights on Earth. See the impressive falls from both the Brazilian and Argentine sides. Brazil's view takes you through clouds of mist and the opportunity to see these 275 falls, spanning nearly two miles! Argentina’s side allows you to walk along the boardwalk network and embark on a jungle train through the forest for unforgettable views. Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world. From vibrant cities to scenic beauty, this vacation to Rio de Janeiro, Iguassu Falls, and Buenos Aires will leave you with vacation memories you’ll cherish for life.\",\n    \"pricePerNight\": 200,\n    \"capacity\": 7,\n    \"rating\": 5,\n    \"rentalHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Canoa\"\n        },\n        {\n            \"key\": \"Price\",\n            \"value\": \"$200/Night\"\n        },\n        {\n            \"key\": \"Capacity\",\n            \"value\": \"Sleeps 7\"\n        },\n        {\n            \"key\": \"Additional Perks\",\n            \"value\": \"Beachfront Rustic House\"\n        }\n    ],\n    \"photoGallery\": [\n        \"https://southlander.travel/images/gallery/s1.jpg\",\n        \"https://southlander.travel/images/gallery/s2.jpg\",\n        \"https://southlander.travel/images/gallery/s3.jpg\",\n        \"https://southlander.travel/images/gallery/s4.jpg\",\n        \"https://southlander.travel/images/gallery/s5.jpg\",\n        \"https://southlander.travel/images/gallery/s6.jpg\",\n        \"https://southlander.travel/images/gallery/s7.jpg\",\n        \"https://southlander.travel/images/gallery/s8.jpg\",\n        \"https://southlander.travel/images/gallery/s9.jpg\"\n    ],\n    \"amenities\": [\n        \"Airport transportation (surcharge)\",\n        \"Number of floors - 9\",\n        \"Coffee shop or café\",\n        \"Dry cleaning/laundry service\",\n        \"Health club\",\n        \"Billiards or pool table\",\n        \"Total number of rooms - 108\",\n        \"Bar/lounge\",\n        \"Air Conditioner\",\n        \"Mini Bar (with liquor)\",\n        \"Separate Bedroom\",\n        \"Living Room Space\"\n    ],\n    \"location\": \"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6290415.157581651!2d-93.99661009218904!3d39.661150926343694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880b2d386f6e2619%3A0x7f15825064115956!2sIllinois%2C+USA!5e0!3m2!1sen!2sin!4v1467884030780\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/rentalDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Rental Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/rentalDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rental Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rentalId\": \"64fc96f0feb9d351e29c2355\",\n    \"title\": \"Casa Bonita, Canoa\",\n    \"description\": \"Discover two of South America’s greatest cities, Rio de Janeiro and Buenos Aires, at a leisurely pace. A major highlight on this journey is a visit to Iguassu Falls in between your two city stays. It truly is one of the most spectacular sights on Earth. See the impressive falls from both the Brazilian and Argentine sides. Brazil's view takes you through clouds of mist and the opportunity to see these 275 falls, spanning nearly two miles! Argentina’s side allows you to walk along the boardwalk network and embark on a jungle train through the forest for unforgettable views. Hear the deafening roar and admire the brilliant rainbows created by the clouds of spray, and take in the majesty of this wonder of the world. From vibrant cities to scenic beauty, this vacation to Rio de Janeiro, Iguassu Falls, and Buenos Aires will leave you with vacation memories you’ll cherish for life.\",\n    \"pricePerNight\": 250,\n    \"capacity\": 7,\n    \"rating\": 5,\n    \"rentalHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Canoa\"\n        },\n        {\n            \"key\": \"Perks\",\n            \"value\": \"Beachfront Rustic House\"\n        }\n    ],\n    \"photoGallery\": [\n        \"photo1.jpg\",\n        \"photo2.jpg\"\n    ],\n    \"amenities\": [\n        \"Dry cleaning/laundry service\",\n        \"Health Club\"\n    ],\n    \"location\": \"Sample Location\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/rentalDetail/64fca47fd50e6844f9a309c6"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Rental Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/rentalDetail/64fca47fd50e6844f9a309c6"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tours",
+			"item": [
+				{
+					"name": "Create Tour",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"All Continental Ecuador Tours\",\n    \"tagLine\": \"CONTINENTAL ECUADOR\",\n    \"description\": \"Make the most out of your time and budget, all available Continental Ecuador tours on one booking site, discover Southlander.\",\n    \"imagePath\": \"https://southlander.travel/images/place14.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/tour"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tours",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/tour"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tour",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Quito City And Old Town\",\n    \"tagLine\": \"QUITO, WHOLE DAY.\",\n    \"description\": \"The beautiful capital of Ecuador welcomes you in all its historic, cultural and natural splendor.\",\n    \"imagePath\": \"test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/tour/64fc98369d2a854c352cc136"
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Tour",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/tour/disable/64fc98369d2a854c352cc136"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tour",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/tour/64fc98369d2a854c352cc136"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tour Details",
+			"item": [
+				{
+					"name": "Create Tour Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tourId\": \"6506fade4e8ea20100b5e338\",\n    \"title\": \"Fishing and Whale Watching\",\n    \"description\": \"We'll set-out on this adventure from La Gavía Luxury Condominium Resort, within Club Casablanca, a beautiful beach, 9-hole golf club and Marina on the Ecuadorian coast. The beach has a distinct jungle-like feel, with big leafy trees intermingling with palms and brightly colored tropical flowers, as usual in the biologically diverse Chocó tropical forest, which extends along the coast from Panama to Ecuador. Seasonal whale and dolphin watching, along Marlin fishing are a delight; but the more common mahi-mahi, tuna, grouper, bighead tilefish, bearded brotula, barracuda, snook, weakfish, red snapper, and sand perch catch is the real year-round deal; enjoy the equatorial Pacific Ocean.\",\n    \"price\": 200,\n    \"duration\": \"5 Days/6 Nights\",\n    \"rating\": 5,\n    \"tourHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Rio,Brazil\"\n        },\n        {\n            \"key\": \"Arrival Date\",\n            \"value\": \"Nov 12, 2017\"\n        },\n        {\n            \"key\": \"Departure Date\",\n            \"value\": \"Nov 21, 2017\"\n        },\n        {\n            \"key\": \"Additional Perks\",\n            \"value\": \"Free Sightseeing & Hotel\"\n        }\n    ],\n    \"photoGallery\": [\n        \"https://southlander.travel/images/gallery/t1.jpg\",\n        \"https://southlander.travel/images/gallery/t2.jpg\",\n        \"https://southlander.travel/images/gallery/t3.jpg\",\n        \"https://southlander.travel/images/gallery/t4.jpg\",\n        \"https://southlander.travel/images/gallery/t5.jpg\",\n        \"https://southlander.travel/images/gallery/s6.jpg\",\n        \"https://southlander.travel/images/gallery/s7.jpg\",\n        \"https://southlander.travel/images/gallery/s8.jpg\",\n        \"https://southlander.travel/images/gallery/s9.jpg\"\n    ],\n    \"location\": \"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7978.761352750492!2d-79.92727530378531!3d0.8486439383421538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fd4ed876dcd2d85%3A0xdbf8288ebf703661!2sClub%20Casablanca%2C%20Same%2C%20Ecuador!5e0!3m2!1sen!2sus!4v1634613703032!5m2!1sen!2sus\",\n    \"about\": [\n        {\n            \"placesCovered\": \"La Gavía\",\n            \"description\": \"Condominium Resort\",\n            \"activities\": \"Meeting Point\",\n            \"itinerary\": \"7:00-7:30\"\n        },\n        {\n            \"placesCovered\": \"Club Casablanca Marina\",\n            \"description\": \"Fishing-Boat Boarding\",\n            \"activities\": \"Safety Instructions\",\n            \"itinerary\": \"7:30-8:00\"\n        },\n        {\n            \"placesCovered\": \"Off-Shore Pacific Ocean\",\n            \"description\": \"Boat Tour\",\n            \"activities\": \"Fishing/Wildlife\",\n            \"itinerary\": \"8:00-13:30\"\n        },\n        {\n            \"placesCovered\": \"La Playita\",\n            \"description\": \"Restaurant\",\n            \"activities\": \"Lunch\",\n            \"itinerary\": \"13:30-14:30\"\n        }\n    ],\n    \"notes\": \"Tropical weather conditions between 21 and 32 degrees Celcius year-round, we advise to always bring comfy boarding shoes, sun hats, sunscreen and several changes on the side; water ponchos will be provided if the weather conditions call for it.\",\n    \"inclusions\": [\n        \"Fishing boat captain\",\n        \"Certified tour guide ENG-SPA\",\n        \"Complete Fishing Equipment\",\n        \"Soft-Drinks and Snacks\",\n        \"Three-course lunch\",\n        \"Water ponchos if needed\"\n    ],\n    \"exclusions\": [\n        \"Alcoholic beverages\",\n        \"Specific foods, snacks and beverages not mentioned.\",\n        \"Personal travel and health insurance\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/tourDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tour Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/tourDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tour Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tourId\": \"64fc98329d2a854c352cc134\",\n  \"title\": \" City and Old Town\",\n  \"description\": \"Quito, the capital of Ecuador, today a modern and cosmopolitan south american capital, was founded in the 16th century on the ruins of an Inca city and stands at an altitude of 2,850 m. Despite the 1917 earthquake, the city has the best-preserved, least altered historic centre in Latin America. The monasteries of San Francisco and Santo Domingo, and the Church and Jesuit College of La Compañía, with their rich interiors, are pure examples of the 'Baroque school of Quito', which is a fusion of Spanish, Italian, Moorish, Flemish and indigenous art. The great majority of attributes upon which the Outstanding Universal Value of the City of Quito is based are present and intact. The Historic Centre of Quito has conserved its original configuration, new constructions being built outside of the colonial centre. Indeed, based on the first plan of Quito designed in 1734 by Dionisio Alcedo y Herrera, one notes that the original plan of the streets, the blocks of houses and squares – with a few rare exceptions – is the same can be seen today. Despite numerous earthquakes that have affected it over the course of history, the city conserves the least modified historic centre of all Latin America because of the concerted action of the Municipal authorities of the Metropolitan District of Quito and the Ecuadorean government.\",\n  \"price\": 200,\n  \"rating\": 5,\n  \"tourHighlights\": [\n    {\n      \"key\": \"Location\",\n      \"value\": \"Rio,Brazil\"\n    },\n    {\n      \"key\": \"Arrival Date\",\n      \"value\": \"Nov 12, 2017\"\n    }\n  ],\n  \"photoGallery\": [\"photo1.jpg\", \"photo2.jpg\"],\n  \"location\": \"Sample Location\",\n  \"about\": [\n    {\n      \"placesCovered\": \"Naciones Unidas Boulevard\",\n      \"description\": \"Park Boulevard\",\n      \"activities\": \"Meeting Point\",\n      \"itinerary\": \"10:00-10:15\"\n    },\n    {\n      \"placesCovered\": \"La Carolina Park\",\n      \"description\": \"Centro-Norte City Park\",\n      \"activities\": \"Guided Walk\",\n      \"itinerary\": \"10:00-10:40\"\n    }\n  ],\n  \"notes\": \"Being in the equator, yet high up in the Andes, the city of Quito and its surroundings enjoy overall spring-like weather conditions, but be advised to bring comfy walking shoes, sunscreen and a warm jacket on the side; water ponchos will be provided if the weather conditions call for it.\",\n  \"inclusions\": [\"Panoramic tour in double-decker tourist bus\", \"Certified tour guide ENG-SPA\"],\n  \"exclusions\": [\"Alcoholic beverages\", \"Personal travel and health insurance\"]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/tourDetail/64fca6a6dc4230df464d2fa1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tour Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/tourDetail/64fca6a6dc4230df464d2fa1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Tickets",
+			"item": [
+				{
+					"name": "Create Event Ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Mago de Oz\",\n  \"date\": \"May 15th\",\n  \"location\": \"Plaza de Toros, Quito\",\n  \"time\": \"8:30 PM\",\n  \"price\": 120,\n  \"imagePath\": \"https://southlander.travel/images/iplace-1.jpg\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/eventTicket"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Tickets",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/eventTicket"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event Ticket",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Mago de Oz\",\n  \"date\": \"May 15th\",\n  \"location\": \"Plaza de Toros, Quito\",\n  \"time\": \"8:30 PM\",\n  \"price\": 100,\n  \"imagePath\": \"/path/to/image.jpg\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/eventTicket/64fc9a4fb9439de0d87b6893"
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Event Ticket",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/eventTicket/disable/64fc9a4fb9439de0d87b6893"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event Ticket",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/eventTicket/64fc9a4fb9439de0d87b6893"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event Ticket Details",
+			"item": [
+				{
+					"name": "Create Event Ticket Detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"eventTicketId\": \"6506fba44e8ea20100b5e346\",\n    \"title\": \"Mago de Oz\",\n    \"description\": \"Discover the beautiful capital city of Ecuador, high in the Andes and dramatically squeezed between snow capped mountain peaks; exquisitely fusing modern lifestyle, great food, nature and UNESCO World Heritage architectural treasures. Quito, today a modern and cosmopolitan south american capital, was founded in the 16th century on the ruins of an Inca city and stands at an altitude of 2,850 m. The city has the best-preserved, least altered historic centre in Latin America. The monasteries of San Francisco and Santo Domingo, and the Church and Jesuit College of La Compañía, with their rich interiors, are pure examples of the 'Baroque School of Quito', which is a fusion of Spanish, Italian, Moorish, Flemish and indigenous art. Historically known for being a starting point for many expeditions, like those of Orellana to discover the Amazon river; Quito is surrounded by nature and still an strategic location to set-out to the wild, both in the country of Ecuador and the rest of South America.\",\n    \"price\": 50,\n    \"duration\": \"3 Days/2 Nights\",\n    \"rating\": 5,\n    \"eventPackageHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Rio,Brazil\"\n        },\n        {\n            \"key\": \"Arrival Date\",\n            \"value\": \"Nov 12, 2017\"\n        },\n        {\n            \"key\": \"Departure Date\",\n            \"value\": \"Nov 21, 2017\"\n        },\n        {\n            \"key\": \"Additional Perks\",\n            \"value\": \"Free Sightseeing & Hotel\"\n        }\n    ],\n    \"photoGallery\": [\n        \"https://southlander.travel/images/gallery/t1.jpg\",\n        \"https://southlander.travel/images/gallery/t2.jpg\",\n        \"https://southlander.travel/images/gallery/t3.jpg\",\n        \"https://southlander.travel/images/gallery/t4.jpg\",\n        \"https://southlander.travel/images/gallery/t5.jpg\",\n        \"https://southlander.travel/images/gallery/s6.jpg\",\n        \"https://southlander.travel/images/gallery/s7.jpg\",\n        \"https://southlander.travel/images/gallery/s8.jpg\",\n        \"https://southlander.travel/images/gallery/s9.jpg\"\n    ],\n    \"location\": \"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255347.02337720996!2d-78.57062296404375!3d-0.18625044944477476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a4002427c9f%3A0x44b991e158ef5572!2sQuito%2C%20Ecuador!5e0!3m2!1sen!2sus!4v1633296470067!5m2!1sen!2sus\",\n    \"about\": [\n        {\n            \"placesCovered\": \"Plaza de San Francisco\",\n            \"description\": \"Colonial Square\",\n            \"activities\": \"History/Walk/Architecture\",\n            \"cityParish\": \"Casco Colonial\"\n        },\n        {\n            \"placesCovered\": \"Plaza de Santo Domingo\",\n            \"description\": \"Colonial Square\",\n            \"activities\": \"History/Walk/Architecture\",\n            \"cityParish\": \"Casco Colonial\"\n        },\n        {\n            \"placesCovered\": \"El Ejido Park\",\n            \"description\": \"City Park\",\n            \"activities\": \"History/Walk/Arts\",\n            \"cityParish\": \"Downtown Quito\"\n        },\n        {\n            \"placesCovered\": \"Calle de las 7 Cruces\",\n            \"description\": \"Casco Colonial\",\n            \"activities\": \"History/Walk/Architecture\",\n            \"cityParish\": \"Casco Colonial\"\n        },\n        {\n            \"placesCovered\": \"Calle La Ronda\",\n            \"description\": \"Casco Colonial\",\n            \"activities\": \"History/Walk/Food\",\n            \"cityParish\": \"Casco Colonial\"\n        },\n        {\n            \"placesCovered\": \"Pululahua Geobotanical Reserve\",\n            \"description\": \"Volcano Crater\",\n            \"activities\": \"Guided Hike\",\n            \"cityParish\": \"Mitad del Mundo\"\n        },\n        {\n            \"placesCovered\": \"Ciudad Mitad del Mundo\",\n            \"description\": \"Outdoors Science Museum\",\n            \"activities\": \"Guided Walk\",\n            \"cityParish\": \"Mitad del Mundo\"\n        },\n        {\n            \"placesCovered\": \"Rumipamba Archaelogical Reserve\",\n            \"description\": \"Archaelogical Park\",\n            \"activities\": \"Guided Walk\",\n            \"cityParish\": \"Rumipamba\"\n        },\n        {\n            \"placesCovered\": \"Guápulo Viewpoint\",\n            \"description\": \"Sightseeing\",\n            \"activities\": \"History/Sightseeing\",\n            \"cityParish\": \"Guápulo\"\n        },\n        {\n            \"placesCovered\": \"Palacio de Cristal\",\n            \"description\": \"Viewpoint\",\n            \"activities\": \"Guided Walk\",\n            \"cityParish\": \"Itchimbía\"\n        }\n    ],\n    \"inclusions\": [\n        \"All land transportation and transfers\",\n        \"All meals detailed in the itinerary\",\n        \"Soft drinks mentioned in the itinerary\",\n        \"Accommodation facilities, if described in the itinerary\",\n        \"Certified Guidance - English/Spanish\",\n        \"All activities described in the itinerary\"\n    ],\n    \"exclusions\": [\n        \"Alcoholic beverages and other personal expenses\",\n        \"Foods and beverages not mentioned in the itinerary\",\n        \"Personal travel and health insurance\"\n    ],\n    \"itinerary\": [\n        {\n            \"dayTitle\": \"Day : 1 Casco Colonial, Calle de las 7 Cruces and Visit to \\\"La Ronda\\\" Street\",\n            \"activities\": \"After breakfast you will have a tour of Quito's casco colonial where you will discover unique attractions such as the Plaza de San Francisco, Santo Domingo, El Ejido, the artisan market, among others. You will have a typical lunch to later walk the famous street of the 7 crosses that takes us through the most representative churches of Quito in neoclassical, gothic and Quitenian school baroque styles. You will then return to your hotel for some rest before an evening visit to \\\"La Ronda\\\", one of the most cheerful and well-known colonial neighborhoods of Quito.\"\n        },\n        {\n            \"dayTitle\": \"Day : 2 Mitad del Mundo and Pululahua Geobotanical Reserve\",\n            \"activities\": \"Prepare for a fantastic day through the Pululahua Geobotanical Reserve, a protected area with a great diversity of flora and fauna, inside a supervolcano crater. Here you can go hiking and visit the various recreational areas the park offers, while enjoying a spectacular view of the Pululahua crater and caldera, a perfect place to get away from the noise, hustle and bustle of everyday life. Later you will visit \\\"Ciudad Mitad del Mundo\\\", a known city attraction, where you will have the opportunity to photograph yourself with one foot on the Northern hemisphere and one in the Southern hemisphere at the same time. After lunch, we will return to the hotel and have a rest, before heading out for a city night-out.\"\n        },\n        {\n            \"dayTitle\": \"Day : 3 Rumipamba, Guápulo and Itchimbia\",\n            \"activities\": \"Today you will tour popular sites and traditional barrios you cannot leave without visiting during your Quito stay, starting with the \\\"Iñaquito\\\" Market where you can taste local foods and drinks in unspoiled Quitenian style; the archaeological museum of Rumipamba where you can find remains of the indigenous pre-Incan Quitu culture; the Itchimbia Crystal Palace, a structure that has been in existence for more than 124 years, its design includes the cladding of large sheets of glass where artistic and cultural exhibitions are held; and one of the most picturesque and ancient neighborhoods of the city, \\\"Guápulo\\\" where you can enjoy a panoramic view of Quito's rural valleys and follow Francisco de Orellana's steps into the Amazon river and the city of El Dorado.\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/eventTicketDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event Ticket Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/eventTicketDetail"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event Ticket Detail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"eventTicketId\": \"64fc9a4bb9439de0d87b6891\",\n    \"title\": \"Mago de\",\n    \"description\": \"A sample event ticket description.\",\n    \"price\": 50,\n    \"duration\": \"3 Days/2 Nights\",\n    \"rating\": 5,\n    \"eventPackageHighlights\": [\n        {\n            \"key\": \"Location\",\n            \"value\": \"Rio,Brazil\"\n        },\n        {\n            \"key\": \"Arrival Date\",\n            \"value\": \"Nov 12, 2017\"\n        }\n    ],\n    \"photoGallery\": [\n        \"photo1.jpg\",\n        \"photo2.jpg\"\n    ],\n    \"location\": \"Sample Location\",\n    \"about\": [\n        {\n            \"placesCovered\": \"Plaza de San Francisco\",\n            \"description\": \"Colonial Square\",\n            \"activities\": \"History/Walk/Architecture\",\n            \"cityParish\": \"Casco Colonial\"\n        }\n    ],\n    \"inclusions\": [\n        \"All land transportation and transfers\"\n    ],\n    \"exclusions\": [\n        \"Alcoholic beverages and other personal expenses\"\n    ],\n    \"itinerary\": [\n        {\n            \"dayTitle\": \"Day : 1 Casco Colonial, Calle de las 7 Cruces and Visit to \\\"La Ronda\\\" Street\",\n            \"activities\": \"After breakfast you will have a tour of Quito's casco colonial where you will discover unique attractions such as the Plaza de San Francisco, Santo Domingo, El Ejido, the artisan market, among others. You will have a typical lunch to later walk the famous street of the 7 crosses that takes us through the most representative churches of Quito in neoclassical, gothic and quitenian school baroque styles. You will then return to your hotel for some rest before an evening visit to \\\"La Ronda\\\", one of the most cheerful and well-known colonial neighborhoods of Quito.\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/eventTicketDetail/64fca8a841b44dbae15d8182"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event Ticket Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/eventTicketDetail/64fca8a841b44dbae15d8182"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Create Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Packages\",\n    \"userId\": \"64fc81643f85792c6765217f\",\n    \"name\": \"Huzaifah Tariq\",\n    \"nationality\": \"Pakistani\",\n    \"idType\": \"CNIC\",\n    \"idNumber\": \"1234567890\",\n    \"phone\": \"090078601\",\n    \"email\": \"huzaifahtariq@gmail.com\",\n    \"package\": \"Coast: Beach Hopping\",\n    \"adultsCount\": \"1\",\n    \"childrenCount\": \"0\",\n    \"checkIn\": \"2023-09-15\",\n    \"checkOut\": \"2023-09-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/booking"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/booking"
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/booking/me"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Packages\",\n    \"userId\": \"64fc81643f85792c6765217f\",\n    \"name\": \"Huzaifah Tariq\",\n    \"nationality\": \"Pakistani\",\n    \"idType\": \"CNIC\",\n    \"idNumber\": \"1234567890\",\n    \"phone\": \"090078601\",\n    \"email\": \"huzaifahtariq@gmail.com\",\n    \"package\": \"Coast: Beach Hopping\",\n    \"adultsCount\": \"1\",\n    \"childrenCount\": \"2\",\n    \"checkIn\": \"2023-09-15\",\n    \"checkOut\": \"2023-09-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/booking/64fc9d890a42b8792e1e9c95"
+					},
+					"response": []
+				},
+				{
+					"name": "Update My Booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"Packages\",\n    \"userId\": \"64fc81643f85792c6765217f\",\n    \"name\": \"Huzaifah Tariq\",\n    \"nationality\": \"Pakistani\",\n    \"idType\": \"CNIC\",\n    \"idNumber\": \"1234567890\",\n    \"phone\": \"090078601\",\n    \"email\": \"huzaifahtariq@gmail.com\",\n    \"package\": \"Coast: Beach Hopping\",\n    \"adultsCount\": \"1\",\n    \"childrenCount\": \"0\",\n    \"checkIn\": \"2023-09-15\",\n    \"checkOut\": \"2023-09-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/booking/me/64fc9d890a42b8792e1e9c95"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/booking/64fc9d890a42b8792e1e9c95"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete My Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/booking/me/64fc9f3f8465ea41cc322610"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inquiries",
+			"item": [
+				{
+					"name": "Create Inquiry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"64fc81643f85792c6765217f\",\n    \"firstName\": \"Huzaifah\",\n    \"lastName\": \"Tariq\",\n    \"phoneNumber\": \"090078601\",\n    \"email\": \"huzaifahtariq@gmail.com\",\n    \"helpType\": \"Accomodation\",\n    \"message\": \"This is a test message\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/inquiry"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Inquiries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/inquiry"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Inquiry",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"64fc81643f85792c6765217f\",\n    \"firstName\": \"Huzaifah\",\n    \"lastName\": \"Tariq\",\n    \"phoneNumber\": \"090078601\",\n    \"email\": \"huzaifahtariq08@gmail.com\",\n    \"helpType\": \"Accomodation\",\n    \"message\": \"This is a test message\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/api/inquiry/64fca0256875e72fb3e71076"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Inquiry",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGZjODE2NDNmODU3OTJjNjc2NTIxN2YiLCJ1c2VybmFtZSI6Imh1emFpZmFodGFyaXEiLCJlbWFpbCI6Imh1emFpZmFodGFyaXEwOEBnbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpc0FjdGl2ZSI6dHJ1ZSwiaWF0IjoxNjk0MjY5ODM0fQ.dkwNGpTO60HwvUeInQLbl42lR8o1eac_OQiQylOkcrg",
+								"type": "text"
+							}
+						],
+						"url": "{{baseUrl}}/api/inquiry/64fca0256875e72fb3e71076"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

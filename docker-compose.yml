@@ -1,0 +1,17 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "4000:4000"
+    depends_on:
+      - frontend
+    restart: always  # Add this line to specify always restart
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:80"
+    restart: always  # Add this line to specify always restart
