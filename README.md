@@ -1,26 +1,125 @@
-# South Lander Travel Agency Website
+# Tour Management Service
 
-## Overview
-South Lander is a cutting-edge Travel Agency website designed to offer users an exceptional traveling planning experience. Built with the MERN stack (MongoDB, Express.js, React, Node.js), this website integrates Docker for containerization and Stripe for secure payment processing. Our platform offers a user-friendly interface, seamless browsing experience, and secure transaction processes.
+Tour-Management-Service is a MERN stack-based web application designed to streamline the process of planning and booking personalized tours. This platform offers an array of customizable tour plans, allowing users to tailor their travel experiences to their preferences.
+
+## Table of Contents
+
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Configuration](#configuration)
+- [Installation (With Docker)](<#installation-(with-docker)>)
+- [Installation (Without Docker)](<#installation-(without-docker)>)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Features
-- **Travel Planning:** Allows users to browse and book various travel packages.
-- **Secure Payment Gateway:** Integrated with Stripe for safe and reliable transactions.
-- **User Accounts:** Personalized user profiles for managing bookings and viewing history.
-- **Responsive Design:** Optimized for both desktop and mobile devices.
 
-## Tech Stack
-- **MongoDB:** For database management.
-- **Express.js:** Backend framework.
-- **React:** Frontend library.
-- **Node.js:** Server-side runtime environment.
-- **Docker:** For containerizing the application.
-- **Stripe:** For handling payments.
+- Variety of pre-designed tour plans.
+- Customization options for each tour.
+- User-friendly interface for easy navigation.
+- Built using MongoDB, Express.js, React, and Node.js.
 
-## Getting Started
+## Prerequisites
 
-### Prerequisites
-- Node.js
-- NPM
-- Docker
-- MongoDB account
+Before you begin, make sure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+- [MongoDB](https://www.mongodb.com/) Database Server
+- [Docker](https://www.docker.com/) (optional, for Docker-based setup)
+
+## Configuration
+
+Rename the env.example file (present in the backend folder) to .env file and configure everything according to your setup.
+
+## Installation (With Docker)
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/tour-management-service.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd tour-management-service
+   ```
+
+3. Run Docker Compose:
+
+- Ensure Docker is running on your machine.
+- Execute the following command:
+
+  ```bash
+  docker-compose up --build
+  ```
+
+- This will set up the entire environment using Docker.
+
+4. Access the Application:
+
+- The app should be accessible on http://localhost:3000.
+
+## Installation (Without Docker)
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/tour-management-service.git
+   ```
+
+2. Setup MongoDB:
+
+- Ensure MongoDB server is running on your machine.
+- Create a new connection to MongoDB.
+- Copy the connection string and place it in the .env file.
+- All the collections will be automatically created once the backend service is run.
+
+3. Navigate to the project backend:
+
+   ```bash
+   cd tour-management-service/backend
+   ```
+
+4. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+5. Run the backend:
+
+   ```bash
+   npm start
+   ```
+
+6. Navigate to the project frontend:
+
+   ```bash
+   cd tour-management-service/frontend
+   ```
+
+7. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+8. Run the frontend:
+
+   ```bash
+   npm start
+   ```
+
+9. Access the Application:
+
+- The app should be accessible on http://localhost:3000.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
