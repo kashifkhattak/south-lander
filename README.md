@@ -16,8 +16,9 @@ Tour-Management-Service is a MERN stack-based web application designed to stream
 
 - Variety of pre-designed tour plans.
 - Customization options for each tour.
+- Integrated with **Stripe** for safe and reliable transactions.
 - User-friendly interface for easy navigation.
-- Built using MongoDB, Express.js, React, and Node.js.
+- Built using **MongoDB**, **Express.js**, **React**, and **Node.js**.
 
 ## Prerequisites
 
@@ -25,12 +26,14 @@ Before you begin, make sure you have the following installed on your system:
 
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
-- [MongoDB](https://www.mongodb.com/) Database Server
-- [Docker](https://www.docker.com/) (optional, for Docker-based setup)
+- [MongoDB](https://www.mongodb.com/) (Database Server)
+- [Docker](https://www.docker.com/) (Optional, for Docker-based setup)
+- [Stripe](https://stripe.com/) (Optional, for recieving payments)
 
 ## Configuration
 
-Rename the env.example file (present in the backend folder) to .env file and configure everything according to your setup.
+- Rename the env.example file (present in the backend folder) to .env file and configure everything according to your setup.
+- Add your stripe API key if you want to recieve client payments. (Optional)
 
 ## Installation (With Docker)
 
