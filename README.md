@@ -1,6 +1,6 @@
-# Tour Management Service
+# South Lander
 
-Tour-Management-Service is a MERN stack-based web application designed to streamline the process of planning and booking personalized tours. This platform offers an array of customizable tour plans, allowing users to tailor their travel experiences to their preferences.
+South Lander is a MERN stack-based web application designed to streamline the process of planning and booking personalized tours. This platform offers an array of customizable tour plans, allowing users to tailor their travel experiences to their preferences.
 
 ## Table of Contents
 
@@ -40,13 +40,13 @@ Before you begin, make sure you have the following installed on your system:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/tour-management-service.git
+   git clone https://github.com/your-username/south-lander.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd tour-management-service
+   cd south-lander
    ```
 
 3. Run Docker Compose:
@@ -69,7 +69,7 @@ Before you begin, make sure you have the following installed on your system:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/tour-management-service.git
+   git clone https://github.com/your-username/south-lander.git
    ```
 
 2. Setup MongoDB:
@@ -82,7 +82,7 @@ Before you begin, make sure you have the following installed on your system:
 3. Navigate to the project backend:
 
    ```bash
-   cd tour-management-service/backend
+   cd south-lander/backend
    ```
 
 4. Install dependencies:
@@ -100,7 +100,7 @@ Before you begin, make sure you have the following installed on your system:
 6. Navigate to the project frontend:
 
    ```bash
-   cd tour-management-service/frontend
+   cd south-lander/frontend
    ```
 
 7. Install dependencies:
